@@ -68,6 +68,30 @@ module.exports = {
     {
       id: "UC_MbFb0fBPURLVJ5H5XbGQw",
       name: "Mau Rodriguez"
+    },
+    {
+      id: "UCCHoKlb5YIiN2ZPDD_jqXlw",
+      name: "Pueblo Informado"
+    },
+    {
+      id: "UC2N6_cvCmlCohKmVFKEBaug",
+      name: "Sin Línea Mx"
+    },
+    {
+      id: "UCoeJxDc717MNVJtUsQW20Qg",
+      name: "Senado de México"
+    },
+    {
+      id: "UCkLEVSsqQSCZ8pnyiLyGn3w",
+      name: "Cámara de Diputados"
+    },
+    {
+      id: "UCvASv4hWCpTTbeEU67jkEzA",
+      name: "Noticiero en Redes"
+    },
+    {
+      id: "UCmoHmtwGF6XAZfSI1S2PkTg",
+      name: "Meme Yamel"
     }
   ]
 };
