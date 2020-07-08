@@ -33,7 +33,7 @@ try {
     
     for (const channel of CHANNELS) {
       log = JSON.parse(rawLog || "[]");  
-      let streamData = {}, time = '', date = '';
+      let streamData = {}, time = '', date = '', viewers = '';
       await checkIfLive(channel.id).then((data) => streamData = data);
       console.log(streamData);
       if (!streamData.success) {
@@ -54,7 +54,7 @@ try {
           console.log(`Esta transmisión ya fue notificada: ${streamData.videoId} - ${channel.name}: ${channel.id}`);
           logEntry.push({ error: `Esta transmisión ya fue notificada: ${streamData.videoId} - ${channel.name}: ${channel.id}`, date: new Date() });
         } else {
-          await checkStreamDetails(streamData.videoId).then((data) => { time = data.time; date = data.date; });
+          await checkStreamDetails(streamData.videoId).then((data) => { time = data.time; date = data.date; viewers = data.viewers });
     
           transmissions.push({
             "id": streamData.videoId,
@@ -65,7 +65,7 @@ try {
           fs.writeFileSync(__dirname + '/streams.json', JSON.stringify(transmissions, null, 2));
           await sendMessage({
             chat_id: "@SinCensuraMedia",
-            text: `🔴 ¡${channel.name} está transmitiendo En Vivo! Entra a: https://www.youtube.com/watch?v=${streamData.videoId} \n Comenzó a transmitir a las: ${time}`,
+            text: `🔴 ¡${channel.name} está transmitiendo En Vivo! \n\n ✪ Entra a: https://www.youtube.com/watch?v=${streamData.videoId} \n\n ☑ Comenzó a transmitir: ${time} \n\n ☑ Están viendo ahora: ${viewers} espectadores`,
           });
         }
       }

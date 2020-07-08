@@ -20,18 +20,25 @@ const checkStreamDetails = (streamId) => {
           new Date(
             body.match(/"startTimestamp":"+([A-Za-z0-9_@.:/#&+-]*)+"/i)[1])
         ).toLocaleTimeString('es-MX', { timeZone: 'America/Mexico_City' })
-        : null;
+        : `${new Date(
+          new Date(new Date()
+        ).toLocaleTimeString('es-MX', { timeZone: 'America/Mexico_City' }))} (?)`;
+      const viewers = isLive 
+        ? body.match(/"text":"([0-9,]+)+.*"/i)[1]
+        : '(?)';
       console.log({
         isLive,
         success,
         time,
-        date
+        date,
+        viewers
       });
       resolve({
         isLive,
         success,
         time,
-        date
+        date,
+        viewers
       });
     });
   });

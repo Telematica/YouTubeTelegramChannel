@@ -92,6 +92,18 @@ module.exports = {
     {
       id: "UCmoHmtwGF6XAZfSI1S2PkTg",
       name: "Meme Yamel"
-    }
+    },
+    {
+      id: "UCE0jLtnLnVG9xLyoR-r_jXg",
+      name: "Nino Canún"
+    },
+    {
+      id: "UCPC0Z_lxVz4o-NMPHMoDMlA",
+      name: "Con Toño Ruiz"
+    },
+    {
+      id: "UCu2Uc7YeJmE9mvGG9OK-zbQ",
+      name: "Secretaría de Salud México"
+    },
   ]
 };
