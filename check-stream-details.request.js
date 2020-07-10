@@ -14,15 +14,11 @@ const checkStreamDetails = (streamId) => {
         return;
       }
       const isLive = Boolean(body.match(/LIVE NOW/gi));
-      const date = isLive ? body.match(/"startTimestamp":"+([A-Za-z0-9_@.:/#&+-]*)+"/i)[1] : null;
-      const time = isLive
-        ? new Date(
-          new Date(
-            body.match(/"startTimestamp":"+([A-Za-z0-9_@.:/#&+-]*)+"/i)[1])
-        ).toLocaleTimeString('es-MX', { timeZone: 'America/Mexico_City' })
-        : `${new Date(
-          new Date(new Date()
-        ).toLocaleTimeString('es-MX', { timeZone: 'America/Mexico_City' }))} (?)`;
+      const timestamp = isLive ? body.match(/"startTimestamp":"+([A-Za-z0-9_@.:/#&+-]*)+"/i) : null;
+      const date = isLive && timestamp ? timestamp[1] : null;
+      const time = isLive  && timestamp
+        ? new Date(new Date(date)).toLocaleTimeString('es-MX', { timeZone: 'America/Mexico_City' })
+        : `${new Date().toLocaleTimeString('es-MX', { timeZone: 'America/Mexico_City' })} (*)`;
       const viewers = isLive 
         ? body.match(/"text":"([0-9,]+)+.*"/i)[1]
         : '(?)';

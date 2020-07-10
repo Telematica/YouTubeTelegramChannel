@@ -105,5 +105,15 @@ module.exports = {
       id: "UCu2Uc7YeJmE9mvGG9OK-zbQ",
       name: "Secretaría de Salud México"
     },
+    {
+      id: "UCKIVcWfT68v6yiWjbLr8uKw",
+      name: "GobCDMX",
+      channel: "GobCDMX"
+    },
+    {
+      id: "UCXodhnJahy40Brs8pi7KoUQ",
+      name: "Iber Alejandro",
+      channel: "YEIPIMARTNEZIBERALEJANDRO"
+    }
   ]
 };
