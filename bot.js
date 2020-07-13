@@ -65,7 +65,7 @@ try {
           fs.writeFileSync(__dirname + '/streams.json', JSON.stringify(transmissions, null, 2));
           await sendMessage({
             chat_id: "@SinCensuraMedia",
-            text: `🔴 ¡${channel.name} está transmitiendo En Vivo! \n\n ✪ Entra a: https://www.youtube.com/watch?v=${streamData.videoId} \n\n ☑ Comenzó a transmitir: ${time} \n\n ☑ Están viendo ahora: ${viewers} espectadores`,
+            text: `🔴 ¡${channel.name} está transmitiendo En Vivo! \n\n ✪ Entra a: http://youtu.be/${streamData.videoId} \n\n ☑ Transmite desde: ${time} \n\n ☑ Espectadores: ${viewers}`,
           });
         }
       }
