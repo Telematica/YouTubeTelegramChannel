@@ -8,12 +8,11 @@ const checkIfLive = (channelId) => {
       headers: YOUTUBE_REQUEST_HEADERS,
     };
     request(options, (error, response, body) => {
-      const success = !error && response.statusCode == 200;
+      const success = !error && response.statusCode === 200;
       if (!success) {
-        reject("Request error!");
-        return;
+        reject({error, code:response.statusCode});
       }
-      const isLive = Boolean(body.match(/LIVE NOW|PREMIERING NOW/gi));
+      const isLive = Boolean(body.match(/ watching|LIVE NOW|PREMIERING NOW/gi));
       const videoId = isLive
         ? body.match(/https:\/\/i\.ytimg\.com\/vi\/([A-Za-z0-9_@./#&+-]*)\/(hqdefault_live|maxresdefault)/i)[1]
         : null;

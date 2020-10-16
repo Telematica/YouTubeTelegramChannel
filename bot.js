@@ -1,13 +1,10 @@
 //https://stackoverflow.com/questions/42335016/dotenv-file-is-not-loading-environment-variables
 require('dotenv').config({path:__dirname+'/.env'});
 const fs = require('fs');
-const request = require("request");
-const querystring = require("querystring");
 const checkStreamDetails = require("./check-stream-details.request");
 const checkIfLive = require("./check-stream-iflive.request");
 const sendMessage = require("./send-message.request");
 const formatBytes = require("./format-bytes.utils");
-var os = require("os");
 const { CHANNELS } = require('./constants');
 
 console.log(process.env.API_TOKEN, process.env.TZ, new Date(), new Date().toLocaleTimeString());
@@ -21,7 +18,7 @@ try {
     if (fs.existsSync(__dirname + `/logs/${logFilename}`)) {
       rawLog = fs.readFileSync(__dirname + `/logs/${logFilename}`);
     } else {
-      fs.writeFile(logFilename, "[]", (err) => {
+      fs.writeFile(__dirname + `/logs/${logFilename}`, "[]", (err) => {
         if (err) throw err;
         console.log("The file was succesfully saved!");
       }); 
@@ -34,7 +31,7 @@ try {
     for (const channel of CHANNELS) {
       log = JSON.parse(rawLog || "[]");  
       let streamData = {}, time = '', date = '', viewers = '';
-      await checkIfLive(channel.id).then((data) => streamData = data);
+      await checkIfLive(channel.id).then((data) => streamData = data).catch(error => console.log(error));
       console.log(streamData);
       if (!streamData.success) {
         console.log('¡Hubo un Error en la Petición al Canal!');
@@ -54,7 +51,7 @@ try {
           console.log(`Esta transmisión ya fue notificada: ${streamData.videoId} - ${channel.name}: ${channel.id}`);
           logEntry.push({ error: `Esta transmisión ya fue notificada: ${streamData.videoId} - ${channel.name}: ${channel.id}`, date: new Date() });
         } else {
-          await checkStreamDetails(streamData.videoId).then((data) => { time = data.time; date = data.date; viewers = data.viewers });
+          await checkStreamDetails(streamData.videoId).then((data) => { time = data.time; date = data.date; viewers = data.viewers }).catch(error => console.log(error));
     
           transmissions.push({
             "id": streamData.videoId,

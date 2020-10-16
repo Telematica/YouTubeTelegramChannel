@@ -5,7 +5,7 @@ module.exports = {
     "cache-control": "max-age=0",
     "upgrade-insecure-requests": "1",
     "user-agent":
-      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36",
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
     accept:
       "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
     "x-client-data":
@@ -15,6 +15,7 @@ module.exports = {
     "sec-fetch-user": "?1",
     "sec-fetch-dest": "document",
     "accept-language": "en-US,en;q=0.9",
+    "cookie": process.env.COOKIE,
   },
   CHANNELS: [
     {
@@ -114,6 +115,41 @@ module.exports = {
       id: "UCXodhnJahy40Brs8pi7KoUQ",
       name: "Iber Alejandro",
       channel: "YEIPIMARTNEZIBERALEJANDRO"
+    },
+    {
+      id: "UCDaSJHXF1JK9vOeYHwuseNw",
+      name: "Buzón Ciudadano",
+      channel: "buzonciudadanomx"
+    },
+    {
+      id: "UCZd-6H5UnqzwqiedUYCD2Kg",
+      name: "Campechaneando",
+      channel: "Campechaneando"
+    },
+    {
+      id: "UCb9OjVjHD-SrV852rdQyByQ",
+      name: "El Caporal En Vivo",
+      channel: "VlogsdeElCaporal"
+    },
+    {
+      id: "UCUF37fUphmbJmor8ALRJzuQ",
+      name: "Hans Salazar Oficial",
+      channel: "2412hans"
+    },
+    {
+      id: "UC0tE4QuonBXjuUzZlZav8PA",
+      name: "Rata Política",
+      channel: "RataPoliticaReportera"
+    },
+    {
+      id: "UC0R4smsFydUrF_vK9ziR80A",
+      name: "Sin Censura Media",
+      channel: "sincensuraMedia"
+    },
+    {
+      id: "UCrbK2ykRa2e3DHuyDcqSYxg",
+      name: "Al Viruela Media",
+      channel: "AlViruelaMedia",
     }
   ]
 };

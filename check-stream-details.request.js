@@ -8,10 +8,9 @@ const checkStreamDetails = (streamId) => {
       headers: YOUTUBE_REQUEST_HEADERS,
     };
     request(options, (error, response, body) => {
-      const success = !error && response.statusCode == 200;
+      const success = !error && response.statusCode === 200;
       if (!success) {
-        reject("Request error!");
-        return;
+        reject({error, code: response.statusCode});
       }
       const isLive = Boolean(body.match(/LIVE NOW/gi));
       const timestamp = isLive ? body.match(/"startTimestamp":"+([A-Za-z0-9_@.:/#&+-]*)+"/i) : null;
@@ -22,13 +21,6 @@ const checkStreamDetails = (streamId) => {
       const viewers = isLive 
         ? body.match(/"text":"([0-9,]+)+.*"/i)[1]
         : '(?)';
-      console.log({
-        isLive,
-        success,
-        time,
-        date,
-        viewers
-      });
       resolve({
         isLive,
         success,
