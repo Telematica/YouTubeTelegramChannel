@@ -150,6 +150,21 @@ module.exports = {
       id: "UCrbK2ykRa2e3DHuyDcqSYxg",
       name: "Al Viruela Media",
       channel: "AlViruelaMedia",
+    },
+    {
+      id: "UCJL2rYbSTWNY6R_NVyfdeuA",
+      name: "Eli Tv Oficial",
+      channel: "EliTvOficial"
+    },
+    {
+      id: "UCm1zWwbdLPk99KwqOralv6A",
+      name: "BENDITAS REDES SOCIALES",
+      channel: "BENDITASREDESSOCIALES"
+    },
+    {
+      id: "UCIFMR2wH-tYMT-Uq5kgAvFQ",
+      name: "El Chapucero EN VIVO",
+      channel: null
     }
   ]
 };

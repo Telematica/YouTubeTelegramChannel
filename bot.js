@@ -9,9 +9,10 @@ const { CHANNELS } = require('./constants');
 
 console.log(process.env.API_TOKEN, process.env.TZ, new Date(), new Date().toLocaleTimeString());
 
-try {
-  (async () => {
-    let logDate = new Date();
+
+(async () => {
+  let logDate = new Date();
+  try {
     let logFilename = String(logDate.getFullYear()).padStart(2,0)+"-"+String(logDate.getMonth()+1).padStart(2,0)+"-"+String(logDate.getDate()).padStart(2,0)+".log.json";
     let rawLog = null;
 
@@ -84,15 +85,15 @@ try {
     });
     log.push(logEntry);
     fs.writeFileSync(__dirname + `/logs/${logFilename}`, JSON.stringify(log, null, 2));
-  })();
-} catch (e) {
-  let logFilename = String(logDate.getFullYear()).padStart(2,0)+"-"+String(logDate.getMonth()+1).padStart(2,0)+"-"+String(logDate.getDate()).padStart(2,0)+".error_log.json";
-  if (fs.existsSync(__dirname + `/logs/${logFilename}`)) {
-    fs.appendFile(__dirname + `/logs/${logFilename}`, e.toString());
-  } else {
-    fs.writeFile(logFilename, e.toString() + " : " + new Date(), (err) => {
-      if (err) throw err;
-      console.log("Error log saved!");
-    }); 
+  } catch (e) {
+    let logFilename = String(logDate.getFullYear()).padStart(2,0)+"-"+String(logDate.getMonth()+1).padStart(2,0)+"-"+String(logDate.getDate()).padStart(2,0)+".error.log";
+    if (fs.existsSync(__dirname + `/logs/errors/${logFilename}`)) {
+      fs.appendFile(__dirname + `/logs/errors/${logFilename}`, e.toString());
+    } else {
+      fs.writeFile(__dirname + `/logs/errors/${logFilename}`, e.toString() + " : " + new Date(), (err) => {
+        if (err) throw err;
+        console.log("Error log saved!");
+      }); 
+    }
   }
-}
+})();
