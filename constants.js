@@ -165,6 +165,16 @@ module.exports = {
       id: "UCIFMR2wH-tYMT-Uq5kgAvFQ",
       name: "El Chapucero EN VIVO",
       channel: null
+    },
+    {
+      id: "UCPX3yijEA2s1jTJGDlUnGsQ",
+      name: "Rafa Herrera",
+      channel: "RafaHerrera"
+    },
+    {
+      id: "UCcNxmMVK_S2zzdb5qd77ESQ",
+      name: "Radio Bufalo MX",
+      channel: "RadioBufaloMX"
     }
   ]
 };
