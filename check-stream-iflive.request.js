@@ -12,7 +12,7 @@ const checkIfLive = (channelId) => {
       if (!success) {
         reject({error, code:response.statusCode});
       }
-      const isLive = Boolean(body.match(/ watching|LIVE NOW|PREMIERING NOW/gi));
+      const isLive = Boolean(body.match(/\d+ watching|LIVE NOW|PREMIERING NOW/gi));
       const match = body.match(/https:\/\/i\.ytimg\.com\/vi\/([A-Za-z0-9_@./#&+-]*)\/(hqdefault|hqdefault_live|maxresdefault)/i);
       const videoId = isLive && match
         ? match[1]
