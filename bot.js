@@ -40,7 +40,7 @@ console.log(process.env.API_TOKEN, process.env.TZ, new Date(), new Date().toLoca
       }
     
       if (!streamData.isLive && streamData.success) {
-        console.log('El Canal no está en vivo');
+        console.log(`El Canal no está en vivo: ${channel.name}: ${channel.id}`);
         logEntry.push({error: `El Canal no está en vivo: ${channel.name}: ${channel.id}`, date: new Date() });
       }
     

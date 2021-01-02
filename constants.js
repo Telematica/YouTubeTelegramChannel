@@ -25,6 +25,7 @@ module.exports = {
     {
       id: "UCUqetMbryrT0yMpokrUDJgg",
       name: "Sin Censura TV",
+      channel: "SinCensuraTVMedia"
     },
     {
       id: "UCxEgOKuI-n-WOJaNcisHvSg",
