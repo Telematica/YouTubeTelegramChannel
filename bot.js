@@ -63,7 +63,7 @@ console.log(process.env.API_TOKEN, process.env.TZ, new Date(), new Date().toLoca
           fs.writeFileSync(__dirname + '/streams.json', JSON.stringify(transmissions, null, 2));
           await sendMessage({
             chat_id: "@SinCensuraMedia",
-            text: `🔴 ¡${channel.name} está transmitiendo En Vivo! \n\n ✪ Entra a: http://youtu.be/${streamData.videoId} \n\n ☑ Transmite desde: ${time} \n\n ☑ Espectadores: ${viewers}`,
+            text: `🎞 🔴 ¡${channel.name} está transmitiendo En Vivo! \n\n ✪ Entra a: http://youtu.be/${streamData.videoId} \n\n ☑ Transmite desde: ${time} \n\n ☑ Espectadores: ${viewers}`,
           });
         }
       }

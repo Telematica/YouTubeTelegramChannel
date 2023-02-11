@@ -176,6 +176,12 @@ module.exports = {
       id: "UCcNxmMVK_S2zzdb5qd77ESQ",
       name: "Radio Bufalo MX",
       channel: "RadioBufaloMX"
+    },
+    {
+      id: "UClfxfOThZDPL_c0Ld7psDsw",
+      name: "CONFERENCIAS EXCLUSIVAS Alfredo Jalife",
+      channel: "CONFERENCIASEXCLUSIVASAlfredoJalife"
     }
   ]
 };
+// {"browseId":"UClfxfOThZDPL_c0Ld7psDsw","canonicalBaseUrl":"/c/CONFERENCIASEXCLUSIVASAlfredoJalife"}

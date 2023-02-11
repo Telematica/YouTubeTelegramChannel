@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.2.0",
+    "jsdom": "^21.1.0",
     "request": "^2.88.2"
   }
 }
