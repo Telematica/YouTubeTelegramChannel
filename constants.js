@@ -15,7 +15,7 @@ module.exports = {
     "sec-fetch-user": "?1",
     "sec-fetch-dest": "document",
     "accept-language": "en-US,en;q=0.9",
-    "cookie": process.env.COOKIE,
+    cookie: process.env.COOKIE,
   },
   CHANNELS: [
     {
@@ -25,7 +25,7 @@ module.exports = {
     {
       id: "UCUqetMbryrT0yMpokrUDJgg",
       name: "Sin Censura TV",
-      channel: "SinCensuraTVMedia"
+      channel: "SinCensuraTVMedia",
     },
     {
       id: "UCxEgOKuI-n-WOJaNcisHvSg",
@@ -33,7 +33,7 @@ module.exports = {
     },
     {
       id: "UCNQqL-xd30otxNGRL5UeFFQ",
-      name: "GFNorona Oficial - Gerardo Fernández Noroña"
+      name: "GFNorona Oficial - Gerardo Fernández Noroña",
     },
     {
       id: "UCegfUb76P-zysNAoaDRMC9Q",
@@ -49,103 +49,103 @@ module.exports = {
     },
     {
       id: "UCcWFzlAzYkURynPFlV9KWZg",
-      name: "El Chapucero"
+      name: "El Chapucero",
     },
     {
       id: "UCRja7nxirrJ4yEUa9pPkFmw",
-      name: "Julio Astillero"
+      name: "Julio Astillero",
     },
     {
       id: "UCt7k7y_xTkkc1Jeh7cdAjDQ",
-      name: "SinEmbargo Al Aire"
+      name: "SinEmbargo Al Aire",
     },
     {
       id: "UCBdM6w8S6kn90P0or3Z0kxQ",
-      name: "RompevientoTV"
+      name: "RompevientoTV",
     },
     {
       id: "UCrQNcN2YrmWjoPFZYQNlpmQ",
-      name: "Política Piñata"
+      name: "Política Piñata",
     },
     {
       id: "UC_MbFb0fBPURLVJ5H5XbGQw",
-      name: "Mau Rodriguez"
+      name: "Mau Rodriguez",
     },
     {
       id: "UCCHoKlb5YIiN2ZPDD_jqXlw",
-      name: "Pueblo Informado"
+      name: "Pueblo Informado",
     },
     {
       id: "UC2N6_cvCmlCohKmVFKEBaug",
-      name: "Sin Línea Mx"
+      name: "Sin Línea Mx",
     },
     {
       id: "UCoeJxDc717MNVJtUsQW20Qg",
-      name: "Senado de México"
+      name: "Senado de México",
     },
     {
       id: "UCkLEVSsqQSCZ8pnyiLyGn3w",
-      name: "Cámara de Diputados"
+      name: "Cámara de Diputados",
     },
     {
       id: "UCvASv4hWCpTTbeEU67jkEzA",
-      name: "Noticiero en Redes"
+      name: "Noticiero en Redes",
     },
     {
       id: "UCmoHmtwGF6XAZfSI1S2PkTg",
-      name: "Meme Yamel"
+      name: "Meme Yamel",
     },
     {
       id: "UCE0jLtnLnVG9xLyoR-r_jXg",
-      name: "Nino Canún"
+      name: "Nino Canún",
     },
     {
       id: "UCPC0Z_lxVz4o-NMPHMoDMlA",
-      name: "Con Toño Ruiz"
+      name: "Con Toño Ruiz",
     },
     {
       id: "UCu2Uc7YeJmE9mvGG9OK-zbQ",
-      name: "Secretaría de Salud México"
+      name: "Secretaría de Salud México",
     },
     {
       id: "UCKIVcWfT68v6yiWjbLr8uKw",
       name: "GobCDMX",
-      channel: "GobCDMX"
+      channel: "GobCDMX",
     },
     {
       id: "UCXodhnJahy40Brs8pi7KoUQ",
       name: "Iber Alejandro",
-      channel: "YEIPIMARTNEZIBERALEJANDRO"
+      channel: "YEIPIMARTNEZIBERALEJANDRO",
     },
     {
       id: "UCDaSJHXF1JK9vOeYHwuseNw",
       name: "Buzón Ciudadano",
-      channel: "buzonciudadanomx"
+      channel: "buzonciudadanomx",
     },
     {
       id: "UCZd-6H5UnqzwqiedUYCD2Kg",
       name: "Campechaneando",
-      channel: "Campechaneando"
+      channel: "Campechaneando",
     },
     {
       id: "UCb9OjVjHD-SrV852rdQyByQ",
       name: "El Caporal En Vivo",
-      channel: "VlogsdeElCaporal"
+      channel: "VlogsdeElCaporal",
     },
     {
       id: "UCUF37fUphmbJmor8ALRJzuQ",
       name: "Hans Salazar Oficial",
-      channel: "2412hans"
+      channel: "2412hans",
     },
     {
       id: "UC0tE4QuonBXjuUzZlZav8PA",
       name: "Rata Política",
-      channel: "RataPoliticaReportera"
+      channel: "RataPoliticaReportera",
     },
     {
       id: "UC0R4smsFydUrF_vK9ziR80A",
       name: "Sin Censura Media",
-      channel: "sincensuraMedia"
+      channel: "sincensuraMedia",
     },
     {
       id: "UCrbK2ykRa2e3DHuyDcqSYxg",
@@ -155,33 +155,33 @@ module.exports = {
     {
       id: "UCJL2rYbSTWNY6R_NVyfdeuA",
       name: "Eli Tv Oficial",
-      channel: "EliTvOficial"
+      channel: "EliTvOficial",
     },
     {
       id: "UCm1zWwbdLPk99KwqOralv6A",
       name: "BENDITAS REDES SOCIALES",
-      channel: "BENDITASREDESSOCIALES"
+      channel: "BENDITASREDESSOCIALES",
     },
     {
       id: "UCIFMR2wH-tYMT-Uq5kgAvFQ",
       name: "El Chapucero EN VIVO",
-      channel: null
+      channel: null,
     },
     {
       id: "UCPX3yijEA2s1jTJGDlUnGsQ",
       name: "Rafa Herrera",
-      channel: "RafaHerrera"
+      channel: "RafaHerrera",
     },
     {
       id: "UCcNxmMVK_S2zzdb5qd77ESQ",
       name: "Radio Bufalo MX",
-      channel: "RadioBufaloMX"
+      channel: "RadioBufaloMX",
     },
     {
       id: "UClfxfOThZDPL_c0Ld7psDsw",
       name: "CONFERENCIAS EXCLUSIVAS Alfredo Jalife",
-      channel: "CONFERENCIASEXCLUSIVASAlfredoJalife"
-    }
-  ]
+      channel: "CONFERENCIASEXCLUSIVASAlfredoJalife",
+    },
+  ],
 };
 // {"browseId":"UClfxfOThZDPL_c0Ld7psDsw","canonicalBaseUrl":"/c/CONFERENCIASEXCLUSIVASAlfredoJalife"}

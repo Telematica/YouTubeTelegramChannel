@@ -1,5 +1,5 @@
 const request = require("request");
-const { YOUTUBE_REQUEST_HEADERS } = require('./constants');
+const { YOUTUBE_REQUEST_HEADERS } = require("./constants");
 
 const checkIfLive = (channelId) => {
   return new Promise((resolve, reject) => {
@@ -10,13 +10,15 @@ const checkIfLive = (channelId) => {
     request(options, (error, response, body) => {
       const success = !error && response.statusCode === 200;
       if (!success) {
-        reject({error, code:response.statusCode});
+        reject({ error, code: response.statusCode });
       }
-      const isLive = Boolean(body.match(/\d+ watching|LIVE NOW|"\bEN VIVO\b"|PREMIERING NOW/gi));
-      const match = body.match(/https:\/\/i\.ytimg\.com\/vi\/([A-Za-z0-9_@./#&+-]*)\/(hqdefault|hqdefault_live|maxresdefault)/i);
-      const videoId = isLive && match
-        ? match[1]
-        : null;
+      const isLive = Boolean(
+        body.match(/\d+ watching|LIVE NOW|"\bEN VIVO\b"|PREMIERING NOW/gi)
+      );
+      const match = body.match(
+        /https:\/\/i\.ytimg\.com\/vi\/([A-Za-z0-9_@./#&+-]*)\/(hqdefault|hqdefault_live|maxresdefault)/i
+      );
+      const videoId = isLive && match ? match[1] : null;
       resolve({
         isLive,
         success,
@@ -24,6 +26,6 @@ const checkIfLive = (channelId) => {
       });
     });
   });
-}
+};
 
 module.exports = checkIfLive;
