@@ -7,12 +7,12 @@ const sendMessage = require("./send-message.request");
 const formatBytes = require("./format-bytes.utils");
 const { CHANNELS } = require("./constants");
 
-console.log(
-  process.env.API_TOKEN,
-  process.env.TZ,
-  new Date(),
-  new Date().toLocaleTimeString()
-);
+console.table({
+  "Telegram Token": process.env.API_TOKEN,
+  "TimeZone": process.env.TZ,
+  "Server DateTime": new Date().toDateString(),
+  "Server Locale Time": new Date().toLocaleTimeString()
+});
 
 (async () => {
   let logDate = new Date();
