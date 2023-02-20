@@ -12,7 +12,7 @@ console.table({
   "TimeZone": process.env.TZ,
   "Server DateTime": new Date().toDateString(),
   "Server Locale Time": new Date().toLocaleTimeString()
-});
+}, ["Logged Server Attribute", "Value"]);
 
 (async () => {
   let logDate = new Date();
@@ -103,6 +103,7 @@ console.table({
           await sendMessage({
             chat_id: "@SinCensuraMedia",
             text: `🎞 🔴 ¡${channel.name} está transmitiendo En Vivo! \n\n ✪ Entra a: http://youtu.be/${streamData.videoId} \n\n ☑ Transmite desde: ${time} \n\n ☑ Espectadores: ${viewers}`,
+            disable_notification: channel.id !== "UCNQqL-xd30otxNGRL5UeFFQ"
           });
         }
       }

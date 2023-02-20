@@ -11,10 +11,10 @@ const { API_TOKEN, TELEGRAM_API_URL } = require("../constants/app.constants");
  */
 const telegramSendMessage = async ({ chat_id, text }) => {
   /** @type {string} */
-  const data = querystring.stringify({ chat_id, text });
+  const params = querystring.stringify({ chat_id, text });
 
   /** @type {string} */
-  const url = `${TELEGRAM_API_URL}${API_TOKEN}/sendMessage?${data}`;
+  const url = `${TELEGRAM_API_URL}${API_TOKEN}/sendMessage?${params}`;
 
   try {
     return await axios.get(url);

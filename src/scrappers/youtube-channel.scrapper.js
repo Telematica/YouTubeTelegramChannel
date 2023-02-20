@@ -10,7 +10,7 @@ const pingChannelStreamLive = require("../requests/ping-channel-stream-live.requ
  */
 const youtubeChannelScrapper = async (cid) => {
   try {
-    /** @type {import("axios").AxiosResponse | import("axios").AxiosError} */
+    /** @type {AxiosResponse} */
     const response = await pingChannelStreamLive(cid);
 
     if (response instanceof axios.AxiosError) {

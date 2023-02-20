@@ -9,13 +9,13 @@ const {
  * Verifies if a channel is live
  *
  * @param {string} channelId Channel Id
- * @returns {Promise<import("axios").AxiosResponse<any, any> | import("axios").AxiosError<any, any>>}
+ * @returns {Promise<AxiosResponse>}
  */
 const pingChannelStreamLive = async (channelId) => {
   /** @type {string} */
   const url = `${YOUTUBE_CHANNEL_URL}/${channelId}/live`;
 
-  /** @type {import("axios").AxiosRequestConfig<any>} */
+  /** @type {AxiosRequestConfig} */
   const config = {
     headers: YOUTUBE_LIVE_HEADERS,
   };
