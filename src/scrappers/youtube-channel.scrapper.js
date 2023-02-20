@@ -42,8 +42,9 @@ const youtubeChannelScrapper = async (cid) => {
     /** @type {NodeListOf<HTMLScriptElement>} */
     const pageScriptTags = dom.window.document.querySelectorAll("script");
 
-    for (const script in pageScriptTags) {
-      const scriptTag = dom.window.document.querySelectorAll("script")[script];
+    for (const scriptIndex in pageScriptTags) {
+      const scriptTag =
+        dom.window.document.querySelectorAll("script")[scriptIndex];
       if (scriptTag.textContent?.includes(scriptHint)) {
         rawScript =
           scriptTag.textContent?.replace(scriptHint, "").slice(0, -1) || "{}";
