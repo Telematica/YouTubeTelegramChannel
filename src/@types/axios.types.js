@@ -1,9 +1,10 @@
+const axios = require("axios");
+
 /**
- * @typedef {import("axios").AxiosResponse<any, any> | import("axios").AxiosError<any, any>}
+ * @typedef {axios.AxiosResponse<any, any> | axios.AxiosError<any, any>}
  * AxiosResponse
  */
 
-/**
- * @typedef {import("axios").AxiosRequestConfig<any>}
- * AxiosRequestConfig
- */
+/** @typedef {axios.AxiosRequestConfig<any>} AxiosRequestConfig */
+
+exports.unused = {};

@@ -1,5 +1,6 @@
 // @ts-check
 const axios = require("axios").default;
+const Axios = require("../@types/axios.types");
 const {
   YOUTUBE_CHANNEL_URL,
   YOUTUBE_LIVE_HEADERS,
@@ -9,13 +10,13 @@ const {
  * Verifies if a channel is live
  *
  * @param {string} channelId Channel Id
- * @returns {Promise<AxiosResponse>}
+ * @returns {Promise<Axios.AxiosResponse>}
  */
 const pingChannelStreamLive = async (channelId) => {
   /** @type {string} */
   const url = `${YOUTUBE_CHANNEL_URL}/${channelId}/live`;
 
-  /** @type {AxiosRequestConfig} */
+  /** @type {AxiosTypes.AxiosRequestConfig} */
   const config = {
     headers: YOUTUBE_LIVE_HEADERS,
   };

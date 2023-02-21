@@ -1,5 +1,6 @@
 // @ts-check
 const axios = require("axios").default;
+const grammyjs = require("@grammyjs/types");
 const querystring = require("querystring");
 const { API_TOKEN, TELEGRAM_API_URL } = require("../constants/app.constants");
 
@@ -7,7 +8,7 @@ const { API_TOKEN, TELEGRAM_API_URL } = require("../constants/app.constants");
  * Verifies if a channel is live
  *
  * @param {SendMessageRequest} Send Message Params
- * @returns {Promise<import("@grammyjs/types").Message>}
+ * @returns {Promise<grammyjs.Message>}
  */
 const telegramSendMessage = async ({ chat_id, text }) => {
   /** @type {string} */

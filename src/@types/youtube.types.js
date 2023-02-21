@@ -1,14 +1,15 @@
 /**
- * @typedef {{
- *  cid: string,
- *  live?: boolean,
- *  configured?: boolean,
- *  vid?: string,
- *  title?: string | null,
- *  thumbnail?: string,
- *  scheduledStartTime?: string,
- *  actualStartTime?: string,
- *  viewCount?: number,
- *  liveSince?: string
- * }} YouTubeLiveDataType
+ * YouTube Live Data Type
+ *
+ * @typedef {Object}                  YouTubeLiveDataType
+ * @property {string}                 cid
+ * @property {string|null|undefined=} vid
+ * @property {boolean}                live
+ * @property {boolean=}               configured
+ * @property {string|null|undefined=} title 
+ * @property {string=}                thumbnail
+ * @property {string=}                scheduledStartTime
+ * @property {string=}                actualStartTime
+ * @property {number=}                viewCount
+ * @property {string=}                liveSince
  */

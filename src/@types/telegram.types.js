@@ -1,13 +1,11 @@
 /**
  * https://core.telegram.org/bots/api#available-methods
  *
- * @typedef {{
- *  chat_id: number,
- *  text: string,
- *  parse_mode?: string,
- *  disable_notification?: boolean,
- *  reply_to_message_id?: number,
- *  allow_sending_without_reply?: boolean
- * }}
- * SendMessageRequest
+ * @typedef {Object}    SendMessageRequest
+ * @property {number}   chat_id
+ * @property {string}   text
+ * @property {string=}  parse_mode
+ * @property {boolean=} disable_notification
+ * @property {number=}  reply_to_message_id
+ * @property {boolean=} allow_sending_without_reply
  */
