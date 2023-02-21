@@ -8,5 +8,8 @@ https://stackoverflow.com/questions/22310972/using-youtube-api-v3-to-tell-if-a-c
 https://developers.google.com/youtube/v3/live/docs/liveBroadcasts/list
 
 
- https://stackoverflow.com/questions/69337592/how-to-set-the-response-type-using-axios-with-javascript-and-jsdocs
- https://stackoverflow.com/questions/32454238/how-to-check-if-youtube-channel-is-streaming-live
+https://stackoverflow.com/questions/69337592/how-to-set-the-response-type-using-axios-with-javascript-and-jsdocs
+
+https://stackoverflow.com/questions/32454238/how-to-check-if-youtube-channel-is-streaming-live
+
+https://stackoverflow.com/questions/42335016/dotenv-file-is-not-loading-environment-variables
