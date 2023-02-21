@@ -16,7 +16,7 @@ const pingChannelStreamLive = async (channelId) => {
   /** @type {string} */
   const url = `${YOUTUBE_CHANNEL_URL}/${channelId}/live`;
 
-  /** @type {AxiosTypes.AxiosRequestConfig} */
+  /** @type {Axios.AxiosRequestConfig} */
   const config = {
     headers: YOUTUBE_LIVE_HEADERS,
   };
