@@ -1,5 +1,5 @@
 // ts-check
-const formatBytes = require("../utils/format-bytes.utils");
+const { formatBytes } = require("../utils/format-bytes.utils");
 
 /**
 * @class Perf
@@ -24,7 +24,7 @@ function Perf() {
   this.hrend;
 
   /**
-   * Set starting stats
+   * @description Set starting stats
    * @returns {void}
    */
   this.begin = () => {
@@ -33,7 +33,7 @@ function Perf() {
   };
 
   /**
-   * Set finished stats
+   * @description Set finished stats
    * @returns {Perf}
    */
   this.finish = () => {
@@ -45,7 +45,7 @@ function Perf() {
   };
 
   /**
-   * Get memory usage with Human Readable stats
+   * @description Get memory usage with Human Readable stats
    * @returns {Array<{key:string, value:string}>}
    */
   this.getMemoryUsage = function () {
@@ -58,7 +58,7 @@ function Perf() {
   };
 
   /**
-   * Get Performance stats
+   * @description Get Performance stats
    * @returns {{
    *  memoryUsage: Array<{key:string, value:string}>,
    *  executionTime: {[key: string]: any}
@@ -77,7 +77,7 @@ function Perf() {
   };
 
   /**
-   * Show Performance stats in the console
+   * @description Show Performance stats in the console
    * @returns {void}
    */
   this.showStats = function () {

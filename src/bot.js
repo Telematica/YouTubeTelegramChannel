@@ -5,19 +5,15 @@ const fs = require("fs");
 const { YOUTUBE_CHANNELS } = require("./constants/youtube.constants");
 const telegramSendMessage = require("./requests/telegram-send-message.request");
 const youtubeChannelScrapper = require("./scrappers/youtube-channel.scrapper");
-const formatBytes = require("./utils/format-bytes.utils");
+const { formatBytes } = require("./utils/format-bytes.utils");
+const { getYearMonthDayString } = require("./utils/date.utils");
 const Perf = require("./utils/performance.utils");
 
 /** @type {Date} */
 const logDate = new Date();
 
 /** @type {string} */
-const logFormattedDate =
-  String(logDate.getFullYear()) +
-  "-" +
-  String(logDate.getMonth() + 1).padStart(2, "0") +
-  "-" +
-  String(logDate.getDate()).padStart(2, "0");
+const logFormattedDate = getYearMonthDayString(logDate);
 
 /** @type {string} */
 const logFileExtension = ".log.json";
@@ -59,14 +55,22 @@ function openOrCreateLogFile() {
   } else {
     fs.writeFile(__dirname + `/logs/${logFilename}`, "[]", (err) => {
       if (err) throw err;
-      console.log("The file was succesfully saved!");
+      console.log("Log file was succesfully created!");
     });
   }
   return JSON.parse(rawLogObj || "[]");
 }
 
-async function checkIfLive() {
-
+/**
+ *
+ * @param {YouTubeChannelType} channel
+ */
+async function checkIfLive(channel) {
+  try {
+    const info = await youtubeChannelScrapper(channel.id);
+  } catch (e) {
+    
+  }
 }
 
 (async () => {
@@ -76,8 +80,12 @@ async function checkIfLive() {
     const logEntry = [];
     const perf = new Perf();
     perf.begin();
+    /** @type {Array<YouTubeTransmissionType>} */
+    const transmissions = JSON.parse(
+      fs.readFileSync(__dirname + "/streams.json").toString()
+    );
 
-    for (const channel of CHANNELS) {
+    for (const channel of YOUTUBE_CHANNELS) {
       let streamData = {},
         time = "",
         date = "",

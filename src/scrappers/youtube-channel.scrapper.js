@@ -7,7 +7,7 @@ const pingChannelStreamLive = require("../requests/ping-channel-stream-live.requ
  * Verifies if a channel is live
  *
  * @param {string} cid Channel Id
- * @returns {Promise<any>}
+ * @returns {Promise<YouTubeLiveDataType|unknown>}
  */
 const youtubeChannelScrapper = async (cid) => {
   try {
@@ -89,9 +89,7 @@ const youtubeChannelScrapper = async (cid) => {
     };
     return Promise.resolve(data);
   } catch (error) {
-    return Promise.reject(
-      error instanceof axios.AxiosError ? error.message : error
-    );
+    return Promise.reject(error);
   }
 };
 
