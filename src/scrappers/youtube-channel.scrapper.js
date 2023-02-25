@@ -1,5 +1,6 @@
 const axios = require("axios").default;
 const AxiosTypes = require("../@types/axios.types");
+const YoutubeTypes = require("../@types/youtube.types");
 const jsdom = require("jsdom");
 const pingChannelStreamLive = require("../requests/ping-channel-stream-live.request");
 
@@ -7,7 +8,7 @@ const pingChannelStreamLive = require("../requests/ping-channel-stream-live.requ
  * Verifies if a channel is live
  *
  * @param {string} cid Channel Id
- * @returns {Promise<YouTubeLiveDataType|unknown>}
+ * @returns {Promise<YoutubeTypes.YouTubeLiveDataType|unknown>} YouTube Data
  */
 const youtubeChannelScrapper = async (cid) => {
   try {

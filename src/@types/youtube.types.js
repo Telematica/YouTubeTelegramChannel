@@ -1,28 +1,30 @@
 /**
  * @description YouTube Live Data Type
- * @typedef {Object}                  YouTubeLiveDataType
- * @property {string}                 cid
- * @property {string|null|undefined=} vid
- * @property {boolean}                live
- * @property {boolean=}               configured
- * @property {string|null|undefined=} title 
- * @property {string=}                thumbnail
- * @property {string=}                scheduledStartTime
- * @property {string=}                actualStartTime
- * @property {number=}                viewCount
- * @property {string=}                liveSince
+ * @typedef  {object}                 YouTubeLiveDataType
+ * @property {string}                 cid                Channel Id
+ * @property {string|null|undefined=} vid                Video Id
+ * @property {boolean}                live               live?
+ * @property {boolean=}               configured         configured?
+ * @property {string|null|undefined=} title              Live Title
+ * @property {string=}                thumbnail          Thumbnail image url
+ * @property {string=}                scheduledStartTime Scheduled Start time
+ * @property {string=}                actualStartTime    Actual Start time
+ * @property {number=}                viewCount          View count
+ * @property {string=}                liveSince          Live since
  */
 
 /**
- * @typedef {Object}  YouTubeChannelType
- * @property {string} id
- * @property {string} name
- * @property {string} [channel]
+ * @typedef  {object} YouTubeChannelType
+ * @property {string} id        Channel id
+ * @property {string} name      Channel name
+ * @property {string} [channel] Channel
  */
 
 /**
- * @typedef {Object}  YouTubeTransmissionType
- * @property {string} id
- * @property {?string} startTimestamp
- * @property {string} channel
+ * @typedef  {object}  YouTubeTransmissionType
+ * @property {string}  id             Transmission id
+ * @property {?string} startTimestamp Start timestamp
+ * @property {string}  channel        Channel id
  */
+
+exports.unused = {};

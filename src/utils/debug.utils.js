@@ -1,8 +1,7 @@
 // @ts-check
 /**
- * Display Debug Info in the Console
- *
- * @returns void
+ * @description Display Debug Info in the Console
+ * @returns {void}
  */
 function showDebugInfo() {
   console.table(

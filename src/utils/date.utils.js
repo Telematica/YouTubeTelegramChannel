@@ -1,7 +1,7 @@
 /**
- * @description Get Year-Month-Day Formatted String. Example output: 2023-02-23
- * @param {Date} date
- * @returns {string}
+ * @description Get Year-Month-Day Formatted String.
+ * @param {Date} date Date object
+ * @returns {string} Example output: 2023-02-23
  */
 function getYearMonthDayString(date) {
   return (

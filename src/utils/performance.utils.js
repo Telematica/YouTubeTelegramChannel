@@ -2,14 +2,14 @@
 const { formatBytes } = require("../utils/format-bytes.utils");
 
 /**
-* @class Perf
-* @classdesc Performance data: execution time and memory stats.
-* @property {Date} this.start - Start time.
-* @property {Array<number>} this.hrstart - High-resolution real time Start.
-* @property {Array<number>} this.end - End time.
-* @property {Array<number>} this.hrend - High-resolution real time End.
-* @this Perf
-*/
+ * @class Perf
+ * @classdesc Performance data: execution time and memory stats.
+ * @property {Date} start Start time.
+ * @property {Array<number>} hrstart - High-resolution real time Start.
+ * @property {Array<number>} end - End time.
+ * @property {Array<number>} hrend - High-resolution real time End.
+ * @this Perf
+ */
 function Perf() {
   /** @type {Date} */
   this.start;
@@ -34,7 +34,7 @@ function Perf() {
 
   /**
    * @description Set finished stats
-   * @returns {Perf}
+   * @returns {Perf} this
    */
   this.finish = () => {
     // @ts-ignore
@@ -46,7 +46,7 @@ function Perf() {
 
   /**
    * @description Get memory usage with Human Readable stats
-   * @returns {Array<{key:string, value:string}>}
+   * @returns {Array<{key:string, value:string}>} Array of key-value objects
    */
   this.getMemoryUsage = function () {
     /** @type {NodeJS.MemoryUsage} */
@@ -63,10 +63,7 @@ function Perf() {
 
   /**
    * @description Get Performance stats
-   * @returns {{
-   *  memoryUsage: Array<{key:string, value:string}>,
-   *  executionTime: {[key: string]: any}
-   * }}
+   * @returns {{ memoryUsage: Array<{key:string, value:string}>, executionTime: {[key: string]: any} }}
    */
   this.getStats = function () {
     return {

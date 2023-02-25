@@ -10,7 +10,7 @@ const {
  * Verifies if a channel is live
  *
  * @param {string} channelId Channel Id
- * @returns {Promise<Axios.AxiosResponse>}
+ * @returns {Promise<Axios.AxiosResponse>} Axios Response
  */
 const pingChannelStreamLive = async (channelId) => {
   /** @type {string} */
