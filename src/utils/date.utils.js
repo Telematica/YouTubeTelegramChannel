@@ -1,5 +1,5 @@
 /**
- * @description Get Year-Month-Day Formatted String
+ * @description Get Year-Month-Day Formatted String. Example output: 2023-02-23
  * @param {Date} date
  * @returns {string}
  */

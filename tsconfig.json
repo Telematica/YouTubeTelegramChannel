@@ -12,7 +12,6 @@
       "declarationDir": "./dist",
       "noEmit": false,
       "strict": true,
-      "suppressImplicitAnyIndexErrors": true,
       "noImplicitThis": false,
       "moduleResolution": "node",
       "esModuleInterop": true,

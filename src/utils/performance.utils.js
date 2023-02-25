@@ -3,7 +3,7 @@ const { formatBytes } = require("../utils/format-bytes.utils");
 
 /**
 * @class Perf
-* @classdesc A person object that only takes in names.
+* @classdesc Performance data: execution time and memory stats.
 * @property {Date} this.start - Start time.
 * @property {Array<number>} this.hrstart - High-resolution real time Start.
 * @property {Array<number>} this.end - End time.
@@ -52,7 +52,11 @@ function Perf() {
     /** @type {NodeJS.MemoryUsage} */
     const memoryUsage = process.memoryUsage();
 
-    return Object.keys(memoryUsage).map((item) => {
+    /** @type {Array<string>} */
+    const keys = Object.keys(memoryUsage);
+
+    return keys.map((/** @type {string} */ item) => {
+      // @ts-ignore
       return { key: item, value: formatBytes(memoryUsage[item]) };
     });
   };

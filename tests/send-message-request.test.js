@@ -1,6 +1,6 @@
 require('dotenv').config({path:__dirname+'/.env'});
 const checkStreamDetails = require("../check-stream-details.request");
-const sendMessage = require("../send-message.request");
+const sendMessage = require("../legacy/send-message.request");
 
 try {
   (async function(){

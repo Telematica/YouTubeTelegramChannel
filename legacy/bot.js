@@ -26,10 +26,10 @@ console.table({
       ".log.json";
     let rawLog = null;
 
-    if (fs.existsSync(__dirname + `/logs/${logFilename}`)) {
-      rawLog = fs.readFileSync(__dirname + `/logs/${logFilename}`);
+    if (fs.existsSync(__dirname + `/../logs/${logFilename}`)) {
+      rawLog = fs.readFileSync(__dirname + `/../logs/${logFilename}`);
     } else {
-      fs.writeFile(__dirname + `/logs/${logFilename}`, "[]", (err) => {
+      fs.writeFile(__dirname + `/../logs/${logFilename}`, "[]", (err) => {
         if (err) throw err;
         console.log("The file was succesfully saved!");
       });
@@ -137,11 +137,11 @@ console.table({
       "-" +
       String(logDate.getDate()).padStart(2, 0) +
       ".error.log";
-    if (fs.existsSync(__dirname + `/logs/errors/${logFilename}`)) {
-      fs.appendFile(__dirname + `/logs/errors/${logFilename}`, e.toString());
+    if (fs.existsSync(__dirname + `/../logs/errors/${logFilename}`)) {
+      fs.appendFile(__dirname + `/../logs/errors/${logFilename}`, e.toString());
     } else {
       fs.writeFile(
-        __dirname + `/logs/errors/${logFilename}`,
+        __dirname + `/../logs/errors/${logFilename}`,
         e.toString() + " : " + new Date(),
         (err) => {
           if (err) throw err;

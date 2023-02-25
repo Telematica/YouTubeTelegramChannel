@@ -7,6 +7,7 @@ const telegramSendMessage = require("./requests/telegram-send-message.request");
 const youtubeChannelScrapper = require("./scrappers/youtube-channel.scrapper");
 const { formatBytes } = require("./utils/format-bytes.utils");
 const { getYearMonthDayString } = require("./utils/date.utils");
+const { showDebugInfo } = require("./utils/debug.utils");
 const Perf = require("./utils/performance.utils");
 
 /** @type {Date} */
@@ -21,22 +22,17 @@ const logFileExtension = ".log.json";
 /** @type {string} */
 const errorLogFileExtension = ".error.log";
 
-/**
- * Display Debug Info in the Console
- *
- * @returns void
- */
-function showDebugInfo() {
-  console.table(
-    {
-      "Telegram Token": process.env.API_TOKEN,
-      TimeZone: process.env.TZ,
-      "Server DateTime": new Date().toDateString(),
-      "Server Locale Time": new Date().toLocaleTimeString(),
-    },
-    ["Logged Server Attribute", "Value"]
-  );
-}
+/** @type {string} */
+const logFilename = `${logFormattedDate}${logFileExtension}`;
+
+/** @type {string} */
+const LOG_FILE_DIRECTORY = __dirname + "/logs";
+
+/** @type {string} */
+const ERROR_LOG_FILE_DIRECTORY = __dirname + "/logs/errors";
+
+/** @type {string} */
+const STREAMS_FILE = __dirname + "/streams.json";
 
 /**
  * Display Debug Info in the Console
@@ -48,12 +44,12 @@ function openOrCreateLogFile() {
   let rawLogObj = "";
 
   /** @type {string} */
-  const logFilename = `${logFormattedDate}${logFileExtension}`;
+  const fullPathFile = `${LOG_FILE_DIRECTORY}/${logFilename}`;
 
-  if (fs.existsSync(__dirname + `/logs/${logFilename}`)) {
-    rawLogObj = fs.readFileSync(__dirname + `/logs/${logFilename}`).toString();
+  if (fs.existsSync(fullPathFile)) {
+    rawLogObj = fs.readFileSync(fullPathFile).toString();
   } else {
-    fs.writeFile(__dirname + `/logs/${logFilename}`, "[]", (err) => {
+    fs.writeFile(fullPathFile, "[]", (err) => {
       if (err) throw err;
       console.log("Log file was succesfully created!");
     });
@@ -62,27 +58,63 @@ function openOrCreateLogFile() {
 }
 
 /**
+ * 
+ * @param {unknown} error Caught Error
+ * @return {void}
+ */
+function openOrCreateAndWriteErrorLogFile(error) {
+  /** @type {string} */
+  const errorLogFilename = `${logFormattedDate}${errorLogFileExtension}`;
+
+  /** @type {string} */
+  const fullPathFile = `${ERROR_LOG_FILE_DIRECTORY}/${errorLogFilename}`;
+
+  if (fs.existsSync(fullPathFile)) {
+    fs.appendFile(fullPathFile, String(error), () => { });
+  } else {
+    fs.writeFile(
+      fullPathFile,
+      String(error) + " : " + new Date(),
+      (err) => {
+        if (err) throw err;
+        console.log("Error log saved!");
+      }
+    );
+  }
+}
+
+/**
  *
  * @param {YouTubeChannelType} channel
+ * @returns {Promise<YouTubeLiveDataType|unknown>}
+ * @throws {unknown}
  */
 async function checkIfLive(channel) {
   try {
     const info = await youtubeChannelScrapper(channel.id);
+    return info;
   } catch (e) {
-    
+    throw new Error("Scrapping Error");
   }
 }
 
 (async () => {
   showDebugInfo();
   try {
-    const log = openOrCreateLogFile();
-    const logEntry = [];
+    /** @type {Perf} */
     const perf = new Perf();
+
     perf.begin();
+
+    /** @type {Array<any>} */
+    const log = openOrCreateLogFile();
+
+    /** @type {Array<any>} */
+    const logEntry = [];
+
     /** @type {Array<YouTubeTransmissionType>} */
     const transmissions = JSON.parse(
-      fs.readFileSync(__dirname + "/streams.json").toString()
+      fs.readFileSync(STREAMS_FILE).toString()
     );
 
     for (const channel of YOUTUBE_CHANNELS) {
@@ -152,50 +184,13 @@ async function checkIfLive(channel) {
         }
       }
     }
-    var end = new Date() - start,
-      hrend = process.hrtime(hrstart);
-    let memoryUsage = process.memoryUsage();
-    memoryUsage = Object.keys(memoryUsage).map((item) => {
-      return { key: item, value: formatBytes(memoryUsage[item]) };
-    });
-    console.info("Execution time: %dms", end);
-    console.info("Execution time (hr): %ds %dms", hrend[0], hrend[1] / 1000000);
-    console.info("Total Memory usage:", memoryUsage);
-    logEntry.push({
-      memoryUsage,
-      executionTime: {
-        "Execution time: %dms": end,
-        "Execution time (hr): %ds %dms": `${hrend[0]} ${hrend[1] / 1000000}`,
-      },
-    });
-    log.push(logEntry);
-    fs.writeFileSync(
-      __dirname + `/logs/${logFilename}`,
-      JSON.stringify(log, null, 2)
-    );
-  } catch (e) {
-    let logFilename =
-      String(logDate.getFullYear()).padStart(2, 0) +
-      "-" +
-      String(logDate.getMonth() + 1).padStart(2, 0) +
-      "-" +
-      String(logDate.getDate()).padStart(2, 0) +
-      ".error.log";
-    if (fs.existsSync(__dirname + `/logs/errors/${logFilename}`)) {
-      fs.appendFile(__dirname + `/logs/errors/${logFilename}`, e.toString());
-    } else {
-      fs.writeFile(
-        __dirname + `/logs/errors/${logFilename}`,
-        e.toString() + " : " + new Date(),
-        (err) => {
-          if (err) throw err;
-          console.log("Error log saved!");
-        }
-      );
-    }
-  }
-})();
 
-(async () => {
-  console.log(await youtubeChannelScrapper("UCb9OjVjHD-SrV852rdQyByQ"));
+    perf.finish().showStats();
+    logEntry.push(perf.getStats());
+    log.push(logEntry);
+    fs.writeFileSync(__dirname + `/logs/${logFilename}`, JSON.stringify(log, null, 2));
+    
+  } catch (/** @type unknown */ e) {
+    openOrCreateAndWriteErrorLogFile(e);
+  }
 })();
