@@ -26,3 +26,7 @@ COOOKIE={mock-cookie}
 - https://stackoverflow.com/questions/32454238/how-to-check-if-youtube-channel-is-streaming-live
 - https://stackoverflow.com/questions/42335016/dotenv-file-is-not-loading-environment-variables
 - https://stackoverflow.com/questions/42706584/eslint-error-parsing-error-the-keyword-const-is-reserved
+
+
+- https://github.com/gajus/eslint-plugin-jsdoc/issues/533
+- https://eslint.org/docs/latest/use/configure/language-options#specifying-globals

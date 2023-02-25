@@ -4,11 +4,13 @@ const YoutubeTypes = require("../@types/youtube.types");
 const jsdom = require("jsdom");
 const pingChannelStreamLive = require("../requests/ping-channel-stream-live.request");
 
+/* global NodeListOf:readonly, HTMLScriptElement:readonly, HTMLLinkElement:readonly */
+
 /**
  * Verifies if a channel is live
  *
  * @param {string} cid Channel Id
- * @returns {Promise<YoutubeTypes.YouTubeLiveDataType|unknown>} YouTube Data
+ * @returns {Promise<YoutubeTypes.YouTubeLiveDataType>} YouTube Data
  */
 const youtubeChannelScrapper = async (cid) => {
   try {
@@ -79,7 +81,7 @@ const youtubeChannelScrapper = async (cid) => {
 
     // publishedTimeText
 
-    /** @type {YouTubeLiveDataType} */
+    /** @type {YoutubeTypes.YouTubeLiveDataType} */
     const data = {
       cid,
       vid,

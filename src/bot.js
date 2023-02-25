@@ -2,10 +2,10 @@
 require("dotenv").config({ path: __dirname + "/.env" });
 
 const fs = require("fs");
+const YouTubeTypes = require("./@types/youtube.types");
 const { YOUTUBE_CHANNELS } = require("./constants/youtube.constants");
 const telegramSendMessage = require("./requests/telegram-send-message.request");
 const youtubeChannelScrapper = require("./scrappers/youtube-channel.scrapper");
-const { formatBytes } = require("./utils/format-bytes.utils");
 const { getYearMonthDayString } = require("./utils/date.utils");
 const { showDebugInfo } = require("./utils/debug.utils");
 const Perf = require("./utils/performance.utils");
@@ -35,12 +35,11 @@ const ERROR_LOG_FILE_DIRECTORY = __dirname + "/logs/errors";
 const STREAMS_FILE = __dirname + "/streams.json";
 
 /**
- * Display Debug Info in the Console
- *
- * @returns {Array<any>}
+ * @description Open and retrieve log file contents as an Array of any
+ * @returns {Array<any>} Array of any
  */
 function openOrCreateLogFile() {
-  /** @type {string|Buffer} */
+  /** @type {string} */
   let rawLogObj = "";
 
   /** @type {string} */
@@ -58,9 +57,9 @@ function openOrCreateLogFile() {
 }
 
 /**
- * 
+ * @description Open and write error log file
  * @param {unknown} error Caught Error
- * @return {void}
+ * @returns {void}
  */
 function openOrCreateAndWriteErrorLogFile(error) {
   /** @type {string} */
@@ -84,21 +83,21 @@ function openOrCreateAndWriteErrorLogFile(error) {
 }
 
 /**
- *
- * @param {YouTubeChannelType} channel
- * @returns {Promise<YouTubeLiveDataType|unknown>}
+ * @description Scrap Youtube Channel for info
+ * @param {string} channelId Channel object
+ * @returns {Promise<YouTubeTypes.YouTubeLiveDataType>} Youtube scrapped data
  * @throws {unknown}
  */
-async function checkIfLive(channel) {
+async function checkIfLive(channelId) {
   try {
-    const info = await youtubeChannelScrapper(channel.id);
+    const info = await youtubeChannelScrapper(channelId);
     return info;
   } catch (e) {
     throw new Error("Scrapping Error");
   }
 }
 
-(async () => {
+;(async () => {
   showDebugInfo();
   try {
     /** @type {Perf} */
@@ -112,20 +111,13 @@ async function checkIfLive(channel) {
     /** @type {Array<any>} */
     const logEntry = [];
 
-    /** @type {Array<YouTubeTransmissionType>} */
+    /** @type {Array<YouTubeTypes.YouTubeTransmissionType>} */
     const transmissions = JSON.parse(
       fs.readFileSync(STREAMS_FILE).toString()
     );
 
     for (const channel of YOUTUBE_CHANNELS) {
-      let streamData = {},
-        time = "",
-        date = "",
-        viewers = "";
-      await checkIfLive(channel.id)
-        .then((data) => (streamData = data))
-        .catch((error) => console.log(error));
-      console.log(streamData);
+      const youtubeData = checkIfLive(channel.id);
       if (!streamData.success) {
         console.log("¡Hubo un Error en la Petición al Canal!");
         logEntry.push({
@@ -189,8 +181,8 @@ async function checkIfLive(channel) {
     logEntry.push(perf.getStats());
     log.push(logEntry);
     fs.writeFileSync(__dirname + `/logs/${logFilename}`, JSON.stringify(log, null, 2));
-    
-  } catch (/** @type unknown */ e) {
+
+  } catch (/** @type {unknown} */ e) {
     openOrCreateAndWriteErrorLogFile(e);
   }
 })();
