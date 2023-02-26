@@ -120,9 +120,9 @@ async function checkIfLive(channelId) {
       try {
         /** @type {YouTubeTypes.YouTubeLiveDataType} */
         const youtubeData = await checkIfLive(channel.id);
-        let video = transmissions.find((t) => t.id === youtubeData.vid);
 
         if (youtubeData.live) {
+          let video = transmissions.find((t) => t.id === youtubeData.vid);
           if (video) {
             console.log(
               `Esta transmisión ya fue notificada: ${youtubeData.vid} - ${channel.name}: ${channel.id}`
@@ -141,13 +141,9 @@ async function checkIfLive(channelId) {
               success: `¡Transmisión Notificada! : ${youtubeData.vid} - ${channel.name}: ${channel.id}`,
               date: new Date(),
             });
-            fs.writeFileSync(
-              __dirname + "/../legacy/streams.json",
-              JSON.stringify(transmissions, null, 2)
-            );
             await telegramSendMessage({
               chat_id: "@SinCensuraMedia",
-              text: `🎞 🔴 ¡${channel.name} está transmitiendo En Vivo! \n\n ✪ Entra a: http://youtu.be/${youtubeData.vid} \n\n ☑ Transmite desde: ${youtubeData.liveSince} \n\n ☑ Espectadores: ${youtubeData.viewCount}`,
+              text: `🔴 ¡${channel.name} está transmitiendo En Vivo! \n\n ✪ Entra a: http://youtu.be/${youtubeData.vid} \n\n 🕒 ${youtubeData.liveSince} \n\n ☑ Espectadores: ${youtubeData.viewCount}`,
               disable_notification: channel.id !== "UCNQqL-xd30otxNGRL5UeFFQ",
             });
           }
@@ -165,12 +161,13 @@ async function checkIfLive(channelId) {
           date: new Date(),
         });
       }
+      fs.writeFileSync(STREAMS_FILE, JSON.stringify(transmissions, null, 2));
     }
 
     perf.finish().showStats();
     logEntry.push(perf.getStats());
     log.push(logEntry);
-    fs.writeFileSync(__dirname + `/../logs/${logFilename}`, JSON.stringify(log, null, 2));
+    fs.writeFileSync(`${LOG_FILE_DIRECTORY}/${logFilename}`, JSON.stringify(log, null, 2));
 
   } catch (/** @type {unknown} */ e) {
     openOrCreateAndWriteErrorLogFile(e);
