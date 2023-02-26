@@ -1,5 +1,5 @@
 // @ts-check
-require("dotenv").config({ path: __dirname + "/.env" });
+require("dotenv").config({ path: __dirname + "/../.env" });
 
 const fs = require("fs");
 const YouTubeTypes = require("./@types/youtube.types");
@@ -26,13 +26,13 @@ const errorLogFileExtension = ".error.log";
 const logFilename = `${logFormattedDate}${logFileExtension}`;
 
 /** @type {string} */
-const LOG_FILE_DIRECTORY = __dirname + "/logs";
+const LOG_FILE_DIRECTORY = __dirname + "/../logs";
 
 /** @type {string} */
-const ERROR_LOG_FILE_DIRECTORY = __dirname + "/logs/errors";
+const ERROR_LOG_FILE_DIRECTORY = __dirname + "/../logs/errors";
 
 /** @type {string} */
-const STREAMS_FILE = __dirname + "/streams.json";
+const STREAMS_FILE = __dirname + "/../legacy/streams.json";
 
 /**
  * @description Open and retrieve log file contents as an Array of any
@@ -97,8 +97,8 @@ async function checkIfLive(channelId) {
   }
 }
 
-;(async () => {
-  showDebugInfo();
+; (async () => {
+  showDebugInfo(process);
   try {
     /** @type {Perf} */
     const perf = new Perf();
@@ -117,70 +117,60 @@ async function checkIfLive(channelId) {
     );
 
     for (const channel of YOUTUBE_CHANNELS) {
-      const youtubeData = checkIfLive(channel.id);
-      if (!streamData.success) {
-        console.log("¡Hubo un Error en la Petición al Canal!");
-        logEntry.push({
-          error: "¡Hubo un Error en la Petición al Canal!",
-          date: new Date(),
-        });
-      }
+      try {
+        /** @type {YouTubeTypes.YouTubeLiveDataType} */
+        const youtubeData = await checkIfLive(channel.id);
+        let video = transmissions.find((t) => t.id === youtubeData.vid);
 
-      if (!streamData.isLive && streamData.success) {
-        console.log(`El Canal no está en vivo: ${channel.name}: ${channel.id}`);
-        logEntry.push({
-          error: `El Canal no está en vivo: ${channel.name}: ${channel.id}`,
-          date: new Date(),
-        });
-      }
-
-      if (streamData.isLive) {
-        let rawdata = fs.readFileSync(__dirname + "/streams.json");
-        let transmissions = JSON.parse(rawdata);
-        let video = transmissions.find((t) => t.id === streamData.videoId);
-        if (video) {
-          console.log(
-            `Esta transmisión ya fue notificada: ${streamData.videoId} - ${channel.name}: ${channel.id}`
-          );
-          logEntry.push({
-            error: `Esta transmisión ya fue notificada: ${streamData.videoId} - ${channel.name}: ${channel.id}`,
-            date: new Date(),
-          });
+        if (youtubeData.live) {
+          if (video) {
+            console.log(
+              `Esta transmisión ya fue notificada: ${youtubeData.vid} - ${channel.name}: ${channel.id}`
+            );
+            logEntry.push({
+              error: `Esta transmisión ya fue notificada: ${youtubeData.vid} - ${channel.name}: ${channel.id}`,
+              date: new Date(),
+            });
+          } else {
+            transmissions.push({
+              id: String(youtubeData.vid),
+              startTimestamp: null,
+              channelId: `${channel.id}`,
+            });
+            logEntry.push({
+              success: `¡Transmisión Notificada! : ${youtubeData.vid} - ${channel.name}: ${channel.id}`,
+              date: new Date(),
+            });
+            fs.writeFileSync(
+              __dirname + "/../legacy/streams.json",
+              JSON.stringify(transmissions, null, 2)
+            );
+            await telegramSendMessage({
+              chat_id: "@SinCensuraMedia",
+              text: `🎞 🔴 ¡${channel.name} está transmitiendo En Vivo! \n\n ✪ Entra a: http://youtu.be/${youtubeData.vid} \n\n ☑ Transmite desde: ${youtubeData.liveSince} \n\n ☑ Espectadores: ${youtubeData.viewCount}`,
+              disable_notification: channel.id !== "UCNQqL-xd30otxNGRL5UeFFQ",
+            });
+          }
         } else {
-          await checkStreamDetails(streamData.videoId)
-            .then((data) => {
-              time = data.time;
-              date = data.date;
-              viewers = data.viewers;
-            })
-            .catch((error) => console.log(error));
-
-          transmissions.push({
-            id: streamData.videoId,
-            startTimestamp: date,
-            channelId: `${channel.id}`,
-          });
+          console.log(`El Canal no está en vivo: ${channel.name}: ${channel.id}`);
           logEntry.push({
-            success: `¡Transmisión Notificada! : ${streamData.videoId} - ${channel.name}: ${channel.id}`,
+            error: `El Canal no está en vivo: ${channel.name}: ${channel.id}`,
             date: new Date(),
-          });
-          fs.writeFileSync(
-            __dirname + "/streams.json",
-            JSON.stringify(transmissions, null, 2)
-          );
-          await sendMessage({
-            chat_id: "@SinCensuraMedia",
-            text: `🎞 🔴 ¡${channel.name} está transmitiendo En Vivo! \n\n ✪ Entra a: http://youtu.be/${streamData.videoId} \n\n ☑ Transmite desde: ${time} \n\n ☑ Espectadores: ${viewers}`,
-            disable_notification: channel.id !== "UCNQqL-xd30otxNGRL5UeFFQ",
           });
         }
+      } catch (liveRequestError) {
+        console.log("¡Hubo un Error en la Petición al Canal! " + String(liveRequestError));
+        logEntry.push({
+          error: "¡Hubo un Error en la Petición al Canal! " + String(liveRequestError),
+          date: new Date(),
+        });
       }
     }
 
     perf.finish().showStats();
     logEntry.push(perf.getStats());
     log.push(logEntry);
-    fs.writeFileSync(__dirname + `/logs/${logFilename}`, JSON.stringify(log, null, 2));
+    fs.writeFileSync(__dirname + `/../logs/${logFilename}`, JSON.stringify(log, null, 2));
 
   } catch (/** @type {unknown} */ e) {
     openOrCreateAndWriteErrorLogFile(e);

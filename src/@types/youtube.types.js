@@ -24,7 +24,7 @@
  * @typedef  {object}  YouTubeTransmissionType
  * @property {string}  id             Transmission id
  * @property {?string} startTimestamp Start timestamp
- * @property {string}  channel        Channel id
+ * @property {string}  channelId        Channel id
  */
 
 exports.unused = {};

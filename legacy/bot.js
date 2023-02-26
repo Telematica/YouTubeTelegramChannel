@@ -138,11 +138,11 @@ console.table({
       String(logDate.getDate()).padStart(2, 0) +
       ".error.log";
     if (fs.existsSync(__dirname + `/../logs/errors/${logFilename}`)) {
-      fs.appendFile(__dirname + `/../logs/errors/${logFilename}`, e.toString());
+      fs.appendFile(__dirname + `/../logs/errors/${logFilename}`, String(e), () => {});
     } else {
       fs.writeFile(
         __dirname + `/../logs/errors/${logFilename}`,
-        e.toString() + " : " + new Date(),
+        String(e) + " : " + new Date(),
         (err) => {
           if (err) throw err;
           console.log("Error log saved!");

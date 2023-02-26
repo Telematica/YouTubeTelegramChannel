@@ -1,7 +1,7 @@
 /**
  * @description Telegram Request Type https://core.telegram.org/bots/api#available-methods
  * @typedef {object}    SendMessageRequest
- * @property {number}   chat_id                     Chat id
+ * @property {string|number}   chat_id                     Chat id
  * @property {string}   text                        Message
  * @property {string=}  parse_mode                  Parse Mode
  * @property {boolean=} disable_notification        Silent notification

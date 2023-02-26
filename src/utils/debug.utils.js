@@ -1,17 +1,19 @@
 // @ts-check
+
 /**
  * @description Display Debug Info in the Console
+ * @param {NodeJS.Process} pro
  * @returns {void}
  */
-function showDebugInfo() {
+function showDebugInfo(pro) {
+  const { API_TOKEN, TZ } = pro.env;
   console.table(
     {
-      "Telegram Token": process.env.API_TOKEN,
-      TimeZone: process.env.TZ,
+      "Telegram Token": API_TOKEN,
+      TimeZone: TZ,
       "Server DateTime": new Date().toDateString(),
       "Server Locale Time": new Date().toLocaleTimeString(),
     },
-    ["Logged Server Attribute", "Value"]
   );
 }
 
