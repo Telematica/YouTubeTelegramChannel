@@ -93,7 +93,7 @@ const youtubeChannelScrapper = async (cid) => {
     const viewCount = Number(
       youtubeData.contents.twoColumnWatchNextResults.results.results.contents[0]
         .videoPrimaryInfoRenderer.viewCount.videoViewCountRenderer.viewCount
-        .runs[0].text
+        .runs[0].text || 0
     );
 
     // publishedTimeText
