@@ -55,8 +55,9 @@ async function checkIfLive(channelId) {
 
 // Main Function IIFE
 ; (async () => {
-  showDebugInfo(process.env);
   try {
+    showDebugInfo(process.env);
+
     /** @type {Perf} */
     const perf = new Perf();
 
