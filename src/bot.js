@@ -4,6 +4,7 @@ require("dotenv").config({ path: __dirname + "/../.env" });
 const fs = require("fs");
 const YouTubeTypes = require("./@types/youtube.types");
 const { YOUTUBE_CHANNELS } = require("./constants/youtube.constants");
+const { TELEGRAM_CHANNEL_OR_GROUP } = require("./constants/app.constants");
 const telegramSendMessage = require("./requests/telegram-send-message.request");
 const youtubeChannelScrapper = require("./scrappers/youtube-channel.scrapper");
 const { getYearMonthDayString } = require("./utils/date.utils");
@@ -99,7 +100,7 @@ async function checkIfLive(channelId) {
               date: new Date(),
             });
             await telegramSendMessage({
-              chat_id: "@SinCensuraMedia",
+              chat_id: TELEGRAM_CHANNEL_OR_GROUP,
               text: `🔴 ¡${channel.name} está transmitiendo En Vivo! \n\n 🔗 Entra a: http://youtu.be/${youtubeData.vid} \n\n 🕒 ${youtubeData.liveSince} \n\n 👥 Espectadores: ${youtubeData.viewCount}`,
               disable_notification: channel.id !== "UCNQqL-xd30otxNGRL5UeFFQ",
             });
