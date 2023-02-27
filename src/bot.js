@@ -8,6 +8,10 @@ const telegramSendMessage = require("./requests/telegram-send-message.request");
 const youtubeChannelScrapper = require("./scrappers/youtube-channel.scrapper");
 const { getYearMonthDayString } = require("./utils/date.utils");
 const { showDebugInfo } = require("./utils/debug.utils");
+const {
+  openOrCreateLogFile,
+  openOrCreateAndWriteErrorLogFile
+} = require("./utils/file-system.utils");
 const Perf = require("./utils/performance.utils");
 
 /** @type {Date} */
@@ -32,55 +36,7 @@ const LOG_FILE_DIRECTORY = __dirname + "/../logs";
 const ERROR_LOG_FILE_DIRECTORY = __dirname + "/../logs/errors";
 
 /** @type {string} */
-const STREAMS_FILE = __dirname + "/../legacy/streams.json";
-
-/**
- * @description Open and retrieve log file contents as an Array of any
- * @returns {Array<any>} Array of any
- */
-function openOrCreateLogFile() {
-  /** @type {string} */
-  let rawLogObj = "";
-
-  /** @type {string} */
-  const fullPathFile = `${LOG_FILE_DIRECTORY}/${logFilename}`;
-
-  if (fs.existsSync(fullPathFile)) {
-    rawLogObj = fs.readFileSync(fullPathFile).toString();
-  } else {
-    fs.writeFile(fullPathFile, "[]", (err) => {
-      if (err) throw err;
-      console.log("Log file was succesfully created!");
-    });
-  }
-  return JSON.parse(rawLogObj || "[]");
-}
-
-/**
- * @description Open and write error log file
- * @param {unknown} error Caught Error
- * @returns {void}
- */
-function openOrCreateAndWriteErrorLogFile(error) {
-  /** @type {string} */
-  const errorLogFilename = `${logFormattedDate}${errorLogFileExtension}`;
-
-  /** @type {string} */
-  const fullPathFile = `${ERROR_LOG_FILE_DIRECTORY}/${errorLogFilename}`;
-
-  if (fs.existsSync(fullPathFile)) {
-    fs.appendFile(fullPathFile, String(error), () => { });
-  } else {
-    fs.writeFile(
-      fullPathFile,
-      String(error) + " : " + new Date(),
-      (err) => {
-        if (err) throw err;
-        console.log("Error log saved!");
-      }
-    );
-  }
-}
+const STREAMS_FILE = __dirname + "/data/streams.json";
 
 /**
  * @description Scrap Youtube Channel for info
@@ -107,13 +63,16 @@ async function checkIfLive(channelId) {
     perf.begin();
 
     /** @type {Array<any>} */
-    const log = openOrCreateLogFile();
+    const log = openOrCreateLogFile({
+      logFileDirectory: LOG_FILE_DIRECTORY,
+      logFilename: logFilename
+    });
 
     /** @type {Array<any>} */
     const logEntry = [];
 
     /** @type {Array<YouTubeTypes.YouTubeTransmissionType>} */
-    const transmissions = JSON.parse(fs.readFileSync(STREAMS_FILE).toString());
+    const transmissions = JSON.parse(fs.readFileSync(STREAMS_FILE).toString() || "[]");
 
     for (const channel of YOUTUBE_CHANNELS) {
       try {
@@ -170,6 +129,12 @@ async function checkIfLive(channelId) {
     fs.writeFileSync(`${LOG_FILE_DIRECTORY}/${logFilename}`, JSON.stringify(log, null, 2));
 
   } catch (/** @type {unknown} */ e) {
-    openOrCreateAndWriteErrorLogFile(e);
+    console.log(String(e));
+    openOrCreateAndWriteErrorLogFile({
+      error: e,
+      logFormattedDate,
+      errorLogFileDirectory: ERROR_LOG_FILE_DIRECTORY,
+      errorLogFileExtension
+    });
   }
 })();
