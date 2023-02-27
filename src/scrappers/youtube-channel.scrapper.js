@@ -27,21 +27,17 @@ const youtubeChannelScrapper = async (cid) => {
     /** @type {HTMLLinkElement|null} */
     const url = dom.window.document.querySelector("link[rel=canonical]");
 
-    /** @type {boolean} */
-    const isLive = /watch\?v=/.test(url?.href || "");
-
-    if (!isLive) {
-      return Promise.resolve({
-        cid,
-        live: isLive,
-      });
-    }
+    /** @type {string=} */
+    let ytInitialDataRawScript = "";
 
     /** @type {string=} */
-    let rawScript = "";
+    let ytInitialPlayerResponseRawScript = "{}";
 
     /** @type {string} */
-    const scriptHint = "var ytInitialData = ";
+    const ytInitialData = "var ytInitialData = ";
+
+    /** @type {string} */
+    const ytInitialPlayerResponse = "var ytInitialPlayerResponse = ";
 
     /** @type {NodeListOf<HTMLScriptElement>} */
     const pageScriptTags = dom.window.document.querySelectorAll("script");
@@ -49,27 +45,24 @@ const youtubeChannelScrapper = async (cid) => {
     for (const scriptIndex in pageScriptTags) {
       const scriptTag =
         dom.window.document.querySelectorAll("script")[scriptIndex];
-      if (scriptTag.textContent?.includes(scriptHint)) {
-        rawScript =
-          scriptTag.textContent?.replace(scriptHint, "").slice(0, -1) || "{}";
-        break;
+      if (scriptTag.textContent?.includes(ytInitialData)) {
+        ytInitialDataRawScript =
+          scriptTag.textContent?.replace(ytInitialData, "").slice(0, -1) || "{}";
+        continue;
+      }
+
+      if (scriptTag.textContent?.includes(ytInitialPlayerResponse)) {
+        ytInitialPlayerResponseRawScript =
+          scriptTag.textContent?.replace(ytInitialPlayerResponse, "").replace(/;var meta.*/, "") || "{}";
+        continue;
       }
     }
 
     /** @type {any} */
-    const youtubeData = JSON.parse(rawScript);
+    const youtubeData = JSON.parse(ytInitialDataRawScript);
 
-    /** @type {string} */
-    const liveSince =
-      youtubeData.contents.twoColumnWatchNextResults.results.results.contents[0]
-        .videoPrimaryInfoRenderer.dateText.simpleText;
-
-    /** @type {number} */
-    const viewCount = Number(
-      youtubeData.contents.twoColumnWatchNextResults.results.results.contents[0]
-        .videoPrimaryInfoRenderer.viewCount.videoViewCountRenderer.viewCount
-        .runs[0].text
-    );
+    /** @type {any} */
+    const playerResponse = JSON.parse(ytInitialPlayerResponseRawScript);
 
     /** @type {string|null|undefined} */
     const title = dom.window.document
@@ -79,15 +72,39 @@ const youtubeChannelScrapper = async (cid) => {
     /** @type {string|undefined} */
     const vid = url?.href.match(/watch\?v=(.*)/)?.[1];
 
+    /** @type {boolean} */
+    const live = /watch\?v=/.test(url?.href || "") && playerResponse.playabilityStatus && playerResponse.playabilityStatus.status === "OK";
+
+    if (!live) {
+      const scheduledStartTime = playerResponse.playabilityStatus && playerResponse.playabilityStatus.status === "LIVE_STREAM_OFFLINE"
+        ? playerResponse.playabilityStatus.liveStreamability.liveStreamabilityRenderer.offlineSlate.liveStreamOfflineSlateRenderer.scheduledStartTime
+        : 0;
+      return Promise.resolve({
+        cid,
+        live,
+        scheduledStartTime
+      });
+    }
+
+    /** @type {string} */
+    const liveSince = youtubeData.contents.twoColumnWatchNextResults.results.results.contents[0].videoPrimaryInfoRenderer.dateText.simpleText;
+
+    /** @type {number} */
+    const viewCount = Number(
+      youtubeData.contents.twoColumnWatchNextResults.results.results.contents[0]
+        .videoPrimaryInfoRenderer.viewCount.videoViewCountRenderer.viewCount
+        .runs[0].text
+    );
+
     // publishedTimeText
 
     /** @type {YoutubeTypes.YouTubeLiveDataType} */
     const data = {
       cid,
-      vid,
-      live: isLive,
-      title,
+      live,
       liveSince,
+      title,
+      vid,
       viewCount,
     };
     return Promise.resolve(data);

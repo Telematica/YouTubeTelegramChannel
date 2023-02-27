@@ -93,12 +93,13 @@ async function checkIfLive(channelId) {
     const info = await youtubeChannelScrapper(channelId);
     return info;
   } catch (e) {
-    throw new Error("Scrapping Error");
+    throw new Error("Scrapping Error: " + String(e));
   }
 }
 
+// Main Function IIFE
 ; (async () => {
-  showDebugInfo(process);
+  showDebugInfo(process.env);
   try {
     /** @type {Perf} */
     const perf = new Perf();
@@ -112,9 +113,7 @@ async function checkIfLive(channelId) {
     const logEntry = [];
 
     /** @type {Array<YouTubeTypes.YouTubeTransmissionType>} */
-    const transmissions = JSON.parse(
-      fs.readFileSync(STREAMS_FILE).toString()
-    );
+    const transmissions = JSON.parse(fs.readFileSync(STREAMS_FILE).toString());
 
     for (const channel of YOUTUBE_CHANNELS) {
       try {
@@ -143,12 +142,13 @@ async function checkIfLive(channelId) {
             });
             await telegramSendMessage({
               chat_id: "@SinCensuraMedia",
-              text: `🔴 ¡${channel.name} está transmitiendo En Vivo! \n\n ✪ Entra a: http://youtu.be/${youtubeData.vid} \n\n 🕒 ${youtubeData.liveSince} \n\n ☑ Espectadores: ${youtubeData.viewCount}`,
+              text: `🔴 ¡${channel.name} está transmitiendo En Vivo! \n\n 🔗 Entra a: http://youtu.be/${youtubeData.vid} \n\n 🕒 ${youtubeData.liveSince} \n\n 👥 Espectadores: ${youtubeData.viewCount}`,
               disable_notification: channel.id !== "UCNQqL-xd30otxNGRL5UeFFQ",
             });
           }
         } else {
-          console.log(`El Canal no está en vivo: ${channel.name}: ${channel.id}`);
+          // @todo scheduledStartTime logic to notify twice: when scheduled and when live
+          console.log(`El Canal no está en vivo: ${channel.name}: ${channel.id}. Programado para: ${youtubeData.scheduledStartTime}`);
           logEntry.push({
             error: `El Canal no está en vivo: ${channel.name}: ${channel.id}`,
             date: new Date(),
@@ -161,9 +161,9 @@ async function checkIfLive(channelId) {
           date: new Date(),
         });
       }
-      fs.writeFileSync(STREAMS_FILE, JSON.stringify(transmissions, null, 2));
     }
 
+    fs.writeFileSync(STREAMS_FILE, JSON.stringify(transmissions, null, 2));
     perf.finish().showStats();
     logEntry.push(perf.getStats());
     log.push(logEntry);

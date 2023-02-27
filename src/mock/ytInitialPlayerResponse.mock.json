@@ -1,0 +1,1000 @@
+{
+  "responseContext": {
+    "serviceTrackingParams": [
+      {
+        "service": "GFEEDBACK",
+        "params": [
+          { "key": "is_alc_surface", "value": "false" },
+          { "key": "is_viewed_live", "value": "True" },
+          { "key": "ipcc", "value": "0" },
+          { "key": "premium_membership", "value": "youtube_premium" },
+          { "key": "has_unlimited_entitlement", "value": "True" },
+          { "key": "has_alc_entitlement", "value": "false" },
+          { "key": "logged_in", "value": "1" },
+          {
+            "key": "e",
+            "value": "1714259,23804281,23858057,23918597,23946420,23966208,23983296,23986015,23998056,24004644,24007246,24034168,24036947,24077241,24080738,24108448,24120820,24135310,24140247,24161116,24162919,24164186,24166867,24169501,24181174,24187043,24187377,24197450,24211178,24219382,24219713,24241378,24255165,24255543,24255545,24260378,24262346,24263796,24267564,24268142,24281897,24283015,24283093,24288664,24290971,24291857,24390674,24396645,24397800,24404640,24404818,24407191,24415864,24415866,24422005,24426636,24429095,24433679,24436009,24437577,24439361,24439483,24440132,24449113,24450367,24451032,24452969,24453129,24457195,24457969,24458317,24458324,24458329,24458635,24458839,24473090,24478762,24591046"
+          }
+        ]
+      },
+      {
+        "service": "CSI",
+        "params": [
+          { "key": "yt_ad", "value": "1" },
+          { "key": "c", "value": "WEB" },
+          { "key": "cver", "value": "2.20230217.01.00" },
+          { "key": "yt_li", "value": "1" },
+          { "key": "GetPlayer_rid", "value": "0x2a85b7d46eeee2c2" }
+        ]
+      },
+      {
+        "service": "GUIDED_HELP",
+        "params": [{ "key": "logged_in", "value": "1" }]
+      },
+      {
+        "service": "ECATCHER",
+        "params": [
+          { "key": "client.version", "value": "2.20230217" },
+          { "key": "client.name", "value": "WEB" },
+          {
+            "key": "client.fexp",
+            "value": "24241378,24473090,24255543,24164186,24034168,23966208,23983296,24390674,24181174,24291857,24452969,24140247,24404818,24450367,24211178,24135310,24283015,24161116,24187043,24396645,24415864,24439361,24449113,24457969,24108448,24478762,24437577,24458317,24458324,24433679,24288664,24219382,24281897,24290971,24120820,24407191,24268142,24260378,24187377,24036947,24429095,24439483,24169501,23918597,24422005,24458839,24219713,24080738,24404640,23858057,24397800,24458635,24255545,24453129,24440132,24166867,24458329,24267564,24451032,24426636,24415866,24457195,24436009,24263796,1714259,24255165,24004644,23804281,24077241,23986015,24197450,23946420,24591046,24162919,24262346,24283093,24007246,23998056"
+          }
+        ]
+      }
+    ],
+    "mainAppWebResponseContext": {
+      "datasyncId": "100432166830315113379||",
+      "loggedOut": false
+    },
+    "webResponseContextExtensionData": { "hasDecorated": true }
+  },
+  "playabilityStatus": {
+    "status": "OK",
+    "playableInEmbed": true,
+    "liveStreamability": {
+      "liveStreamabilityRenderer": {
+        "videoId": "F8gbJUXaeo0",
+        "broadcastId": "2",
+        "pollDelayMs": "15000"
+      }
+    },
+    "miniplayer": {
+      "miniplayerRenderer": { "playbackMode": "PLAYBACK_MODE_ALLOW" }
+    },
+    "contextParams": "Q0FFU0FnZ0M="
+  },
+  "streamingData": {
+    "expiresInSeconds": "21540",
+    "adaptiveFormats": [
+      {
+        "itag": 136,
+        "url": "https://rr1---sn-uvu5a2a5t-bqa6.googlevideo.com/videoplayback?expire=1676811746\u0026ei=gcnxY-3pNdCnlu8Ps-Kz4Ak\u0026ip=187.190.202.164\u0026id=F8gbJUXaeo0.2\u0026itag=136\u0026aitags=133%2C134%2C135%2C136%2C160\u0026source=yt_live_broadcast\u0026requiressl=yes\u0026mh=XF\u0026mm=44%2C29\u0026mn=sn-uvu5a2a5t-bqa6%2Csn-9gv7lnle\u0026ms=lva%2Crdu\u0026mv=m\u0026mvi=1\u0026pl=24\u0026ctier=A\u0026initcwndbps=1811250\u0026hightc=yes\u0026vprv=1\u0026live=1\u0026hang=1\u0026noclen=1\u0026mime=video%2Fmp4\u0026ns=LDvgBmX4P2k8LdFYPyxWJnML\u0026gir=yes\u0026mt=1676790031\u0026fvip=1\u0026keepalive=yes\u0026fexp=24007246\u0026c=WEB\u0026n=1QAHWowW9qTHHcwW\u0026sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cctier%2Chightc%2Cvprv%2Clive%2Chang%2Cnoclen%2Cmime%2Cns%2Cgir\u0026sig=AOq0QJ8wRQIgAdA2u_g9GP67PoDYjpi_DR8gDv65rKCddrAVVtxJbY8CIQDq_xbc1j1-lA64bZeXCrY_QOAeqY-0kJRwrCInLeKZOg%3D%3D\u0026lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps\u0026lsig=AG3C_xAwRQIhAKuaTF-l-cy1MJeFIevZ7lK4bV_CuLPMQLSBR2DfX51JAiARTR_Zvttqi-k0BHsed2b-Q68WNCj_7WM1mCdGbmK9sQ%3D%3D",
+        "mimeType": "video/mp4; codecs=\"avc1.4d401f\"",
+        "bitrate": 2684050,
+        "width": 1280,
+        "height": 720,
+        "quality": "hd720",
+        "fps": 30,
+        "qualityLabel": "720p",
+        "projectionType": "RECTANGULAR",
+        "targetDurationSec": 5,
+        "maxDvrDurationSec": 43200
+      },
+      {
+        "itag": 247,
+        "url": "https://rr1---sn-uvu5a2a5t-bqa6.googlevideo.com/videoplayback?expire=1676811746\u0026ei=gcnxY-3pNdCnlu8Ps-Kz4Ak\u0026ip=187.190.202.164\u0026id=F8gbJUXaeo0.2\u0026itag=247\u0026aitags=242%2C243%2C244%2C247%2C278\u0026source=yt_live_broadcast\u0026requiressl=yes\u0026mh=XF\u0026mm=44%2C29\u0026mn=sn-uvu5a2a5t-bqa6%2Csn-9gv7lnle\u0026ms=lva%2Crdu\u0026mv=m\u0026mvi=1\u0026pl=24\u0026ctier=A\u0026initcwndbps=1811250\u0026hightc=yes\u0026vprv=1\u0026live=1\u0026hang=1\u0026noclen=1\u0026mime=video%2Fwebm\u0026ns=LDvgBmX4P2k8LdFYPyxWJnML\u0026gir=yes\u0026mt=1676790031\u0026fvip=1\u0026keepalive=yes\u0026fexp=24007246\u0026c=WEB\u0026n=1QAHWowW9qTHHcwW\u0026sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cctier%2Chightc%2Cvprv%2Clive%2Chang%2Cnoclen%2Cmime%2Cns%2Cgir\u0026sig=AOq0QJ8wRQIhANgq3Mtmn27fs_i_h-tAPNUeFnN_Twoc4PP2KAR-s9MoAiB6muxjl-ff__zmOdqfM2IiqGzOGG9U_UZpj_1niCuhkA%3D%3D\u0026lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps\u0026lsig=AG3C_xAwRQIhAKuaTF-l-cy1MJeFIevZ7lK4bV_CuLPMQLSBR2DfX51JAiARTR_Zvttqi-k0BHsed2b-Q68WNCj_7WM1mCdGbmK9sQ%3D%3D",
+        "mimeType": "video/webm; codecs=\"vp9\"",
+        "bitrate": 732800,
+        "width": 1280,
+        "height": 720,
+        "quality": "hd720",
+        "fps": 30,
+        "qualityLabel": "720p",
+        "projectionType": "RECTANGULAR",
+        "targetDurationSec": 5,
+        "maxDvrDurationSec": 43200
+      },
+      {
+        "itag": 135,
+        "url": "https://rr1---sn-uvu5a2a5t-bqa6.googlevideo.com/videoplayback?expire=1676811746\u0026ei=gcnxY-3pNdCnlu8Ps-Kz4Ak\u0026ip=187.190.202.164\u0026id=F8gbJUXaeo0.2\u0026itag=135\u0026aitags=133%2C134%2C135%2C136%2C160\u0026source=yt_live_broadcast\u0026requiressl=yes\u0026mh=XF\u0026mm=44%2C29\u0026mn=sn-uvu5a2a5t-bqa6%2Csn-9gv7lnle\u0026ms=lva%2Crdu\u0026mv=m\u0026mvi=1\u0026pl=24\u0026ctier=A\u0026initcwndbps=1811250\u0026hightc=yes\u0026vprv=1\u0026live=1\u0026hang=1\u0026noclen=1\u0026mime=video%2Fmp4\u0026ns=LDvgBmX4P2k8LdFYPyxWJnML\u0026gir=yes\u0026mt=1676790031\u0026fvip=1\u0026keepalive=yes\u0026fexp=24007246\u0026c=WEB\u0026n=1QAHWowW9qTHHcwW\u0026sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cctier%2Chightc%2Cvprv%2Clive%2Chang%2Cnoclen%2Cmime%2Cns%2Cgir\u0026sig=AOq0QJ8wRAIgYj-jVATdhSNS8FEGX72jjld4EJRUvKq2V2BXytfWBW4CIGs29cFPp1RKKJ_A51PU39p7zlfG6bkGSu482_6xtfNg\u0026lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps\u0026lsig=AG3C_xAwRQIhAKuaTF-l-cy1MJeFIevZ7lK4bV_CuLPMQLSBR2DfX51JAiARTR_Zvttqi-k0BHsed2b-Q68WNCj_7WM1mCdGbmK9sQ%3D%3D",
+        "mimeType": "video/mp4; codecs=\"avc1.4d401f\"",
+        "bitrate": 1350025,
+        "width": 854,
+        "height": 480,
+        "quality": "large",
+        "fps": 30,
+        "qualityLabel": "480p",
+        "projectionType": "RECTANGULAR",
+        "targetDurationSec": 5,
+        "maxDvrDurationSec": 43200
+      },
+      {
+        "itag": 244,
+        "url": "https://rr1---sn-uvu5a2a5t-bqa6.googlevideo.com/videoplayback?expire=1676811746\u0026ei=gcnxY-3pNdCnlu8Ps-Kz4Ak\u0026ip=187.190.202.164\u0026id=F8gbJUXaeo0.2\u0026itag=244\u0026aitags=242%2C243%2C244%2C247%2C278\u0026source=yt_live_broadcast\u0026requiressl=yes\u0026mh=XF\u0026mm=44%2C29\u0026mn=sn-uvu5a2a5t-bqa6%2Csn-9gv7lnle\u0026ms=lva%2Crdu\u0026mv=m\u0026mvi=1\u0026pl=24\u0026ctier=A\u0026initcwndbps=1811250\u0026hightc=yes\u0026vprv=1\u0026live=1\u0026hang=1\u0026noclen=1\u0026mime=video%2Fwebm\u0026ns=LDvgBmX4P2k8LdFYPyxWJnML\u0026gir=yes\u0026mt=1676790031\u0026fvip=1\u0026keepalive=yes\u0026fexp=24007246\u0026c=WEB\u0026n=1QAHWowW9qTHHcwW\u0026sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cctier%2Chightc%2Cvprv%2Clive%2Chang%2Cnoclen%2Cmime%2Cns%2Cgir\u0026sig=AOq0QJ8wRAIgPNa6D6qSrques0FPGfK4-rznvszadVOSgi9wgJ1YhfICIChxpLvMRijhI2HlUhN5GOCRlfymiO40ukVcJTjLG2Zy\u0026lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps\u0026lsig=AG3C_xAwRQIhAKuaTF-l-cy1MJeFIevZ7lK4bV_CuLPMQLSBR2DfX51JAiARTR_Zvttqi-k0BHsed2b-Q68WNCj_7WM1mCdGbmK9sQ%3D%3D",
+        "mimeType": "video/webm; codecs=\"vp9\"",
+        "bitrate": 528000,
+        "width": 854,
+        "height": 480,
+        "quality": "large",
+        "fps": 30,
+        "qualityLabel": "480p",
+        "projectionType": "RECTANGULAR",
+        "targetDurationSec": 5,
+        "maxDvrDurationSec": 43200
+      },
+      {
+        "itag": 134,
+        "url": "https://rr1---sn-uvu5a2a5t-bqa6.googlevideo.com/videoplayback?expire=1676811746\u0026ei=gcnxY-3pNdCnlu8Ps-Kz4Ak\u0026ip=187.190.202.164\u0026id=F8gbJUXaeo0.2\u0026itag=134\u0026aitags=133%2C134%2C135%2C136%2C160\u0026source=yt_live_broadcast\u0026requiressl=yes\u0026mh=XF\u0026mm=44%2C29\u0026mn=sn-uvu5a2a5t-bqa6%2Csn-9gv7lnle\u0026ms=lva%2Crdu\u0026mv=m\u0026mvi=1\u0026pl=24\u0026ctier=A\u0026initcwndbps=1811250\u0026hightc=yes\u0026vprv=1\u0026live=1\u0026hang=1\u0026noclen=1\u0026mime=video%2Fmp4\u0026ns=LDvgBmX4P2k8LdFYPyxWJnML\u0026gir=yes\u0026mt=1676790031\u0026fvip=1\u0026keepalive=yes\u0026fexp=24007246\u0026c=WEB\u0026n=1QAHWowW9qTHHcwW\u0026sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cctier%2Chightc%2Cvprv%2Clive%2Chang%2Cnoclen%2Cmime%2Cns%2Cgir\u0026sig=AOq0QJ8wRAIgDfK8DeD7ZOOxsn-l4UdmlF3ntGBYMzwIGqMaZkUlXuMCIHy_iwS8lhrV-WJbA7kTD377KwMuDL4_PMN20Olny-aN\u0026lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps\u0026lsig=AG3C_xAwRQIhAKuaTF-l-cy1MJeFIevZ7lK4bV_CuLPMQLSBR2DfX51JAiARTR_Zvttqi-k0BHsed2b-Q68WNCj_7WM1mCdGbmK9sQ%3D%3D",
+        "mimeType": "video/mp4; codecs=\"avc1.4d401e\"",
+        "bitrate": 1008250,
+        "width": 640,
+        "height": 360,
+        "quality": "medium",
+        "fps": 30,
+        "qualityLabel": "360p",
+        "projectionType": "RECTANGULAR",
+        "targetDurationSec": 5,
+        "maxDvrDurationSec": 43200,
+        "highReplication": true
+      },
+      {
+        "itag": 243,
+        "url": "https://rr1---sn-uvu5a2a5t-bqa6.googlevideo.com/videoplayback?expire=1676811746\u0026ei=gcnxY-3pNdCnlu8Ps-Kz4Ak\u0026ip=187.190.202.164\u0026id=F8gbJUXaeo0.2\u0026itag=243\u0026aitags=242%2C243%2C244%2C247%2C278\u0026source=yt_live_broadcast\u0026requiressl=yes\u0026mh=XF\u0026mm=44%2C29\u0026mn=sn-uvu5a2a5t-bqa6%2Csn-9gv7lnle\u0026ms=lva%2Crdu\u0026mv=m\u0026mvi=1\u0026pl=24\u0026ctier=A\u0026initcwndbps=1811250\u0026hightc=yes\u0026vprv=1\u0026live=1\u0026hang=1\u0026noclen=1\u0026mime=video%2Fwebm\u0026ns=LDvgBmX4P2k8LdFYPyxWJnML\u0026gir=yes\u0026mt=1676790031\u0026fvip=1\u0026keepalive=yes\u0026fexp=24007246\u0026c=WEB\u0026n=1QAHWowW9qTHHcwW\u0026sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cctier%2Chightc%2Cvprv%2Clive%2Chang%2Cnoclen%2Cmime%2Cns%2Cgir\u0026sig=AOq0QJ8wRAIgCLwottoOjjWceudfRJ4P_Ferbeb-F7hNVW-YcmTY--kCIDhwn4tZd_1bm28D7-Ff-uRou9-a6-iJw97HXKKx4K5U\u0026lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps\u0026lsig=AG3C_xAwRQIhAKuaTF-l-cy1MJeFIevZ7lK4bV_CuLPMQLSBR2DfX51JAiARTR_Zvttqi-k0BHsed2b-Q68WNCj_7WM1mCdGbmK9sQ%3D%3D",
+        "mimeType": "video/webm; codecs=\"vp9\"",
+        "bitrate": 236800,
+        "width": 640,
+        "height": 360,
+        "quality": "medium",
+        "fps": 30,
+        "qualityLabel": "360p",
+        "projectionType": "RECTANGULAR",
+        "targetDurationSec": 5,
+        "maxDvrDurationSec": 43200
+      },
+      {
+        "itag": 133,
+        "url": "https://rr1---sn-uvu5a2a5t-bqa6.googlevideo.com/videoplayback?expire=1676811746\u0026ei=gcnxY-3pNdCnlu8Ps-Kz4Ak\u0026ip=187.190.202.164\u0026id=F8gbJUXaeo0.2\u0026itag=133\u0026aitags=133%2C134%2C135%2C136%2C160\u0026source=yt_live_broadcast\u0026requiressl=yes\u0026mh=XF\u0026mm=44%2C29\u0026mn=sn-uvu5a2a5t-bqa6%2Csn-9gv7lnle\u0026ms=lva%2Crdu\u0026mv=m\u0026mvi=1\u0026pl=24\u0026ctier=A\u0026initcwndbps=1811250\u0026hightc=yes\u0026vprv=1\u0026live=1\u0026hang=1\u0026noclen=1\u0026mime=video%2Fmp4\u0026ns=LDvgBmX4P2k8LdFYPyxWJnML\u0026gir=yes\u0026mt=1676790031\u0026fvip=1\u0026keepalive=yes\u0026fexp=24007246\u0026c=WEB\u0026n=1QAHWowW9qTHHcwW\u0026sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cctier%2Chightc%2Cvprv%2Clive%2Chang%2Cnoclen%2Cmime%2Cns%2Cgir\u0026sig=AOq0QJ8wRgIhAK0XN1cp9FJbcTbpbeFdtMq6DkuXJblObUnYMtamrOq0AiEA9JEcCF6FOYN1HnLKsiEFE4XHnMx-PIfgdWBBVLOdBiI%3D\u0026lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps\u0026lsig=AG3C_xAwRQIhAKuaTF-l-cy1MJeFIevZ7lK4bV_CuLPMQLSBR2DfX51JAiARTR_Zvttqi-k0BHsed2b-Q68WNCj_7WM1mCdGbmK9sQ%3D%3D",
+        "mimeType": "video/mp4; codecs=\"avc1.4d4015\"",
+        "bitrate": 456228,
+        "width": 426,
+        "height": 240,
+        "quality": "small",
+        "fps": 30,
+        "qualityLabel": "240p",
+        "projectionType": "RECTANGULAR",
+        "targetDurationSec": 5,
+        "maxDvrDurationSec": 43200
+      },
+      {
+        "itag": 242,
+        "url": "https://rr1---sn-uvu5a2a5t-bqa6.googlevideo.com/videoplayback?expire=1676811746\u0026ei=gcnxY-3pNdCnlu8Ps-Kz4Ak\u0026ip=187.190.202.164\u0026id=F8gbJUXaeo0.2\u0026itag=242\u0026aitags=242%2C243%2C244%2C247%2C278\u0026source=yt_live_broadcast\u0026requiressl=yes\u0026mh=XF\u0026mm=44%2C29\u0026mn=sn-uvu5a2a5t-bqa6%2Csn-9gv7lnle\u0026ms=lva%2Crdu\u0026mv=m\u0026mvi=1\u0026pl=24\u0026ctier=A\u0026initcwndbps=1811250\u0026hightc=yes\u0026vprv=1\u0026live=1\u0026hang=1\u0026noclen=1\u0026mime=video%2Fwebm\u0026ns=LDvgBmX4P2k8LdFYPyxWJnML\u0026gir=yes\u0026mt=1676790031\u0026fvip=1\u0026keepalive=yes\u0026fexp=24007246\u0026c=WEB\u0026n=1QAHWowW9qTHHcwW\u0026sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cctier%2Chightc%2Cvprv%2Clive%2Chang%2Cnoclen%2Cmime%2Cns%2Cgir\u0026sig=AOq0QJ8wRQIgXhzCXH7a0_grb0xGo_h-sQWpqUUTYCjIVTq7RNEfXjcCIQCkwKetwjEcL8vSvn0arisdipiSj0VV9WyT_fTA2CYvyg%3D%3D\u0026lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps\u0026lsig=AG3C_xAwRQIhAKuaTF-l-cy1MJeFIevZ7lK4bV_CuLPMQLSBR2DfX51JAiARTR_Zvttqi-k0BHsed2b-Q68WNCj_7WM1mCdGbmK9sQ%3D%3D",
+        "mimeType": "video/webm; codecs=\"vp9\"",
+        "bitrate": 121000,
+        "width": 426,
+        "height": 240,
+        "quality": "small",
+        "fps": 30,
+        "qualityLabel": "240p",
+        "projectionType": "RECTANGULAR",
+        "targetDurationSec": 5,
+        "maxDvrDurationSec": 43200
+      },
+      {
+        "itag": 160,
+        "url": "https://rr1---sn-uvu5a2a5t-bqa6.googlevideo.com/videoplayback?expire=1676811746\u0026ei=gcnxY-3pNdCnlu8Ps-Kz4Ak\u0026ip=187.190.202.164\u0026id=F8gbJUXaeo0.2\u0026itag=160\u0026aitags=133%2C134%2C135%2C136%2C160\u0026source=yt_live_broadcast\u0026requiressl=yes\u0026mh=XF\u0026mm=44%2C29\u0026mn=sn-uvu5a2a5t-bqa6%2Csn-9gv7lnle\u0026ms=lva%2Crdu\u0026mv=m\u0026mvi=1\u0026pl=24\u0026ctier=A\u0026initcwndbps=1811250\u0026hightc=yes\u0026vprv=1\u0026live=1\u0026hang=1\u0026noclen=1\u0026mime=video%2Fmp4\u0026ns=LDvgBmX4P2k8LdFYPyxWJnML\u0026gir=yes\u0026mt=1676790031\u0026fvip=1\u0026keepalive=yes\u0026fexp=24007246\u0026c=WEB\u0026n=1QAHWowW9qTHHcwW\u0026sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cctier%2Chightc%2Cvprv%2Clive%2Chang%2Cnoclen%2Cmime%2Cns%2Cgir\u0026sig=AOq0QJ8wRAIgbH8bXynUh1atJaXP0vRO4Rp9BA1rRtpEwORJfQR1fL8CIBb147hXsQAnrXYo_mPF_LyLVRXJarz8LEDKQfKmnKBR\u0026lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps\u0026lsig=AG3C_xAwRQIhAKuaTF-l-cy1MJeFIevZ7lK4bV_CuLPMQLSBR2DfX51JAiARTR_Zvttqi-k0BHsed2b-Q68WNCj_7WM1mCdGbmK9sQ%3D%3D",
+        "mimeType": "video/mp4; codecs=\"avc1.42c00b\"",
+        "bitrate": 212465,
+        "width": 256,
+        "height": 144,
+        "quality": "tiny",
+        "fps": 15,
+        "qualityLabel": "144p",
+        "projectionType": "RECTANGULAR",
+        "targetDurationSec": 5,
+        "maxDvrDurationSec": 43200
+      },
+      {
+        "itag": 278,
+        "url": "https://rr1---sn-uvu5a2a5t-bqa6.googlevideo.com/videoplayback?expire=1676811746\u0026ei=gcnxY-3pNdCnlu8Ps-Kz4Ak\u0026ip=187.190.202.164\u0026id=F8gbJUXaeo0.2\u0026itag=278\u0026aitags=242%2C243%2C244%2C247%2C278\u0026source=yt_live_broadcast\u0026requiressl=yes\u0026mh=XF\u0026mm=44%2C29\u0026mn=sn-uvu5a2a5t-bqa6%2Csn-9gv7lnle\u0026ms=lva%2Crdu\u0026mv=m\u0026mvi=1\u0026pl=24\u0026ctier=A\u0026initcwndbps=1811250\u0026hightc=yes\u0026vprv=1\u0026live=1\u0026hang=1\u0026noclen=1\u0026mime=video%2Fwebm\u0026ns=LDvgBmX4P2k8LdFYPyxWJnML\u0026gir=yes\u0026mt=1676790031\u0026fvip=1\u0026keepalive=yes\u0026fexp=24007246\u0026c=WEB\u0026n=1QAHWowW9qTHHcwW\u0026sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cctier%2Chightc%2Cvprv%2Clive%2Chang%2Cnoclen%2Cmime%2Cns%2Cgir\u0026sig=AOq0QJ8wRAIgM5vQvcHVIkYhRt9ulsZYKFbvdS7fDBCqSt2EY9UkNCQCIGchKZcomJ9804mxUuZ3hhK_JONqKyxNb3kR8vi380c7\u0026lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps\u0026lsig=AG3C_xAwRQIhAKuaTF-l-cy1MJeFIevZ7lK4bV_CuLPMQLSBR2DfX51JAiARTR_Zvttqi-k0BHsed2b-Q68WNCj_7WM1mCdGbmK9sQ%3D%3D",
+        "mimeType": "video/webm; codecs=\"vp9\"",
+        "bitrate": 111000,
+        "width": 256,
+        "height": 144,
+        "quality": "tiny",
+        "fps": 30,
+        "qualityLabel": "144p",
+        "projectionType": "RECTANGULAR",
+        "targetDurationSec": 5,
+        "maxDvrDurationSec": 43200
+      },
+      {
+        "itag": 140,
+        "url": "https://rr1---sn-uvu5a2a5t-bqa6.googlevideo.com/videoplayback?expire=1676811746\u0026ei=gcnxY-3pNdCnlu8Ps-Kz4Ak\u0026ip=187.190.202.164\u0026id=F8gbJUXaeo0.2\u0026itag=140\u0026aitags=140\u0026source=yt_live_broadcast\u0026requiressl=yes\u0026mh=XF\u0026mm=44%2C29\u0026mn=sn-uvu5a2a5t-bqa6%2Csn-9gv7lnle\u0026ms=lva%2Crdu\u0026mv=m\u0026mvi=1\u0026pl=24\u0026ctier=A\u0026initcwndbps=1811250\u0026hightc=yes\u0026vprv=1\u0026live=1\u0026hang=1\u0026noclen=1\u0026mime=audio%2Fmp4\u0026ns=LDvgBmX4P2k8LdFYPyxWJnML\u0026gir=yes\u0026mt=1676790031\u0026fvip=1\u0026keepalive=yes\u0026fexp=24007246\u0026c=WEB\u0026n=1QAHWowW9qTHHcwW\u0026sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cctier%2Chightc%2Cvprv%2Clive%2Chang%2Cnoclen%2Cmime%2Cns%2Cgir\u0026sig=AOq0QJ8wRgIhAJOggY0qKXxU8wNJu_AznOFmMeeIiyOfjd0gqJJvyHT6AiEA-8TYsP_X4oZnV6VxAAHxmSHY6Gm4zsqvchDZIDLhaNw%3D\u0026lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps\u0026lsig=AG3C_xAwRQIhAKuaTF-l-cy1MJeFIevZ7lK4bV_CuLPMQLSBR2DfX51JAiARTR_Zvttqi-k0BHsed2b-Q68WNCj_7WM1mCdGbmK9sQ%3D%3D",
+        "mimeType": "audio/mp4; codecs=\"mp4a.40.2\"",
+        "bitrate": 144000,
+        "quality": "tiny",
+        "projectionType": "RECTANGULAR",
+        "targetDurationSec": 5,
+        "maxDvrDurationSec": 43200,
+        "highReplication": true,
+        "audioQuality": "AUDIO_QUALITY_MEDIUM",
+        "audioSampleRate": "44100",
+        "audioChannels": 2
+      }
+    ],
+    "dashManifestUrl": "https://manifest.googlevideo.com/api/manifest/dash/expire/1676811746/ei/gcnxY-3pNdCnlu8Ps-Kz4Ak/ip/187.190.202.164/id/F8gbJUXaeo0.2/source/yt_live_broadcast/requiressl/yes/ctier/A/as/fmp4_audio_clear%2Cwebm_audio_clear%2Cwebm2_audio_clear%2Cfmp4_sd_hd_clear%2Cwebm2_sd_hd_clear/hightc/yes/vprv/1/pacing/0/keepalive/yes/fexp/24007246/itag/0/playlist_type/DVR/sparams/expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Cctier%2Cas%2Chightc%2Cvprv%2Citag%2Cplaylist_type/sig/AOq0QJ8wRQIhAOInQNnioGjGYWC_CzUiSUCRGJEhy6XUh-b6XYUP9lCgAiAzh2pW59pDzlfj7E2ZfQtke-vevS6o4UXO8U7NLogpbQ%3D%3D",
+    "hlsManifestUrl": "https://manifest.googlevideo.com/api/manifest/hls_variant/expire/1676811746/ei/gcnxY-3pNdCnlu8Ps-Kz4Ak/ip/187.190.202.164/id/F8gbJUXaeo0.2/source/yt_live_broadcast/requiressl/yes/hfr/1/ctier/A/playlist_duration/30/manifest_duration/30/maxh/4320/maudio/1/hightc/yes/vprv/1/go/1/pacing/0/nvgoi/1/ncsapi/1/keepalive/yes/fexp/24007246/dover/11/itag/0/playlist_type/DVR/sparams/expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Chfr%2Cctier%2Cplaylist_duration%2Cmanifest_duration%2Cmaxh%2Cmaudio%2Chightc%2Cvprv%2Cgo%2Citag%2Cplaylist_type/sig/AOq0QJ8wRQIgW7gN7VLhaMuOGIedKCYcKdSs14vu607Snj-spn1er0UCIQDYDESvj9HejRAwk7I48WgxhadtnHJaNzKeGJxwCjKYSw%3D%3D/file/index.m3u8"
+  },
+  "heartbeatParams": {
+    "heartbeatToken": "CAEQ9J7T7__pwIOtARgAIAAoADAA",
+    "intervalMilliseconds": "15000",
+    "maxRetries": "15",
+    "drmSessionId": "lQz-xlMi2MzzOVUX",
+    "softFailOnError": true,
+    "heartbeatServerData": "GAIgAjA8"
+  },
+  "playbackTracking": {
+    "videostatsPlaybackUrl": {
+      "baseUrl": "https://s.youtube.com/api/stats/playback?cl=509728682\u0026docid=F8gbJUXaeo0\u0026ei=gcnxY-_VObLDlu8PhpugmAE\u0026fexp=1714259%2C3300101%2C3300130%2C3300161%2C3313321%2C3325697%2C3330198%2C3357432%2C3360244%2C3360264%2C3360412%2C3360466%2C3360953%2C3360975%2C3361164%2C11240888%2C11250232%2C11250274%2C11250918%2C11251330%2C11251335%2C11251660%2C11252745%2C11252954%2C11253282%2C11253630%2C11254476%2C11254736%2C11254759%2C11254804%2C23804281%2C23858057%2C23918597%2C23946420%2C23966208%2C23983296%2C23986015%2C23998056%2C24004644%2C24007246%2C24034168%2C24036947%2C24077241%2C24080738%2C24108448%2C24120820%2C24135310%2C24140247%2C24161116%2C24162919%2C24164186%2C24166867%2C24169501%2C24181174%2C24187043%2C24187377%2C24197450%2C24211178%2C24219382%2C24219713%2C24241378%2C24255165%2C24255543%2C24255545%2C24260378%2C24262346%2C24263796%2C24267564%2C24268142%2C24281897%2C24283015%2C24283093%2C24288664%2C24290971%2C24291857%2C24390674%2C24396645%2C24397800%2C24404640%2C24404818%2C24407191%2C24415864%2C24415866%2C24422005%2C24426636%2C24429095%2C24433679%2C24436009%2C24437577%2C24439361%2C24439483%2C24440132%2C24449113%2C24450367%2C24451032%2C24452969%2C24453129%2C24457195%2C24457969%2C24458317%2C24458324%2C24458329%2C24458635%2C24458839%2C24473090%2C24478762%2C24591046%2C39795729%2C39816758%2C39817317%2C39817777\u0026live=dvr\u0026ns=yt\u0026plid=AAX1CCEFIWz9ilJy\u0026delay=5\u0026el=detailpage\u0026len=0\u0026of=A-QO8cY6wBa7BKB1TXFIIQ\u0026osid=MWU2N2JhZjE%3AAOeUNAYSwqZcTfcXeJLEl6us4FAEIhgWFA\u0026subscribed=1\u0026uga=m33\u0026vm=CAEQARgEOjJBRlNkMkZ2NjdUNVNtWVk2a1B6Sm8wMUl5U3lMSEs2WVB5V1NyT1ZDMWktdTlza2p6QWJeQVBta0tETGtWbU5lS0tGVEZveEFxbU9NemlsaWtMRDBwd08wYTY1dlFrbGJnWHdZSHRpZEltRWZVQlhUeGJYeUJKaFdnRjIxOWRob2tKakVaRjVma2J0Ump4MXJzUWgB"
+    },
+    "videostatsDelayplayUrl": {
+      "baseUrl": "https://s.youtube.com/api/stats/delayplay?cl=509728682\u0026docid=F8gbJUXaeo0\u0026ei=gcnxY-_VObLDlu8PhpugmAE\u0026fexp=1714259%2C3300101%2C3300130%2C3300161%2C3313321%2C3325697%2C3330198%2C3357432%2C3360244%2C3360264%2C3360412%2C3360466%2C3360953%2C3360975%2C3361164%2C11240888%2C11250232%2C11250274%2C11250918%2C11251330%2C11251335%2C11251660%2C11252745%2C11252954%2C11253282%2C11253630%2C11254476%2C11254736%2C11254759%2C11254804%2C23804281%2C23858057%2C23918597%2C23946420%2C23966208%2C23983296%2C23986015%2C23998056%2C24004644%2C24007246%2C24034168%2C24036947%2C24077241%2C24080738%2C24108448%2C24120820%2C24135310%2C24140247%2C24161116%2C24162919%2C24164186%2C24166867%2C24169501%2C24181174%2C24187043%2C24187377%2C24197450%2C24211178%2C24219382%2C24219713%2C24241378%2C24255165%2C24255543%2C24255545%2C24260378%2C24262346%2C24263796%2C24267564%2C24268142%2C24281897%2C24283015%2C24283093%2C24288664%2C24290971%2C24291857%2C24390674%2C24396645%2C24397800%2C24404640%2C24404818%2C24407191%2C24415864%2C24415866%2C24422005%2C24426636%2C24429095%2C24433679%2C24436009%2C24437577%2C24439361%2C24439483%2C24440132%2C24449113%2C24450367%2C24451032%2C24452969%2C24453129%2C24457195%2C24457969%2C24458317%2C24458324%2C24458329%2C24458635%2C24458839%2C24473090%2C24478762%2C24591046%2C39795729%2C39816758%2C39817317%2C39817777\u0026live=dvr\u0026ns=yt\u0026plid=AAX1CCEFIWz9ilJy\u0026delay=5\u0026el=detailpage\u0026len=0\u0026of=A-QO8cY6wBa7BKB1TXFIIQ\u0026osid=MWU2N2JhZjE%3AAOeUNAYSwqZcTfcXeJLEl6us4FAEIhgWFA\u0026subscribed=1\u0026uga=m33\u0026vm=CAEQARgEOjJBRlNkMkZ2NjdUNVNtWVk2a1B6Sm8wMUl5U3lMSEs2WVB5V1NyT1ZDMWktdTlza2p6QWJeQVBta0tETGtWbU5lS0tGVEZveEFxbU9NemlsaWtMRDBwd08wYTY1dlFrbGJnWHdZSHRpZEltRWZVQlhUeGJYeUJKaFdnRjIxOWRob2tKakVaRjVma2J0Ump4MXJzUWgB",
+      "elapsedMediaTimeSeconds": 5
+    },
+    "videostatsWatchtimeUrl": {
+      "baseUrl": "https://s.youtube.com/api/stats/watchtime?cl=509728682\u0026docid=F8gbJUXaeo0\u0026ei=gcnxY-_VObLDlu8PhpugmAE\u0026fexp=1714259%2C3300101%2C3300130%2C3300161%2C3313321%2C3325697%2C3330198%2C3357432%2C3360244%2C3360264%2C3360412%2C3360466%2C3360953%2C3360975%2C3361164%2C11240888%2C11250232%2C11250274%2C11250918%2C11251330%2C11251335%2C11251660%2C11252745%2C11252954%2C11253282%2C11253630%2C11254476%2C11254736%2C11254759%2C11254804%2C23804281%2C23858057%2C23918597%2C23946420%2C23966208%2C23983296%2C23986015%2C23998056%2C24004644%2C24007246%2C24034168%2C24036947%2C24077241%2C24080738%2C24108448%2C24120820%2C24135310%2C24140247%2C24161116%2C24162919%2C24164186%2C24166867%2C24169501%2C24181174%2C24187043%2C24187377%2C24197450%2C24211178%2C24219382%2C24219713%2C24241378%2C24255165%2C24255543%2C24255545%2C24260378%2C24262346%2C24263796%2C24267564%2C24268142%2C24281897%2C24283015%2C24283093%2C24288664%2C24290971%2C24291857%2C24390674%2C24396645%2C24397800%2C24404640%2C24404818%2C24407191%2C24415864%2C24415866%2C24422005%2C24426636%2C24429095%2C24433679%2C24436009%2C24437577%2C24439361%2C24439483%2C24440132%2C24449113%2C24450367%2C24451032%2C24452969%2C24453129%2C24457195%2C24457969%2C24458317%2C24458324%2C24458329%2C24458635%2C24458839%2C24473090%2C24478762%2C24591046%2C39795729%2C39816758%2C39817317%2C39817777\u0026live=dvr\u0026ns=yt\u0026plid=AAX1CCEFIWz9ilJy\u0026el=detailpage\u0026len=0\u0026of=A-QO8cY6wBa7BKB1TXFIIQ\u0026osid=MWU2N2JhZjE%3AAOeUNAYSwqZcTfcXeJLEl6us4FAEIhgWFA\u0026subscribed=1\u0026uga=m33\u0026vm=CAEQARgEOjJBRlNkMkZ2NjdUNVNtWVk2a1B6Sm8wMUl5U3lMSEs2WVB5V1NyT1ZDMWktdTlza2p6QWJeQVBta0tETGtWbU5lS0tGVEZveEFxbU9NemlsaWtMRDBwd08wYTY1dlFrbGJnWHdZSHRpZEltRWZVQlhUeGJYeUJKaFdnRjIxOWRob2tKakVaRjVma2J0Ump4MXJzUWgB"
+    },
+    "ptrackingUrl": {
+      "baseUrl": "https://www.youtube.com/ptracking?ei=gcnxY-_VObLDlu8PhpugmAE\u0026oid=0gp7ySUMvE3UtI2_yqrrlQ\u0026plid=AAX1CCEFIWz9ilJy\u0026pltype=contentlive\u0026ptchn=PqrEgBEHVj4vDITrClNQIw\u0026ptk=youtube_single\u0026video_id=F8gbJUXaeo0"
+    },
+    "qoeUrl": {
+      "baseUrl": "https://s.youtube.com/api/stats/qoe?cl=509728682\u0026docid=F8gbJUXaeo0\u0026ei=gcnxY-_VObLDlu8PhpugmAE\u0026event=streamingstats\u0026fexp=1714259%2C3300101%2C3300130%2C3300161%2C3313321%2C3325697%2C3330198%2C3357432%2C3360244%2C3360264%2C3360412%2C3360466%2C3360953%2C3360975%2C3361164%2C11240888%2C11250232%2C11250274%2C11250918%2C11251330%2C11251335%2C11251660%2C11252745%2C11252954%2C11253282%2C11253630%2C11254476%2C11254736%2C11254759%2C11254804%2C23804281%2C23858057%2C23918597%2C23946420%2C23966208%2C23983296%2C23986015%2C23998056%2C24004644%2C24007246%2C24034168%2C24036947%2C24077241%2C24080738%2C24108448%2C24120820%2C24135310%2C24140247%2C24161116%2C24162919%2C24164186%2C24166867%2C24169501%2C24181174%2C24187043%2C24187377%2C24197450%2C24211178%2C24219382%2C24219713%2C24241378%2C24255165%2C24255543%2C24255545%2C24260378%2C24262346%2C24263796%2C24267564%2C24268142%2C24281897%2C24283015%2C24283093%2C24288664%2C24290971%2C24291857%2C24390674%2C24396645%2C24397800%2C24404640%2C24404818%2C24407191%2C24415864%2C24415866%2C24422005%2C24426636%2C24429095%2C24433679%2C24436009%2C24437577%2C24439361%2C24439483%2C24440132%2C24449113%2C24450367%2C24451032%2C24452969%2C24453129%2C24457195%2C24457969%2C24458317%2C24458324%2C24458329%2C24458635%2C24458839%2C24473090%2C24478762%2C24591046%2C39795729%2C39816758%2C39817317%2C39817777\u0026live=dvr\u0026ns=yt\u0026osid=MWU2N2JhZjE%3AAOeUNAYSwqZcTfcXeJLEl6us4FAEIhgWFA\u0026plid=AAX1CCEFIWz9ilJy"
+    },
+    "atrUrl": {
+      "baseUrl": "https://s.youtube.com/api/stats/atr?docid=F8gbJUXaeo0\u0026ei=gcnxY-_VObLDlu8PhpugmAE\u0026len=0\u0026ns=yt\u0026plid=AAX1CCEFIWz9ilJy\u0026ver=2",
+      "elapsedMediaTimeSeconds": 5
+    },
+    "videostatsScheduledFlushWalltimeSeconds": [10, 20, 30],
+    "videostatsDefaultFlushIntervalSeconds": 40,
+    "youtubeRemarketingUrl": {
+      "baseUrl": "https://www.youtube.com/pagead/viewthroughconversion/962985656/?backend=innertube\u0026cname=1\u0026cver=2_20230217\u0026foc_id=PqrEgBEHVj4vDITrClNQIw\u0026label=followon_view\u0026ptype=no_rmkt\u0026random=855515791",
+      "elapsedMediaTimeSeconds": 0
+    },
+    "googleRemarketingUrl": {
+      "baseUrl": "https://www.google.com/pagead/1p-user-list/962985656/?backend=innertube\u0026cname=1\u0026cver=2_20230217\u0026data=backend%3Dinnertube%3Bcname%3D1%3Bcver%3D2_20230217%3Bptype%3Df_view_s%3Bsubscribed%3D1%3Btype%3Dview%3Butuid%3DPqrEgBEHVj4vDITrClNQIw%3Butvid%3DF8gbJUXaeo0\u0026is_vtc=0\u0026ptype=f_view_s\u0026random=86799421\u0026utuid=PqrEgBEHVj4vDITrClNQIw",
+      "elapsedMediaTimeSeconds": 0
+    }
+  },
+  "videoDetails": {
+    "videoId": "F8gbJUXaeo0",
+    "title": "American English Listening Practice Level 1 - English Listening Comprehension",
+    "lengthSeconds": "0",
+    "isLive": true,
+    "keywords": [
+      "english listening practice",
+      "learn english listening",
+      "learning english listening",
+      "english listening comprehension",
+      "improve english listening",
+      "english listening skills",
+      "learning english listening practice",
+      "american english listening practice",
+      "english listening skills practice",
+      "english listening practice level 1",
+      "improve english listening skills",
+      "listening",
+      "listening english practice",
+      "listening practice",
+      "american english listening",
+      "everyday english listening",
+      "abc learning english"
+    ],
+    "channelId": "UCPqrEgBEHVj4vDITrClNQIw",
+    "isOwnerViewing": false,
+    "shortDescription": "Advanced English Speaking | Improve Your English Communication Skills | ABC Learning English\nYou may have trouble speaking fluently if you're unsure of your grammar or vocabulary.\nAs a beginner, you might not feel confident in communicating in English. This might affect your body language, which will leave a bad impression. For instance, let’s say you are saying something; however your body movement is suggesting something completely different. The best way to fix this issue is by practicing a lot. Start speaking in English with your family and friends to build confidence.\nHope, this will help you to communicate effectively!\n==============================================\n🙇Thanks for watching! Please Like, Share, and Comment If You Like This Video!\nIf you like my content and feel like you want to show some extra support, Perhaps consider ''buying me a coffee'' here: https://ko-fi.com/abclearningenglish\n----------------------------------------------------------------------------\nWatching more:\n🌞 Efficient training of Spoken English listening : https://youtube.com/playlist?list=PLjCw5iaiPkINPFNOh-z9nKMVLCyAc2Y-z\n🌞 More than learning English: https://youtube.com/playlist?list=PLjCw5iaiPkIP8pMmOxjao5eavmnDDy9YI\n🌞 English Speaking Practice | Daily English Conversation: https://youtube.com/playlist?list=PLjCw5iaiPkIOwsra0hFvwLUC3Zr2HeyxX\n🌞 Basic English Vocabulary For Beginners: https://youtube.com/playlist?list=PLjCw5iaiPkIMf9UtiFg6B7Py9fPihzuyM\n🌞 12 hours of English Listening Practice: https://youtube.com/playlist?list=PLjCw5iaiPkIMnlwqZIuqQqGB1YxxYedBU\n🌞  4000 Most Important English Words: https://youtube.com/playlist?list=PLjCw5iaiPkIOAEDDLRue_JAWtKPpSFs7L\n🌞 Improve Vocabulary | Advanced English Words Used in Daily Life: https://youtube.com/playlist?list=PLjCw5iaiPkIMQtM1EchuTkXI0zAwvVN0L\n🌞 English Tips: https://youtube.com/playlist?list=PLjCw5iaiPkIM7_BglxUYqf2fOItL80U9o\n----------------------------------------------------------------------------\nSubscribe ABC Learning English to get the newest interesting video:\n👇 https://www.youtube.com/ABCLearningEnglish\n--------------------\nExecutive Producer : ABC Learning English\n#englishsentences #englishlisteningpractice #englishspeakingpractice  #abclearningenglish",
+    "isCrawlable": true,
+    "isLiveDvrEnabled": true,
+    "thumbnail": {
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/F8gbJUXaeo0/hqdefault_live.jpg?sqp=CPCRx58G-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG\u0026rs=AOn4CLBboZxTr6Dgym6wsxY45M_R4ak-hQ",
+          "width": 168,
+          "height": 94
+        },
+        {
+          "url": "https://i.ytimg.com/vi/F8gbJUXaeo0/hqdefault_live.jpg?sqp=CPCRx58G-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG\u0026rs=AOn4CLAbOAyimKGT2--N6CKDDeRLGci6Ow",
+          "width": 196,
+          "height": 110
+        },
+        {
+          "url": "https://i.ytimg.com/vi/F8gbJUXaeo0/hqdefault_live.jpg?sqp=CPCRx58G-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==\u0026rs=AOn4CLDrky18JtWsljTJTRtjdte8hZDrfA",
+          "width": 246,
+          "height": 138
+        },
+        {
+          "url": "https://i.ytimg.com/vi/F8gbJUXaeo0/hqdefault_live.jpg?sqp=CPCRx58G-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==\u0026rs=AOn4CLAovBVGC9obPj5ZPqQRYoQq9SsTTw",
+          "width": 336,
+          "height": 188
+        },
+        {
+          "url": "https://i.ytimg.com/vi/F8gbJUXaeo0/maxresdefault.jpg?v=636db030",
+          "width": 1920,
+          "height": 1080
+        }
+      ]
+    },
+    "liveChunkReadahead": 3,
+    "allowRatings": true,
+    "viewCount": "1085762",
+    "author": "ABC Learning English",
+    "isLowLatencyLiveStream": false,
+    "isPrivate": false,
+    "isUnpluggedCorpus": false,
+    "latencyClass": "MDE_STREAM_OPTIMIZATIONS_RENDERER_LATENCY_NORMAL",
+    "isLiveContent": true
+  },
+  "annotations": [
+    {
+      "playerAnnotationsExpandedRenderer": {
+        "featuredChannel": {
+          "startTimeMs": "0",
+          "endTimeMs": "9223372036854775807",
+          "watermark": {
+            "thumbnails": [
+              {
+                "url": "https://i.ytimg.com/an/PqrEgBEHVj4vDITrClNQIw/featured_channel.jpg?v=61ee64b2",
+                "width": 40,
+                "height": 40
+              }
+            ]
+          },
+          "trackingParams": "CAYQ8zciEwivmoyIgqH9AhWyoeUHHYYNCBM=",
+          "navigationEndpoint": {
+            "clickTrackingParams": "CAYQ8zciEwivmoyIgqH9AhWyoeUHHYYNCBMyAml2",
+            "commandMetadata": {
+              "webCommandMetadata": {
+                "url": "/channel/UCPqrEgBEHVj4vDITrClNQIw",
+                "webPageType": "WEB_PAGE_TYPE_CHANNEL",
+                "rootVe": 3611,
+                "apiUrl": "/youtubei/v1/browse"
+              }
+            },
+            "browseEndpoint": { "browseId": "UCPqrEgBEHVj4vDITrClNQIw" }
+          },
+          "channelName": "ABC Learning English",
+          "subscribeButton": {
+            "subscribeButtonRenderer": {
+              "buttonText": { "runs": [{ "text": "SUSCRITO" }] },
+              "subscribed": true,
+              "enabled": true,
+              "type": "FREE",
+              "channelId": "UCPqrEgBEHVj4vDITrClNQIw",
+              "showPreferences": false,
+              "subscribedButtonText": { "runs": [{ "text": "SUSCRITO" }] },
+              "unsubscribedButtonText": { "runs": [{ "text": "SUSCRIBIRSE" }] },
+              "trackingParams": "CAcQmysiEwivmoyIgqH9AhWyoeUHHYYNCBMyAml2",
+              "unsubscribeButtonText": { "runs": [{ "text": "ANULAR" }] },
+              "serviceEndpoints": [
+                {
+                  "clickTrackingParams": "CAcQmysiEwivmoyIgqH9AhWyoeUHHYYNCBMyAml2",
+                  "commandMetadata": {
+                    "webCommandMetadata": {
+                      "sendPost": true,
+                      "apiUrl": "/youtubei/v1/subscription/subscribe"
+                    }
+                  },
+                  "subscribeEndpoint": {
+                    "channelIds": ["UCPqrEgBEHVj4vDITrClNQIw"],
+                    "params": "EgIIBBgA"
+                  }
+                },
+                {
+                  "clickTrackingParams": "CAcQmysiEwivmoyIgqH9AhWyoeUHHYYNCBM=",
+                  "commandMetadata": {
+                    "webCommandMetadata": { "sendPost": true }
+                  },
+                  "signalServiceEndpoint": {
+                    "signal": "CLIENT_SIGNAL",
+                    "actions": [
+                      {
+                        "clickTrackingParams": "CAcQmysiEwivmoyIgqH9AhWyoeUHHYYNCBM=",
+                        "openPopupAction": {
+                          "popup": {
+                            "confirmDialogRenderer": {
+                              "trackingParams": "CAgQxjgiEwivmoyIgqH9AhWyoeUHHYYNCBM=",
+                              "dialogMessages": [
+                                {
+                                  "runs": [
+                                    {
+                                      "text": "¿Deseas anular tu suscripción a "
+                                    },
+                                    { "text": "ABC Learning English" },
+                                    { "text": "?" }
+                                  ]
+                                }
+                              ],
+                              "confirmButton": {
+                                "buttonRenderer": {
+                                  "style": "STYLE_BLUE_TEXT",
+                                  "size": "SIZE_DEFAULT",
+                                  "isDisabled": false,
+                                  "text": {
+                                    "runs": [{ "text": "Anular suscripción" }]
+                                  },
+                                  "serviceEndpoint": {
+                                    "clickTrackingParams": "CAoQ8FsiEwivmoyIgqH9AhWyoeUHHYYNCBMyAml2",
+                                    "commandMetadata": {
+                                      "webCommandMetadata": {
+                                        "sendPost": true,
+                                        "apiUrl": "/youtubei/v1/subscription/unsubscribe"
+                                      }
+                                    },
+                                    "unsubscribeEndpoint": {
+                                      "channelIds": [
+                                        "UCPqrEgBEHVj4vDITrClNQIw"
+                                      ],
+                                      "params": "CgIIBBgA"
+                                    }
+                                  },
+                                  "accessibility": {
+                                    "label": "Anular suscripción"
+                                  },
+                                  "trackingParams": "CAoQ8FsiEwivmoyIgqH9AhWyoeUHHYYNCBM="
+                                }
+                              },
+                              "cancelButton": {
+                                "buttonRenderer": {
+                                  "style": "STYLE_TEXT",
+                                  "size": "SIZE_DEFAULT",
+                                  "isDisabled": false,
+                                  "text": { "runs": [{ "text": "Cancelar" }] },
+                                  "accessibility": { "label": "Cancelar" },
+                                  "trackingParams": "CAkQ8FsiEwivmoyIgqH9AhWyoeUHHYYNCBM="
+                                }
+                              },
+                              "primaryIsCancel": false
+                            }
+                          },
+                          "popupType": "DIALOG"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "subscribeAccessibility": {
+                "accessibilityData": {
+                  "label": "Suscribirme a ABC Learning English."
+                }
+              },
+              "unsubscribeAccessibility": {
+                "accessibilityData": {
+                  "label": "¿Deseas anular tu suscripción a ABC Learning English?"
+                }
+              }
+            }
+          }
+        },
+        "allowSwipeDismiss": true,
+        "annotationId": "90998d6b-5cd3-42e4-a805-f61bfd7bce16"
+      }
+    }
+  ],
+  "playerConfig": {
+    "audioConfig": { "enablePerFormatLoudness": true },
+    "streamSelectionConfig": { "maxBitrate": "14490000" },
+    "livePlayerConfig": {
+      "liveReadaheadSeconds": 12,
+      "isLiveHeadPlayable": true
+    },
+    "mediaCommonConfig": {
+      "dynamicReadaheadConfig": {
+        "maxReadAheadMediaTimeMs": 120000,
+        "minReadAheadMediaTimeMs": 15000,
+        "readAheadGrowthRateMs": 1000
+      }
+    },
+    "webPlayerConfig": {
+      "useCobaltTvosDash": true,
+      "webPlayerActionsPorting": {
+        "getSharePanelCommand": {
+          "clickTrackingParams": "CAAQu2kiEwivmoyIgqH9AhWyoeUHHYYNCBM=",
+          "commandMetadata": {
+            "webCommandMetadata": {
+              "sendPost": true,
+              "apiUrl": "/youtubei/v1/share/get_web_player_share_panel"
+            }
+          },
+          "webPlayerShareEntityServiceEndpoint": {
+            "serializedShareEntity": "CgtGOGdiSlVYYWVvMA%3D%3D"
+          }
+        },
+        "subscribeCommand": {
+          "clickTrackingParams": "CAAQu2kiEwivmoyIgqH9AhWyoeUHHYYNCBM=",
+          "commandMetadata": {
+            "webCommandMetadata": {
+              "sendPost": true,
+              "apiUrl": "/youtubei/v1/subscription/subscribe"
+            }
+          },
+          "subscribeEndpoint": {
+            "channelIds": ["UCPqrEgBEHVj4vDITrClNQIw"],
+            "params": "EgIIBxgA"
+          }
+        },
+        "unsubscribeCommand": {
+          "clickTrackingParams": "CAAQu2kiEwivmoyIgqH9AhWyoeUHHYYNCBM=",
+          "commandMetadata": {
+            "webCommandMetadata": {
+              "sendPost": true,
+              "apiUrl": "/youtubei/v1/subscription/unsubscribe"
+            }
+          },
+          "unsubscribeEndpoint": {
+            "channelIds": ["UCPqrEgBEHVj4vDITrClNQIw"],
+            "params": "CgIIBxgA"
+          }
+        },
+        "addToWatchLaterCommand": {
+          "clickTrackingParams": "CAAQu2kiEwivmoyIgqH9AhWyoeUHHYYNCBM=",
+          "commandMetadata": {
+            "webCommandMetadata": {
+              "sendPost": true,
+              "apiUrl": "/youtubei/v1/browse/edit_playlist"
+            }
+          },
+          "playlistEditEndpoint": {
+            "playlistId": "WL",
+            "actions": [
+              { "addedVideoId": "F8gbJUXaeo0", "action": "ACTION_ADD_VIDEO" }
+            ]
+          }
+        },
+        "removeFromWatchLaterCommand": {
+          "clickTrackingParams": "CAAQu2kiEwivmoyIgqH9AhWyoeUHHYYNCBM=",
+          "commandMetadata": {
+            "webCommandMetadata": {
+              "sendPost": true,
+              "apiUrl": "/youtubei/v1/browse/edit_playlist"
+            }
+          },
+          "playlistEditEndpoint": {
+            "playlistId": "WL",
+            "actions": [
+              {
+                "action": "ACTION_REMOVE_VIDEO_BY_VIDEO_ID",
+                "removedVideoId": "F8gbJUXaeo0"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "storyboards": {
+    "playerLiveStoryboardSpecRenderer": {
+      "spec": "https://i.ytimg.com/sb/F8gbJUXaeo0/storyboard_live_90_2x2_b2/M$M.jpg?rs=AOn4CLA4XO49uswImXtDN882WblV0ShqhA#159#90#2#2"
+    }
+  },
+  "microformat": {
+    "microformatDataRenderer": {
+      "urlCanonical": "https://www.youtube.com/channel/UCPqrEgBEHVj4vDITrClNQIw/live",
+      "title": "American English Listening Practice Level 1 - English Listening Comprehension",
+      "description": "Advanced English Speaking | Improve Your English Communication Skills | ABC Learning English You may have trouble speaking fluently if you're unsure of your ...",
+      "thumbnail": {
+        "thumbnails": [
+          {
+            "url": "https://i.ytimg.com/vi/F8gbJUXaeo0/maxresdefault_live.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        ]
+      },
+      "siteName": "YouTube",
+      "appName": "YouTube",
+      "androidPackage": "com.google.android.youtube",
+      "iosAppStoreId": "544007664",
+      "iosAppArguments": "https://www.youtube.com/channel/UCPqrEgBEHVj4vDITrClNQIw/live",
+      "ogType": "video.other",
+      "urlApplinksWeb": "https://www.youtube.com/channel/UCPqrEgBEHVj4vDITrClNQIw/live?feature=applinks",
+      "urlApplinksIos": "vnd.youtube://www.youtube.com/channel/UCPqrEgBEHVj4vDITrClNQIw/live?feature=applinks",
+      "urlApplinksAndroid": "vnd.youtube://www.youtube.com/channel/UCPqrEgBEHVj4vDITrClNQIw/live?feature=applinks",
+      "urlTwitterIos": "vnd.youtube://www.youtube.com/channel/UCPqrEgBEHVj4vDITrClNQIw/live?feature=twitter-deep-link",
+      "urlTwitterAndroid": "vnd.youtube://www.youtube.com/channel/UCPqrEgBEHVj4vDITrClNQIw/live?feature=twitter-deep-link",
+      "twitterCardType": "player",
+      "twitterSiteHandle": "@YouTube",
+      "schemaDotOrgType": "http://schema.org/VideoObject",
+      "noindex": true,
+      "unlisted": false,
+      "paid": false,
+      "familySafe": true,
+      "tags": [
+        "english listening practice",
+        "learn english listening",
+        "learning english listening",
+        "english listening comprehension",
+        "improve english listening",
+        "english listening skills",
+        "learning english listening practice",
+        "american english listening practice",
+        "english listening skills practice",
+        "english listening practice level 1",
+        "improve english listening skills",
+        "listening",
+        "listening english practice",
+        "listening practice",
+        "american english listening",
+        "everyday english listening",
+        "abc learning english"
+      ],
+      "availableCountries": [
+        "AD",
+        "AE",
+        "AF",
+        "AG",
+        "AI",
+        "AL",
+        "AM",
+        "AO",
+        "AQ",
+        "AR",
+        "AS",
+        "AT",
+        "AU",
+        "AW",
+        "AX",
+        "AZ",
+        "BA",
+        "BB",
+        "BD",
+        "BE",
+        "BF",
+        "BG",
+        "BH",
+        "BI",
+        "BJ",
+        "BL",
+        "BM",
+        "BN",
+        "BO",
+        "BQ",
+        "BR",
+        "BS",
+        "BT",
+        "BV",
+        "BW",
+        "BY",
+        "BZ",
+        "CA",
+        "CC",
+        "CD",
+        "CF",
+        "CG",
+        "CH",
+        "CI",
+        "CK",
+        "CL",
+        "CM",
+        "CN",
+        "CO",
+        "CR",
+        "CU",
+        "CV",
+        "CW",
+        "CX",
+        "CY",
+        "CZ",
+        "DE",
+        "DJ",
+        "DK",
+        "DM",
+        "DO",
+        "DZ",
+        "EC",
+        "EE",
+        "EG",
+        "EH",
+        "ER",
+        "ES",
+        "ET",
+        "FI",
+        "FJ",
+        "FK",
+        "FM",
+        "FO",
+        "FR",
+        "GA",
+        "GB",
+        "GD",
+        "GE",
+        "GF",
+        "GG",
+        "GH",
+        "GI",
+        "GL",
+        "GM",
+        "GN",
+        "GP",
+        "GQ",
+        "GR",
+        "GS",
+        "GT",
+        "GU",
+        "GW",
+        "GY",
+        "HK",
+        "HM",
+        "HN",
+        "HR",
+        "HT",
+        "HU",
+        "ID",
+        "IE",
+        "IL",
+        "IM",
+        "IN",
+        "IO",
+        "IQ",
+        "IR",
+        "IS",
+        "IT",
+        "JE",
+        "JM",
+        "JO",
+        "JP",
+        "KE",
+        "KG",
+        "KH",
+        "KI",
+        "KM",
+        "KN",
+        "KP",
+        "KR",
+        "KW",
+        "KY",
+        "KZ",
+        "LA",
+        "LB",
+        "LC",
+        "LI",
+        "LK",
+        "LR",
+        "LS",
+        "LT",
+        "LU",
+        "LV",
+        "LY",
+        "MA",
+        "MC",
+        "MD",
+        "ME",
+        "MF",
+        "MG",
+        "MH",
+        "MK",
+        "ML",
+        "MM",
+        "MN",
+        "MO",
+        "MP",
+        "MQ",
+        "MR",
+        "MS",
+        "MT",
+        "MU",
+        "MV",
+        "MW",
+        "MX",
+        "MY",
+        "MZ",
+        "NA",
+        "NC",
+        "NE",
+        "NF",
+        "NG",
+        "NI",
+        "NL",
+        "NO",
+        "NP",
+        "NR",
+        "NU",
+        "NZ",
+        "OM",
+        "PA",
+        "PE",
+        "PF",
+        "PG",
+        "PH",
+        "PK",
+        "PL",
+        "PM",
+        "PN",
+        "PR",
+        "PS",
+        "PT",
+        "PW",
+        "PY",
+        "QA",
+        "RE",
+        "RO",
+        "RS",
+        "RU",
+        "RW",
+        "SA",
+        "SB",
+        "SC",
+        "SD",
+        "SE",
+        "SG",
+        "SH",
+        "SI",
+        "SJ",
+        "SK",
+        "SL",
+        "SM",
+        "SN",
+        "SO",
+        "SR",
+        "SS",
+        "ST",
+        "SV",
+        "SX",
+        "SY",
+        "SZ",
+        "TC",
+        "TD",
+        "TF",
+        "TG",
+        "TH",
+        "TJ",
+        "TK",
+        "TL",
+        "TM",
+        "TN",
+        "TO",
+        "TR",
+        "TT",
+        "TV",
+        "TW",
+        "TZ",
+        "UA",
+        "UG",
+        "UM",
+        "US",
+        "UY",
+        "UZ",
+        "VA",
+        "VC",
+        "VE",
+        "VG",
+        "VI",
+        "VN",
+        "VU",
+        "WF",
+        "WS",
+        "YE",
+        "YT",
+        "ZA",
+        "ZM",
+        "ZW"
+      ],
+      "pageOwnerDetails": {
+        "name": "ABC Learning English",
+        "externalChannelId": "UCPqrEgBEHVj4vDITrClNQIw",
+        "youtubeProfileUrl": "http://www.youtube.com/@ABCLearningEnglish"
+      },
+      "videoDetails": { "externalVideoId": "F8gbJUXaeo0" },
+      "embedDetails": {
+        "iframeUrl": "https://www.youtube.com/embed/live_stream?channel=UCPqrEgBEHVj4vDITrClNQIw",
+        "flashUrl": "http://www.youtube.com/v/F8gbJUXaeo0?version=3\u0026autohide=1",
+        "flashSecureUrl": "https://www.youtube.com/v/F8gbJUXaeo0?version=3\u0026autohide=1",
+        "width": 640,
+        "height": 360
+      },
+      "linkAlternates": [
+        {
+          "hrefUrl": "https://m.youtube.com/channel/UCPqrEgBEHVj4vDITrClNQIw/live"
+        },
+        {
+          "hrefUrl": "android-app://com.google.android.youtube/http/youtube.com/channel/UCPqrEgBEHVj4vDITrClNQIw/live"
+        },
+        {
+          "hrefUrl": "ios-app://544007664/http/youtube.com/channel/UCPqrEgBEHVj4vDITrClNQIw/live"
+        },
+        {
+          "hrefUrl": "https://www.youtube.com/oembed?format=json\u0026url=https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUCPqrEgBEHVj4vDITrClNQIw%2Flive",
+          "title": "American English Listening Practice Level 1 - English Listening Comprehension",
+          "alternateType": "application/json+oembed"
+        },
+        {
+          "hrefUrl": "https://www.youtube.com/oembed?format=xml\u0026url=https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUCPqrEgBEHVj4vDITrClNQIw%2Flive",
+          "title": "American English Listening Practice Level 1 - English Listening Comprehension",
+          "alternateType": "text/xml+oembed"
+        }
+      ],
+      "viewCount": "1085762",
+      "publishDate": "1969-12-31",
+      "category": "Education",
+      "uploadDate": "1969-12-31"
+    }
+  },
+  "cards": {
+    "cardCollectionRenderer": {
+      "cards": [
+        {
+          "cardRenderer": {
+            "teaser": {
+              "simpleCardTeaserRenderer": {
+                "message": { "simpleText": "Ver las correcciones" },
+                "trackingParams": "CAUQ0DYiEwivmoyIgqH9AhWyoeUHHYYNCBM=",
+                "prominent": true,
+                "logVisibilityUpdates": true,
+                "onTapCommand": {
+                  "clickTrackingParams": "CAUQ0DYiEwivmoyIgqH9AhWyoeUHHYYNCBM=",
+                  "changeEngagementPanelVisibilityAction": {
+                    "targetId": "engagement-panel-error-corrections",
+                    "visibility": "ENGAGEMENT_PANEL_VISIBILITY_EXPANDED"
+                  }
+                }
+              }
+            },
+            "cueRanges": [
+              {
+                "startCardActiveMs": "0",
+                "endCardActiveMs": "5000",
+                "teaserDurationMs": "6000",
+                "iconAfterTeaserMs": "5000"
+              }
+            ],
+            "trackingParams": "CAQQtZcBGAAiEwivmoyIgqH9AhWyoeUHHYYNCBM="
+          }
+        }
+      ],
+      "headerText": { "simpleText": "De ABC Learning English" },
+      "icon": {
+        "infoCardIconRenderer": {
+          "trackingParams": "CAMQsJcBIhMIr5qMiIKh_QIVsqHlBx2GDQgT"
+        }
+      },
+      "closeButton": {
+        "infoCardIconRenderer": {
+          "trackingParams": "CAIQsZcBIhMIr5qMiIKh_QIVsqHlBx2GDQgT"
+        }
+      },
+      "trackingParams": "CAEQwjciEwivmoyIgqH9AhWyoeUHHYYNCBM=",
+      "allowTeaserDismiss": true,
+      "logIconVisibilityUpdates": true
+    }
+  },
+  "trackingParams": "CAAQu2kiEwivmoyIgqH9AhWyoeUHHYYNCBM=",
+  "attestation": {
+    "playerAttestationRenderer": {
+      "challenge": "a=5\u0026a2=1\u0026c=1676790146\u0026d=1\u0026e=F8gbJUXaeo0\u0026c1a=1\u0026c6a=1\u0026c6b=1\u0026hh=aNPBi6YSMIH7b1gVZkvr_ZeLEHjlsXUgUC37fTRa0zw",
+      "botguardData": {
+        "program": "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",
+        "interpreterSafeUrl": {
+          "privateDoNotAccessOrElseTrustedResourceUrlWrappedValue": "//www.google.com/js/th/qKJUGOP6x5h8rmPmHT60bnV16o_en-8xXoUTesAF5PA.js"
+        },
+        "serverEnvironment": 1
+      }
+    }
+  },
+  "frameworkUpdates": {
+    "entityBatchUpdate": {
+      "mutations": [
+        {
+          "entityKey": "Eg0KC0Y4Z2JKVVhhZW8wIPYBKAE%3D",
+          "type": "ENTITY_MUTATION_TYPE_REPLACE",
+          "payload": {
+            "offlineabilityEntity": {
+              "key": "Eg0KC0Y4Z2JKVVhhZW8wIPYBKAE%3D",
+              "addToOfflineButtonState": "ADD_TO_OFFLINE_BUTTON_STATE_UNKNOWN"
+            }
+          }
+        }
+      ],
+      "timestamp": { "seconds": "1676790146", "nanos": 134494404 }
+    }
+  }
+}

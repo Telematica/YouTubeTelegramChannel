@@ -2,11 +2,11 @@
 
 /**
  * @description Display Debug Info in the Console
- * @param {NodeJS.Process} pro
+ * @param {NodeJS.ProcessEnv} env
  * @returns {void}
  */
-function showDebugInfo(pro) {
-  const { API_TOKEN, TZ } = pro.env;
+function showDebugInfo(env) {
+  const { API_TOKEN, TZ } = env;
   console.table(
     {
       "Telegram Token": API_TOKEN,
