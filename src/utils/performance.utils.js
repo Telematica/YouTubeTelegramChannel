@@ -25,11 +25,12 @@ function Perf() {
 
   /**
    * @description Set starting stats
-   * @returns {void}
+   * @returns {Perf}
    */
   this.begin = () => {
     this.start = new Date();
     this.hrstart = process.hrtime();
+    return this;
   };
 
   /**

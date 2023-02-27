@@ -59,9 +59,7 @@ async function checkIfLive(channelId) {
     showDebugInfo(process.env);
 
     /** @type {Perf} */
-    const perf = new Perf();
-
-    perf.begin();
+    const perf = new Perf().begin();
 
     /** @type {Array<any>} */
     const log = openOrCreateLogFile({

@@ -6,16 +6,67 @@
   - Do not deal with API Limits (scrapping is free, isn't it?).
 
 ## Getting started
+<br /> 
 
 ### Setup
+
+<br /> 
+
+#### Clone the repo
+```sh
+$ git clone https://github.com/Telematica/YouTubeTelegramChannel.git
+```
+
+#### Install dependencies (npm or yarn)
 ```sh
 $ yarn install
 ```
 
-On the .env file (root)
+#### On the .env file (root), input your Telegram Bot API token, and a mock cookie (optional)
 ```sh
 API_TOKEN={your-telegram-bot-API-key}
 COOOKIE={mock-cookie}
+```
+
+Make sure to create a log/ directory on @ root and an error/ subdirectory inside (log/errors)
+```sh
+|____logs/
+| |____2023-02-19.log.json
+| |____2023-02-18.log.json
+| |____errors/
+| |____2020-06-13.log.json
+| |____2020-06-12.log.json
+|____.gitignore
+|____package.json
+|____.env
+|____tsconfig.json
+|____.vscode
+| |____settings.json
+|____.eslintrc.json
+|____src
+| |____@types/
+| |____constants/
+| |____mock/
+| |____utils/
+| |____scrappers/
+| |____requests/
+| |____bot.js
+| |____data/
+|____LICENSE
+|____.env.sample
+|____jsdoc.json
+|____tests/
+| |____send-message-request.test.js
+|____legacy/
+|____.editorconfig
+|____readme.md
+|____yarn.lock
+```
+## Up and Running
+
+### Execute the script. You will see debug output.
+```sh
+$ /path/to/node /Users/your-user/YouTubeTelegramChannel/src/bot.js
 ```
 
 ## Reference
