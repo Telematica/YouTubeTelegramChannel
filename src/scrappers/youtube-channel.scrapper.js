@@ -53,7 +53,7 @@ const youtubeChannelScrapper = async (cid) => {
 
       if (scriptTag.textContent?.includes(ytInitialPlayerResponse)) {
         ytInitialPlayerResponseRawScript =
-          scriptTag.textContent?.replace(ytInitialPlayerResponse, "").replace(/;var meta.*/, "") || "{}";
+          scriptTag.textContent?.trim().replace(ytInitialPlayerResponse, "").replace(/;\s?var meta.*/, "").replace(/\};$/, "}").replace(/;$/, "") || "{}";
         continue;
       }
     }
