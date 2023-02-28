@@ -1,7 +1,7 @@
 const axios = require("axios").default;
+const jsdom = require("jsdom");
 const AxiosTypes = require("../@types/axios.types");
 const YoutubeTypes = require("../@types/youtube.types");
-const jsdom = require("jsdom");
 const pingChannelStreamLive = require("../requests/ping-channel-stream-live.request");
 
 /* global NodeListOf:readonly, HTMLScriptElement:readonly, HTMLLinkElement:readonly */
@@ -91,9 +91,13 @@ const youtubeChannelScrapper = async (cid) => {
 
     /** @type {number} */
     const viewCount = Number(
-      youtubeData.contents.twoColumnWatchNextResults.results.results.contents[0]
+      isFinite(
+        youtubeData.contents.twoColumnWatchNextResults.results.results.contents[0]
+          .videoPrimaryInfoRenderer.viewCount.videoViewCountRenderer.viewCount
+          .runs[0].text
+      ) ? youtubeData.contents.twoColumnWatchNextResults.results.results.contents[0]
         .videoPrimaryInfoRenderer.viewCount.videoViewCountRenderer.viewCount
-        .runs[0].text || 0
+        .runs[0].text : "0"
     );
 
     // publishedTimeText
