@@ -44,4 +44,32 @@ describe("youtubeChannelScrapper Scrapping Script", () => {
     };
     expect(response).toEqual(expectedData);
   });
+
+  test("Successfully Scraps YouTube Channel page when is not live (and has an scheduled transmission)", async () => {
+    const html = fs.readFileSync(
+      path.resolve(__dirname, "../../src/mock/html/stream-not-live.mock.html"),
+      "utf8"
+    );
+    /** @type {Axios.AxiosResponse} */
+    const mockAxiosResponse = {
+      data: html,
+      status: 200,
+      statusText: "success",
+      headers: {},
+      config: {
+        // @ts-ignore
+        headers: {
+        },
+      },
+    };
+    // @ts-ignore
+    axios.get.mockResolvedValueOnce(Promise.resolve(mockAxiosResponse));
+    const response = await youtubeChannelScrapper("UCPX3yijEA2s1jTJGDlUnGsQ");
+    const expectedData = {
+      cid: "UCPX3yijEA2s1jTJGDlUnGsQ",
+      live: false,
+      scheduledStartTime: "1677432900",
+    };
+    expect(response).toEqual(expectedData);
+  });
 });

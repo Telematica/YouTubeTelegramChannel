@@ -1,11 +1,16 @@
 /**
  * @description Format bytes to Human Readable string.
- * @param {number} bytes Bytes
+ * @param {number} bytes Bytes Integer
  * @param {number} [decimals=2] Precision
  * @returns {string} Examples: 1023 B, 45.6 KB, 78.901 MB, 234.56789 GB
  */
 function formatBytes(bytes, decimals = 2) {
+  if (!Number.isInteger(bytes)) {
+    throw new TypeError("No float type allow.");
+  }
+
   if (bytes === 0) return "0 Bytes";
+
   /** @type {number} */ 
   const k = 1024;
 
