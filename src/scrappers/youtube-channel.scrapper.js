@@ -89,7 +89,7 @@ const youtubeChannelScrapper = async (cid) => {
     /** @type {string} */
     const liveSince = youtubeData.contents.twoColumnWatchNextResults.results.results.contents[0].videoPrimaryInfoRenderer.dateText.simpleText;
 
-    /** @type {number} */
+    /** @type {string} */
     const viewCount = youtubeData.contents.twoColumnWatchNextResults.results.results.contents[0]
       .videoPrimaryInfoRenderer.viewCount.videoViewCountRenderer.viewCount
       .runs[0].text;
@@ -103,7 +103,9 @@ const youtubeChannelScrapper = async (cid) => {
       liveSince,
       title,
       vid,
-      viewCount: isFinite(viewCount) ? Number(viewCount) : 0,
+      viewCount: isFinite(parseInt(viewCount.replace(",", "")))
+        ? Number(viewCount.replace(",", ""))
+        : 0,
     };
     return Promise.resolve(data);
   } catch (error) {

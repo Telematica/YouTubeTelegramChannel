@@ -101,7 +101,7 @@ async function checkIfLive(channelId) {
             });
             await telegramSendMessage({
               chat_id: TELEGRAM_CHANNEL_OR_GROUP,
-              text: `🔴 ¡${channel.name} está transmitiendo En Vivo! \n\n 🔗 Entra a: http://youtu.be/${youtubeData.vid} \n\n 🕒 ${youtubeData.liveSince} \n\n 👥 Espectadores: ${youtubeData.viewCount}`,
+              text: `🔴 ¡${channel.name} está transmitiendo En Vivo! \n\n 🔗 Entra a: http://youtu.be/${youtubeData.vid} \n\n 🕒 ${youtubeData.liveSince} \n\n 👥 Espectadores: ${new Intl.NumberFormat('es-MX', { maximumSignificantDigits: 3 }).format(youtubeData.viewCount || 0)}`,
               disable_notification: channel.id !== "UCNQqL-xd30otxNGRL5UeFFQ",
             });
           }
