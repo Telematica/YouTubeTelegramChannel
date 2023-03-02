@@ -10,9 +10,9 @@ const { API_TOKEN, TELEGRAM_API_URL } = require("../constants/app.constants");
  * @param {TelegramTypes.SendMessageRequest} Send Message Params
  * @returns {Promise<grammyjs.Message>} Telegram Message response
  */
-const telegramSendMessage = async ({ chat_id, text }) => {
+const telegramSendMessage = async ({ chat_id, text, disable_notification }) => {
   /** @type {string} */
-  const params = querystring.stringify({ chat_id, text });
+  const params = querystring.stringify({ chat_id, text, disable_notification });
 
   /** @type {string} */
   const url = `${TELEGRAM_API_URL}${API_TOKEN}/sendMessage?${params}`;
