@@ -14,17 +14,17 @@
  */
 
 /**
- * @typedef  {object} YouTubeChannelType
- * @property {string} id        Channel id
- * @property {string} name      Channel name
- * @property {string} [channel] Channel
+ * @typedef  {object}      YouTubeChannelType
+ * @property {string}      id        Channel id
+ * @property {string}      name      Channel name
+ * @property {string|null} [channel] Channel
  */
 
 /**
  * @typedef  {object}  YouTubeTransmissionType
  * @property {string}  id             Transmission id
  * @property {?string} startTimestamp Start timestamp
- * @property {string}  channelId        Channel id
+ * @property {string}  channelId      Channel id
  */
 
 exports.unused = {};

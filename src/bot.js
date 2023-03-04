@@ -3,15 +3,19 @@ require("dotenv").config({ path: __dirname + "/../.env" });
 
 const fs = require("fs");
 const YouTubeTypes = require("./@types/youtube.types");
+const {
+  CONSOLE,
+  TELEGRAM_CHANNEL_OR_GROUP,
+} = require("./constants/app.constants");
 const { YOUTUBE_CHANNELS } = require("./constants/youtube.constants");
-const { TELEGRAM_CHANNEL_OR_GROUP } = require("./constants/app.constants");
 const telegramSendMessage = require("./requests/telegram-send-message.request");
 const youtubeChannelScrapper = require("./scrappers/youtube-channel.scrapper");
 const { getYearMonthDayString } = require("./utils/date.utils");
 const { showDebugInfo } = require("./utils/debug.utils");
+const { consoleMessage } = require("./utils/string-template.utils");
 const {
   openOrCreateLogFile,
-  openOrCreateAndWriteErrorLogFile
+  openOrCreateAndWriteErrorLogFile,
 } = require("./utils/file-system.utils");
 const Perf = require("./utils/performance.utils");
 
@@ -40,22 +44,11 @@ const ERROR_LOG_FILE_DIRECTORY = __dirname + "/../logs/errors";
 const STREAMS_FILE = __dirname + "/data/streams.json";
 
 /**
- * @description Scrap Youtube Channel for info
- * @param {string} channelId Channel object
- * @returns {Promise<YouTubeTypes.YouTubeLiveDataType>} Youtube scrapped data
- * @throws {unknown}
+ * @function
+ * @description Main Function IIFE
+ * @returns {void}
  */
-async function checkIfLive(channelId) {
-  try {
-    const info = await youtubeChannelScrapper(channelId);
-    return info;
-  } catch (e) {
-    throw new Error("Scrapping Error: " + String(e));
-  }
-}
-
-// Main Function IIFE
-; (async () => {
+(async () => {
   try {
     showDebugInfo(process.env);
 
@@ -65,76 +58,82 @@ async function checkIfLive(channelId) {
     /** @type {Array<any>} */
     const log = openOrCreateLogFile({
       logFileDirectory: LOG_FILE_DIRECTORY,
-      logFilename: logFilename
+      logFilename: logFilename,
     });
 
     /** @type {Array<any>} */
     const logEntry = [];
 
     /** @type {Array<YouTubeTypes.YouTubeTransmissionType>} */
-    const transmissions = JSON.parse(fs.readFileSync(STREAMS_FILE).toString() || "[]");
+    const transmissions = JSON.parse(
+      fs.readFileSync(STREAMS_FILE).toString() || "[]"
+    );
+
+    /** @type {string} */
+    let message = "This is bad!";
 
     for (const channel of YOUTUBE_CHANNELS) {
       try {
         /** @type {YouTubeTypes.YouTubeLiveDataType} */
-        const youtubeData = await checkIfLive(channel.id);
+        const youtubeData = await youtubeChannelScrapper(channel.id);
 
         if (youtubeData.live) {
           let video = transmissions.find((t) => t.id === youtubeData.vid);
+
           if (video) {
-            console.log(
-              `Esta transmisión ya fue notificada: ${youtubeData.vid} - ${channel.name}: ${channel.id}`
-            );
-            logEntry.push({
-              error: `Esta transmisión ya fue notificada: ${youtubeData.vid} - ${channel.name}: ${channel.id}`,
-              date: new Date(),
+            message = consoleMessage(CONSOLE.ALREADY_NOTIFIED, {
+              youtubeData,
+              channel,
             });
+            logEntry.push({ error: message, date: new Date() });
           } else {
+            message = consoleMessage(CONSOLE.NOTIFIED, {
+              youtubeData,
+              channel,
+            });
             transmissions.push({
               id: String(youtubeData.vid),
               startTimestamp: null,
               channelId: `${channel.id}`,
             });
-            logEntry.push({
-              success: `¡Transmisión Notificada! : ${youtubeData.vid} - ${channel.name}: ${channel.id}`,
-              date: new Date(),
-            });
+            logEntry.push({ success: message, date: new Date() });
             await telegramSendMessage({
               chat_id: TELEGRAM_CHANNEL_OR_GROUP,
-              text: `🔴 ¡${channel.name} está transmitiendo En Vivo! \n\n 🔗 Entra a: http://youtu.be/${youtubeData.vid} \n\n 🕒 ${youtubeData.liveSince} \n\n 👥 Espectadores: ${new Intl.NumberFormat('es-MX', { maximumSignificantDigits: 3 }).format(youtubeData.viewCount || 0)}`,
+              text: consoleMessage(CONSOLE.TELEGRAM_MESSAGE, {
+                youtubeData,
+                channel,
+              }),
               disable_notification: channel.id !== "UCNQqL-xd30otxNGRL5UeFFQ",
             });
           }
         } else {
           // @todo scheduledStartTime logic to notify twice: when scheduled and when live
-          console.log(`El Canal no está en vivo: ${channel.name}: ${channel.id}. Programado para: ${youtubeData.scheduledStartTime}`);
-          logEntry.push({
-            error: `El Canal no está en vivo: ${channel.name}: ${channel.id}`,
-            date: new Date(),
-          });
+          message = consoleMessage(CONSOLE.NOT_LIVE, { youtubeData, channel });
+          logEntry.push({ error: message, date: new Date() });
         }
       } catch (liveRequestError) {
-        console.log("¡Hubo un Error en la Petición al Canal! " + String(liveRequestError));
-        logEntry.push({
-          error: "¡Hubo un Error en la Petición al Canal! " + String(liveRequestError),
-          date: new Date(),
-        });
+        message = consoleMessage(CONSOLE.SERVER_ERROR, { liveRequestError });
+        logEntry.push({ error: message, date: new Date() });
       }
+
+      console.log(message);
     }
 
     fs.writeFileSync(STREAMS_FILE, JSON.stringify(transmissions, null, 2));
     perf.finish().showStats();
     logEntry.push(perf.getStats());
     log.push(logEntry);
-    fs.writeFileSync(`${LOG_FILE_DIRECTORY}/${logFilename}`, JSON.stringify(log, null, 2));
-
+    fs.writeFileSync(
+      `${LOG_FILE_DIRECTORY}/${logFilename}`,
+      JSON.stringify(log, null, 2)
+    );
   } catch (/** @type {unknown} */ e) {
     console.log(String(e));
     openOrCreateAndWriteErrorLogFile({
       error: e,
       logFormattedDate,
       errorLogFileDirectory: ERROR_LOG_FILE_DIRECTORY,
-      errorLogFileExtension
+      errorLogFileExtension,
     });
   }
 })();
