@@ -1,5 +1,6 @@
 //@ts-check
 const YouTubeTypes = require("../@types/youtube.types");
+const { CONSOLE } = require("../constants/app.constants");
 
 /**
  * @typedef ConsoleMessageProps
@@ -15,14 +16,21 @@ const YouTubeTypes = require("../@types/youtube.types");
  * @returns {string} Console Message
  */
 function consoleMessage(type, { youtubeData, channel, liveRequestError }) {
+  const {
+    ALREADY_NOTIFIED,
+    NOTIFIED,
+    TELEGRAM_MESSAGE,
+    NOT_LIVE,
+    SERVER_ERROR,
+  } = CONSOLE;
   const defaultMessage = "NOTHING TO SAY!";
   if (!!youtubeData && !!channel) {
     switch (type) {
-      case "ALREADY_NOTIFIED":
+      case ALREADY_NOTIFIED:
         return `Esta transmisión ya fue notificada: ${youtubeData.vid} - ${channel.name}: ${channel.id}`;
-      case "NOTIFIED":
+      case NOTIFIED:
         return `¡Transmisión Notificada! : ${youtubeData.vid} - ${channel.name}: ${channel.id}`;
-      case "TELEGRAM_MESSAGE":
+      case TELEGRAM_MESSAGE:
         return `🔴 ¡${
           channel.name
         } está transmitiendo En Vivo! \n\n 🔗 Entra a: http://youtu.be/${
@@ -32,9 +40,9 @@ function consoleMessage(type, { youtubeData, channel, liveRequestError }) {
         } \n\n 👥 Espectadores: ${new Intl.NumberFormat("es-MX", {
           maximumSignificantDigits: 3,
         }).format(youtubeData.viewCount || 0)}`;
-      case "NOT_LIVE":
+      case NOT_LIVE:
         return `El Canal no está en vivo: ${channel.name}: ${channel.id}. Programado para: ${youtubeData.scheduledStartTime}`;
-      case "SERVER_ERROR":
+      case SERVER_ERROR:
         return `¡Hubo un Error en la Petición al Canal! ${String(
           liveRequestError
         )}`;
