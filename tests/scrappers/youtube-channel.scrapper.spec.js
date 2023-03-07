@@ -26,8 +26,7 @@ describe("youtubeChannelScrapper Scrapping Script", () => {
       headers: {},
       config: {
         // @ts-ignore
-        headers: {
-        },
+        headers: {},
       },
     };
     // @ts-ignore
@@ -58,8 +57,7 @@ describe("youtubeChannelScrapper Scrapping Script", () => {
       headers: {},
       config: {
         // @ts-ignore
-        headers: {
-        },
+        headers: {},
       },
     };
     // @ts-ignore
@@ -71,5 +69,21 @@ describe("youtubeChannelScrapper Scrapping Script", () => {
       scheduledStartTime: "1677432900",
     };
     expect(response).toEqual(expectedData);
+  });
+
+  test("Throws an Error on a Server Error", async () => {
+    const html = fs.readFileSync(
+      path.resolve(__dirname, "../../src/mock/html/stream-not-live.mock.html"),
+      "utf8"
+    );
+    /** @type {Axios.AxiosError} */
+    const mockAxiosResponse = new Axios.AxiosError();
+    // @ts-ignore
+    axios.get.mockResolvedValueOnce(Promise.resolve(mockAxiosResponse));
+    try {
+      const response = await youtubeChannelScrapper("UCPX3yijEA2s1jTJGDlUnGsQ");
+    } catch (/** @type {unknown} */ e) {
+      expect(String(e)).toEqual("Error");
+    }
   });
 });
