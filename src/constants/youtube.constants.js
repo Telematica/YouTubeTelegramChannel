@@ -1,4 +1,5 @@
 module.exports = {
+  YOUTUBE_URL: "https://www.youtube.com",
   YOUTUBE_CHANNEL_URL: "https://www.youtube.com/channel",
   YOUTUBE_REQUEST_HEADERS: {
     authority: "www.youtube.com",

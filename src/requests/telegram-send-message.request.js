@@ -20,9 +20,7 @@ const telegramSendMessage = async ({ chat_id, text, disable_notification }) => {
   try {
     return await axios.get(url);
   } catch (error) {
-    return Promise.reject(
-      error instanceof axios.AxiosError ? error.message : error
-    );
+    return Promise.reject(error);
   }
 };
 

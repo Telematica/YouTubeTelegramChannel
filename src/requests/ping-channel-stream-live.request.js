@@ -2,6 +2,7 @@
 const axios = require("axios").default;
 const Axios = require("../@types/axios.types");
 const {
+  YOUTUBE_URL,
   YOUTUBE_CHANNEL_URL,
   YOUTUBE_LIVE_HEADERS,
 } = require("../constants/youtube.constants");
@@ -14,7 +15,7 @@ const {
  */
 const pingChannelStreamLive = async (channelId) => {
   /** @type {string} */
-  const url = `${YOUTUBE_CHANNEL_URL}/${channelId}/live`;
+  const url = channelId.startsWith("@") ? `${YOUTUBE_URL}/${channelId}/live` : `${YOUTUBE_CHANNEL_URL}/${channelId}/live`;
 
   /** @type {Axios.AxiosRequestConfig} */
   const config = {
@@ -24,9 +25,7 @@ const pingChannelStreamLive = async (channelId) => {
   try {
     return await axios.get(url, config);
   } catch (error) {
-    return Promise.reject(
-      error instanceof axios.AxiosError ? error.message : error
-    );
+    return Promise.reject(error);
   }
 };
 
