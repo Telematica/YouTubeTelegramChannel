@@ -4,6 +4,8 @@ const { formatBytes } = require("../../src/utils/format-bytes.utils");
 describe('format-bytes.utils Functions', () => {
   test('formatBytes behavior', async () => {
     expect({
+      noDecimals: formatBytes(123456789, -1),
+      decimals: formatBytes(123456789, 3),
       zero: formatBytes(0),
       bytes1: formatBytes(1),
       bytes2: formatBytes(1023),
@@ -16,6 +18,8 @@ describe('format-bytes.utils Functions', () => {
       zetabytes: formatBytes(10000000000000000000000),
       yotabytes: formatBytes(10000000000000000000000000)
     }).toEqual({
+      decimals: "117.738 MB",
+      noDecimals: "118 MB",
       zero: "0 Bytes",
       bytes1: "1 Bytes",
       bytes2: "1023 Bytes",

@@ -60,16 +60,14 @@ describe("string-template Functions", () => {
     ).toEqual("¡Hubo un Error en la Petición al Canal! Error: Generic error");
   });
   test("consoleMessage behavior: default", async () => {
-    expect(
-      consoleMessage("no-type", {})
-    ).toEqual("NOTHING TO SAY!");
+    expect(consoleMessage("no-type", {})).toEqual("NOTHING TO SAY!");
   });
   test("consoleMessage behavior: default", async () => {
-    expect(
-      consoleMessage("no-type", {})
-    ).toEqual("NOTHING TO SAY!");
+    expect(consoleMessage("no-type", { youtubeData: live, channel })).toEqual(
+      "NOTHING TO SAY!"
+    );
   });
-  test("consoleMessage behavior: SERVER_ERROR", async () => {
+  test("consoleMessage behavior: TELEGRAM_MESSAGE", async () => {
     expect(
       consoleMessage(CONSOLE.TELEGRAM_MESSAGE, {
         youtubeData: live,
@@ -78,6 +76,17 @@ describe("string-template Functions", () => {
       })
     ).toEqual(
       `🔴 ¡Gobierno de México está transmitiendo En Vivo! \n\n 🔗 Entra a: http://youtu.be/F8gbJUXaeo0 \n\n 🕒 Comenzó a transmitir el 10 nov 2022 \n\n 👥 Espectadores: 132`
+    );
+  });
+  test("consoleMessage behavior: TELEGRAM_MESSAGE with no spectators", async () => {
+    expect(
+      consoleMessage(CONSOLE.TELEGRAM_MESSAGE, {
+        youtubeData: { ...live, viewCount: undefined },
+        channel,
+        liveRequestError,
+      })
+    ).toEqual(
+      `🔴 ¡Gobierno de México está transmitiendo En Vivo! \n\n 🔗 Entra a: http://youtu.be/F8gbJUXaeo0 \n\n 🕒 Comenzó a transmitir el 10 nov 2022 \n\n 👥 Espectadores: 0`
     );
   });
 });

@@ -47,13 +47,13 @@ const youtubeChannelScrapper = async (cid) => {
         dom.window.document.querySelectorAll("script")[scriptIndex];
       if (scriptTag.textContent?.includes(ytInitialData)) {
         ytInitialDataRawScript =
-          scriptTag.textContent?.replace(ytInitialData, "").slice(0, -1) || "{}";
+          scriptTag.textContent?.replace(ytInitialData, "").slice(0, -1);
         continue;
       }
 
       if (scriptTag.textContent?.includes(ytInitialPlayerResponse)) {
         ytInitialPlayerResponseRawScript =
-          scriptTag.textContent?.trim().replace(ytInitialPlayerResponse, "").replace(/;\s?var meta.*/, "").replace(/\};$/, "}").replace(/;$/, "") || "{}";
+          scriptTag.textContent?.trim().replace(ytInitialPlayerResponse, "").replace(/;\s?var meta.*/, "").replace(/\};$/, "}").replace(/;$/, "");
         continue;
       }
     }
@@ -104,7 +104,7 @@ const youtubeChannelScrapper = async (cid) => {
       title,
       vid,
       viewCount: isFinite(parseInt(viewCount.replace(",", "")))
-        ? Number(viewCount.replace(",", ""))
+        ? Number(viewCount.replace(",", "") || 0)
         : 0,
     };
     return Promise.resolve(data);
