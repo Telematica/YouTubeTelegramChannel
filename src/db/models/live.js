@@ -47,8 +47,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     start_timestamp: {
       type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: Sequelize.Sequelize.literal('CURRENT_TIMESTAMP')
+      allowNull: true
     }
   }, {
     tableName: 'live',

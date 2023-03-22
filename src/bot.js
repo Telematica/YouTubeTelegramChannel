@@ -112,6 +112,7 @@ const ERROR_LOG_FILE_DIRECTORY = __dirname + "/../logs/errors";
             }
           } else {
             // @todo scheduledStartTime logic to notify twice: when scheduled and when live
+            // scheduledStartTime: String((parseInt(youtubeData.scheduledStartTime || "0", 10) || 0) * 1000),
             message = consoleMessage(CONSOLE.NOT_LIVE, {
               youtubeData,
               channel,
