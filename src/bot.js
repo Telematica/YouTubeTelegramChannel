@@ -46,18 +46,15 @@ const ERROR_LOG_FILE_DIRECTORY = __dirname + "/../logs/errors";
     /** @type {Perf} */
     const perf = new Perf().begin();
 
-    /** @type {Array<any>} */
-    const logEntry = [];
-
     /** @type {string} */
     let message = "This is bad!";
 
     await connect();
 
-    /** @type Array<YouTubeTypes.YouTubeChannelType> */
-    const channels = await Channel.findAll({ raw: true });
-
     await sequelize.transaction(async (t) => {
+      /** @type Array<YouTubeTypes.YouTubeChannelType> */
+      const channels = await Channel.findAll({ raw: true }, { transaction: t });
+
       for (const channel of channels) {
         try {
           /** @type {YouTubeTypes.YouTubeLiveDataType} */
@@ -74,7 +71,13 @@ const ERROR_LOG_FILE_DIRECTORY = __dirname + "/../logs/errors";
                 youtubeData,
                 channel,
               });
-              // await LogEntry.create({ info: message }, { transaction: t });
+              await LogEntry.create(
+                {
+                  log_status_id: 1,
+                  channel_id: channel.id,
+                },
+                { transaction: t }
+              );
             } else {
               message = consoleMessage(CONSOLE.NOTIFIED, {
                 youtubeData,
@@ -94,7 +97,10 @@ const ERROR_LOG_FILE_DIRECTORY = __dirname + "/../logs/errors";
                 },
                 { transaction: t }
               );
-              // await LogEntry.create({ info: message }, { transaction: t });
+              await LogEntry.create(
+                { log_status_id: 2, channel_id: channel.id },
+                { transaction: t }
+              );
               await telegramSendMessage({
                 chat_id: TELEGRAM_CHANNEL_OR_GROUP,
                 text: consoleMessage(CONSOLE.TELEGRAM_MESSAGE, {
@@ -110,11 +116,23 @@ const ERROR_LOG_FILE_DIRECTORY = __dirname + "/../logs/errors";
               youtubeData,
               channel,
             });
-            // await LogEntry.create({ info: message }, { transaction: t });
+            await LogEntry.create(
+              { log_status_id: 3, channel_id: channel.id },
+              { transaction: t }
+            );
           }
         } catch (liveRequestError) {
+          openOrCreateAndWriteErrorLogFile({
+            error: liveRequestError,
+            logFormattedDate,
+            errorLogFileDirectory: ERROR_LOG_FILE_DIRECTORY,
+            errorLogFileExtension,
+          });
           message = consoleMessage(CONSOLE.SERVER_ERROR, { liveRequestError });
-          // await LogEntry.create({ error: message }, { transaction: t });
+          await LogEntry.create(
+            { log_status_id: 4, channel_id: channel.id },
+            { transaction: t }
+          );
         }
 
         console.log(message);

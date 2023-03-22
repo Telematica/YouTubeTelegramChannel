@@ -10,10 +10,12 @@ function initModels(sequelize) {
   var log_entry = _log_entry(sequelize, DataTypes);
   var log_status = _log_status(sequelize, DataTypes);
 
-  live.belongsTo(channel, { foreignKey: "channel_id"});
-  channel.hasMany(live, { foreignKey: "channel_id"});
-  log_entry.belongsTo(log_status, { foreignKey: "log_status_id"});
-  log_status.hasMany(log_entry, { foreignKey: "log_status_id"});
+  live.belongsTo(channel, { as: "channel", foreignKey: "channel_id"});
+  channel.hasMany(live, { as: "lives", foreignKey: "channel_id"});
+  log_entry.belongsTo(channel, { as: "channel", foreignKey: "channel_id"});
+  channel.hasMany(log_entry, { as: "log_entries", foreignKey: "channel_id"});
+  log_entry.belongsTo(log_status, { as: "log_status", foreignKey: "log_status_id"});
+  log_status.hasMany(log_entry, { as: "log_entries", foreignKey: "log_status_id"});
 
   return {
     channel,

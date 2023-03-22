@@ -31,11 +31,11 @@ function openOrCreateLogFile({ logFileDirectory, logFilename }) {
  * @param {{error: unknown, logFormattedDate: string, errorLogFileDirectory: string, errorLogFileExtension: string}} error Caught Error
  * @returns {void}
  */
-function openOrCreateAndWriteErrorLogFile({ 
+function openOrCreateAndWriteErrorLogFile({
   error,
   logFormattedDate,
   errorLogFileDirectory,
-  errorLogFileExtension
+  errorLogFileExtension,
 }) {
   /** @type {string} */
   const errorLogFilename = `${logFormattedDate}${errorLogFileExtension}`;
@@ -43,21 +43,20 @@ function openOrCreateAndWriteErrorLogFile({
   /** @type {string} */
   const fullPathFile = `${errorLogFileDirectory}/${errorLogFilename}`;
 
+  /** @type {string} */
+  const log = `[${new Date()}]: ` + String(error) + "\n";
+
   if (fs.existsSync(fullPathFile)) {
-    fs.appendFile(fullPathFile, String(error), () => { });
+    fs.appendFile(fullPathFile, log, () => {});
   } else {
-    fs.writeFile(
-      fullPathFile,
-      String(error) + " : " + new Date(),
-      (err) => {
-        if (err) throw err;
-        console.log("Error log saved!");
-      }
-    );
+    fs.writeFile(fullPathFile, log, (err) => {
+      if (err) throw err;
+      console.log("Error log saved!");
+    });
   }
 }
 
 module.exports = {
   openOrCreateLogFile,
-  openOrCreateAndWriteErrorLogFile
+  openOrCreateAndWriteErrorLogFile,
 };

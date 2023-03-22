@@ -171,10 +171,4 @@ VALUES (
         "SERVER_ERROR",
         "Hubo un Error en la Petición al Canal.",
         "error"
-    ),
-    (
-        5,
-        "TELEGRAM_MESSAGE",
-        "El canal está transmitiendo En Vivo.",
-        "info"
     );

@@ -15,6 +15,7 @@ npx sequelize-auto \
 --dialect sqlite \
 -o "./src/db/models" \
 --lang js \
---useDefine --caseModel o --caseFile k --caseProp o --noAlias --additional "./src/db/sequelize-auto-config.json"
+--useDefine --caseModel o --caseFile k --caseProp o --additional "./src/db/sequelize-auto-config.json"
+# --noAlias
 # --noInitModels
 # --tables escorts_profile

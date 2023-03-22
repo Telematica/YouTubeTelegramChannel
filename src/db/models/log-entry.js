@@ -14,6 +14,14 @@ module.exports = function(sequelize, DataTypes) {
         model: 'log_status',
         key: 'id'
       }
+    },
+    channel_id: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      references: {
+        model: 'channel',
+        key: 'id'
+      }
     }
   }, {
     tableName: 'log_entry',
