@@ -7,13 +7,13 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       primaryKey: true
     },
-    error: {
-      type: DataTypes.TEXT,
-      allowNull: true
-    },
-    info: {
-      type: DataTypes.TEXT,
-      allowNull: true
+    log_status_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'log_status',
+        key: 'id'
+      }
     }
   }, {
     tableName: 'log_entry',
