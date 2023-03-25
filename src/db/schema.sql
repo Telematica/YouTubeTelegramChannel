@@ -1,5 +1,6 @@
 PRAGMA foreign_keys = ON;
 PRAGMA journal_mode = WAL;
+PRAGMA main.auto_vacuum = FULL;
 CREATE TABLE IF NOT EXISTS [main].channel (
   id TEXT NOT NULL PRIMARY KEY,
   name TEXT NOT NULL,

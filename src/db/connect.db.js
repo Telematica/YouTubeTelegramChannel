@@ -4,7 +4,7 @@ const { initModels } = require("./models/init-models");
 const sequelize = new Sequelize({
   dialect: 'sqlite',
   isolationLevel: Transaction.ISOLATION_LEVELS.SERIALIZABLE,
-  logging: console.log,
+  logging: false,
   storage: __dirname + "/db.sqlite",
 });
 const models = initModels(sequelize);
