@@ -26,9 +26,6 @@ const logDate = new Date();
 const logFormattedDate = getYearMonthDayString(logDate);
 
 /** @type {string} */
-// const logFileExtension = ".log.json";
-
-/** @type {string} */
 const errorLogFileExtension = ".error.log";
 
 /** @type {string} */
