@@ -46,14 +46,19 @@ const youtubeChannelScrapper = async (cid) => {
       const scriptTag =
         dom.window.document.querySelectorAll("script")[scriptIndex];
       if (scriptTag.textContent?.includes(ytInitialData)) {
-        ytInitialDataRawScript =
-          scriptTag.textContent?.replace(ytInitialData, "").slice(0, -1);
+        ytInitialDataRawScript = scriptTag.textContent
+          ?.replace(ytInitialData, "")
+          .slice(0, -1);
         continue;
       }
 
       if (scriptTag.textContent?.includes(ytInitialPlayerResponse)) {
-        ytInitialPlayerResponseRawScript =
-          scriptTag.textContent?.trim().replace(ytInitialPlayerResponse, "").replace(/;\s?var meta.*/, "").replace(/\};$/, "}").replace(/;$/, "");
+        ytInitialPlayerResponseRawScript = scriptTag.textContent
+          ?.trim()
+          .replace(ytInitialPlayerResponse, "")
+          .replace(/;\s?var meta.*/, "")
+          .replace(/\};$/, "}")
+          .replace(/;$/, "");
         continue;
       }
     }
@@ -73,26 +78,53 @@ const youtubeChannelScrapper = async (cid) => {
     const vid = url?.href.match(/watch\?v=(.*)/)?.[1];
 
     /** @type {boolean} */
-    const live = /watch\?v=/.test(url?.href || "") && playerResponse.playabilityStatus && playerResponse.playabilityStatus.status === "OK";
+    const live =
+      /watch\?v=/.test(url?.href || "") &&
+      playerResponse.playabilityStatus &&
+      playerResponse.playabilityStatus.status === "OK";
 
     if (!live) {
-      const scheduledStartTime = playerResponse.playabilityStatus && playerResponse.playabilityStatus.status === "LIVE_STREAM_OFFLINE"
-        ? playerResponse.playabilityStatus.liveStreamability.liveStreamabilityRenderer.offlineSlate.liveStreamOfflineSlateRenderer.scheduledStartTime
-        : 0;
+      const scheduledStartTime =
+        playerResponse.playabilityStatus &&
+        playerResponse.playabilityStatus.status === "LIVE_STREAM_OFFLINE"
+          ? playerResponse.playabilityStatus.liveStreamability
+              .liveStreamabilityRenderer.offlineSlate
+              .liveStreamOfflineSlateRenderer.scheduledStartTime
+          : 0;
       return Promise.resolve({
         cid,
         live,
-        scheduledStartTime
+        scheduledStartTime,
       });
     }
 
     /** @type {string} */
-    const liveSince = youtubeData.contents.twoColumnWatchNextResults.results.results.contents[0].videoPrimaryInfoRenderer.dateText.simpleText;
+    const liveSince = Array.isArray(
+      youtubeData.contents.twoColumnWatchNextResults.results.results.contents
+    )
+      ? youtubeData.contents.twoColumnWatchNextResults.results.results
+          .contents[0].videoPrimaryInfoRenderer.dateText.simpleText
+      : "(?)";
 
     /** @type {string} */
-    const viewCount = youtubeData.contents.twoColumnWatchNextResults.results.results.contents[0]
-      .videoPrimaryInfoRenderer.viewCount.videoViewCountRenderer.viewCount
-      .runs[0].text;
+    const viewCount =
+      Array.isArray(
+        youtubeData.contents.twoColumnWatchNextResults.results.results.contents
+      ) &&
+      youtubeData.contents.twoColumnWatchNextResults.results.results.contents
+        .length > 0 &&
+      Array.isArray(
+        youtubeData.contents.twoColumnWatchNextResults.results.results
+          .contents[0].videoPrimaryInfoRenderer.viewCount.videoViewCountRenderer
+          .viewCount.runs
+      ) &&
+      youtubeData.contents.twoColumnWatchNextResults.results.results.contents[0]
+        .videoPrimaryInfoRenderer.viewCount.videoViewCountRenderer.viewCount
+        .runs.length > 0
+        ? youtubeData.contents.twoColumnWatchNextResults.results.results
+            .contents[0].videoPrimaryInfoRenderer.viewCount
+            .videoViewCountRenderer.viewCount.runs[0].text
+        : 0;
 
     // publishedTimeText
 
