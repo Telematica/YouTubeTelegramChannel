@@ -119,9 +119,9 @@ const ERROR_LOG_FILE_DIRECTORY = __dirname + "/../logs/errors";
               { transaction: t }
             );
           }
-        } catch (liveRequestError) {
+        } catch (/** @type {any} */ liveRequestError) {
           openOrCreateAndWriteErrorLogFile({
-            error: liveRequestError,
+            error: liveRequestError.stack,
             logFormattedDate,
             errorLogFileDirectory: ERROR_LOG_FILE_DIRECTORY,
             errorLogFileExtension,
@@ -137,10 +137,10 @@ const ERROR_LOG_FILE_DIRECTORY = __dirname + "/../logs/errors";
       }
     });
     perf.finish().showStats();
-  } catch (/** @type {unknown} */ e) {
+  } catch (/** @type {any} */ e) {
     console.log(String(e));
     openOrCreateAndWriteErrorLogFile({
-      error: e,
+      error: e.stack,
       logFormattedDate,
       errorLogFileDirectory: ERROR_LOG_FILE_DIRECTORY,
       errorLogFileExtension,
