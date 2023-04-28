@@ -9,6 +9,7 @@ lerna-debug.log*
 # SQLite WAL files
 src/db/*.sqlite-shm
 src/db/*.sqlite-wal
+src/db/*.sqbpro
 
 
 # sed backup files
