@@ -151,6 +151,11 @@ VALUES (
         "UClfxfOThZDPL_c0Ld7psDsw",
         "CONFERENCIAS EXCLUSIVAS Alfredo Jalife",
         "CONFERENCIASEXCLUSIVASAlfredoJalife"
+    ),
+    (
+        "UC6mvc52_1j0okpAaXJj2c_Q",
+        "Claudia Sheinbaum Pardo",
+        "@ClaudiaSheinbaumP"
     );
 INSERT INTO [main].log_status (id, code, status, type)
 VALUES (
