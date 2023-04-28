@@ -121,7 +121,7 @@ const ERROR_LOG_FILE_DIRECTORY = __dirname + "/../logs/errors";
           }
         } catch (/** @type {any} */ liveRequestError) {
           openOrCreateAndWriteErrorLogFile({
-            error: liveRequestError.stack,
+            error: `Exception on Channel request: \n ${liveRequestError.stack}`,
             logFormattedDate,
             errorLogFileDirectory: ERROR_LOG_FILE_DIRECTORY,
             errorLogFileExtension,
@@ -140,7 +140,7 @@ const ERROR_LOG_FILE_DIRECTORY = __dirname + "/../logs/errors";
   } catch (/** @type {any} */ e) {
     console.log(String(e));
     openOrCreateAndWriteErrorLogFile({
-      error: e.stack,
+      error: `Exception on main thread: \n ${e.stack}`,
       logFormattedDate,
       errorLogFileDirectory: ERROR_LOG_FILE_DIRECTORY,
       errorLogFileExtension,
