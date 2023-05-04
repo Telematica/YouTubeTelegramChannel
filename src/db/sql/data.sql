@@ -45,13 +45,21 @@ VALUES (
         "SinEmbargo Al Aire",
         NULL
     ),
-    ("UCBdM6w8S6kn90P0or3Z0kxQ", "RompevientoTV", NULL),
+    (
+        "UCBdM6w8S6kn90P0or3Z0kxQ",
+        "RompevientoTV",
+        NULL
+    ),
     (
         "UCrQNcN2YrmWjoPFZYQNlpmQ",
         "Política Piñata",
         NULL
     ),
-    ("UC_MbFb0fBPURLVJ5H5XbGQw", "Mau Rodriguez", NULL),
+    (
+        "UC_MbFb0fBPURLVJ5H5XbGQw",
+        "Mau Rodriguez",
+        NULL
+    ),
     (
         "UCCHoKlb5YIiN2ZPDD_jqXlw",
         "Pueblo Informado",
@@ -75,7 +83,11 @@ VALUES (
     ),
     ("UCmoHmtwGF6XAZfSI1S2PkTg", "Meme Yamel", NULL),
     ("UCE0jLtnLnVG9xLyoR-r_jXg", "Nino Canún", NULL),
-    ("UCPC0Z_lxVz4o-NMPHMoDMlA", "Con Toño Ruiz", NULL),
+    (
+        "UCPC0Z_lxVz4o-NMPHMoDMlA",
+        "Con Toño Ruiz",
+        NULL
+    ),
     (
         "UCu2Uc7YeJmE9mvGG9OK-zbQ",
         "Secretaría de Salud México",
@@ -156,6 +168,42 @@ VALUES (
         "UC6mvc52_1j0okpAaXJj2c_Q",
         "Claudia Sheinbaum Pardo",
         "@ClaudiaSheinbaumP"
+    );
+INSERT INTO [main].tiktok_user (id, nickname, unique_id)
+VALUES (
+        "6791529600250905606",
+        "Adi Kraj",
+        "adikraj1"
+    ),
+    (
+        "6924818854669812741",
+        "Mili y los mundos sociales 3.0",
+        "mili_rr2"
+    ),
+    (
+        "312515133980000256",
+        "María del Pilar",
+        "pilibertaopina"
+    ),
+    (
+        "6757845508527899653",
+        "El Temach",
+        "el_temach"
+    ),
+    (
+        "6725508810407429126",
+        "Ophelia Pastrana",
+        "ophcourse"
+    ),
+    (
+        "6792567840220021765",
+        "Armando Saucedo",
+        "armandosaucedo_"
+    ),
+    (
+        "6947574282193880069",
+        "Geopolitica۞Er_bandolero☭",
+        "geopolitica_er_bandolero"
     );
 INSERT INTO [main].log_status (id, code, status, type)
 VALUES (

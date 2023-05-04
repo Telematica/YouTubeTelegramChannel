@@ -99,12 +99,17 @@ const youtubeChannelScrapper = async (cid) => {
     }
 
     /** @type {string} */
-    const liveSince = Array.isArray(
+    const liveSince =
+      Array.isArray(
+        youtubeData.contents.twoColumnWatchNextResults.results.results.contents
+      ) &&
       youtubeData.contents.twoColumnWatchNextResults.results.results.contents
-    )
-      ? youtubeData.contents.twoColumnWatchNextResults.results.results
-          .contents[0].videoPrimaryInfoRenderer.dateText.simpleText
-      : "(?)";
+        .length > 0 &&
+      youtubeData.contents.twoColumnWatchNextResults.results.results.contents[0]
+        .videoPrimaryInfoRenderer
+        ? youtubeData.contents.twoColumnWatchNextResults.results.results
+            .contents[0].videoPrimaryInfoRenderer.dateText.simpleText
+        : "(?)";
 
     /** @type {string} */
     const viewCount =
