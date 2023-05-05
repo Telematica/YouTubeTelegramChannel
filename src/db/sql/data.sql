@@ -204,6 +204,11 @@ VALUES (
         "6947574282193880069",
         "Geopolitica۞Er_bandolero☭",
         "geopolitica_er_bandolero"
+    ),
+    (
+        "6662539857011605510",
+        "Mayte Fierro",
+        "maytefierroo"
     );
 INSERT INTO [main].log_status (id, code, status, type)
 VALUES (
