@@ -105,7 +105,7 @@ const tiktokBatch = async (t) => {
               tiktokData,
               user,
             }),
-            // disable_notification: user.id !== "UCNQqL-xd30otxNGRL5UeFFQ",
+            disable_notification: Boolean(user.disable_notification)
           });
         }
       } else {
@@ -198,7 +198,7 @@ const youtubeBatch = async (t) => {
               youtubeData,
               channel,
             }),
-            disable_notification: channel.id !== "UCNQqL-xd30otxNGRL5UeFFQ",
+            disable_notification: Boolean(channel.disable_notification),
           });
         }
       } else {

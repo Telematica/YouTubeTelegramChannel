@@ -14,10 +14,11 @@
  */
 
 /**
- * @typedef  {object}      YouTubeChannelType
- * @property {string}      id        Channel id
- * @property {string}      name      Channel name
- * @property {string|null} [channel] Channel
+ * @typedef  {object}                           YouTubeChannelType
+ * @property {string}      id                   Channel id
+ * @property {string}      name                 Channel name
+ * @property {string|null} [channel]            Channel
+ * @property {number}      disable_notification Disable Notification
  */
 
 /**

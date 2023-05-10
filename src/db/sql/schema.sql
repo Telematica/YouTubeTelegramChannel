@@ -72,10 +72,3 @@ CREATE TABLE IF NOT EXISTS [main].log_status (
   status TEXT NOT NULL,
   code TEXT NOT NULL
 );
-/* @todo create a DELETE statement to delete all log entries before current week */
-/*
- ALTER TABLE [main.log_entry] ADD COLUMN message TEXT NOT NULL;
- ALTER TABLE [main.log_entry] ADD COLUMN type TEXT NOT NULL;
- ALTER TABLE [main.log_entry] DROP COLUMN error;
- ALTER TABLE [main.log_entry] DROP COLUMN info;
- */
