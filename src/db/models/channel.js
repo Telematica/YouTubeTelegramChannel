@@ -14,6 +14,11 @@ module.exports = function(sequelize, DataTypes) {
     vanity: {
       type: DataTypes.TEXT,
       allowNull: true
+    },
+    disable_notification: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true
     }
   }, {
     tableName: 'channel',

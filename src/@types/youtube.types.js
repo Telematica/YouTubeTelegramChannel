@@ -18,7 +18,7 @@
  * @property {string}      id                   Channel id
  * @property {string}      name                 Channel name
  * @property {string|null} [channel]            Channel
- * @property {number}      disable_notification Disable Notification
+ * @property {string}      disable_notification Disable Notification
  */
 
 /**

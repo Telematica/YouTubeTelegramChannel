@@ -14,6 +14,11 @@ module.exports = function(sequelize, DataTypes) {
     unique_id: {
       type: DataTypes.TEXT,
       allowNull: true
+    },
+    disable_notification: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true
     }
   }, {
     tableName: 'tiktok_user',

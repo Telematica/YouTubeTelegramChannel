@@ -15,7 +15,7 @@
  * @property {string}      id                   User id
  * @property {string}      nickname             Nickname
  * @property {string|null} [unique_id]          User unique id
- * @property {number}      disable_notification Disable Notification
+ * @property {string}      disable_notification Disable Notification
  */
 
 /**
