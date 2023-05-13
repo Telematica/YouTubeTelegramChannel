@@ -118,6 +118,8 @@ const youtubeChannelScrapper = async (cid) => {
       ) &&
       youtubeData.contents.twoColumnWatchNextResults.results.results.contents
         .length > 0 &&
+      youtubeData.contents.twoColumnWatchNextResults.results.results.contents[0]
+        .videoPrimaryInfoRenderer &&
       Array.isArray(
         youtubeData.contents.twoColumnWatchNextResults.results.results
           .contents[0].videoPrimaryInfoRenderer.viewCount.videoViewCountRenderer
