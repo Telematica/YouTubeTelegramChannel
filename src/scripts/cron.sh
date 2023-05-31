@@ -1,5 +1,6 @@
 #!/bin/zsh 
-export PID=78441
+export PID=45760
+export NODE_VERSION="$(nvm version)"
 
 if ps -p $PID > /dev/null
     then
@@ -7,7 +8,7 @@ if ps -p $PID > /dev/null
         # Do something knowing the pid exists, i.e. the process with $PID is running
         return 1;
     else
-        $HOME/.nvm/versions/node/v14.20.1/bin/node $HOME/YouTubeTelegramChannel/src/bot.js & PID=$!
+        $HOME/.nvm/versions/node/$NODE_VERSION/bin/node $HOME/YouTubeTelegramChannel/src/bots/notification.bot.js --use_strict & PID=$!
         sed -i.bak -E "s/=[0-9]+/=$PID/" $HOME/YouTubeTelegramChannel/src/scripts/cron.sh
         # echo "#!/bin/zsh \n export PID=$PID"|cat - $HOME/YouTubeTelegramChannel/src/scripts/cron.sh > /tmp/out && mv /tmp/out $HOME/YouTubeTelegramChannel/src/scripts/cron.sh
 fi

@@ -100,6 +100,10 @@ const youtubeChannelScrapper = async (cid) => {
 
     /** @type {string} */
     const liveSince =
+      youtubeData.contents &&
+      youtubeData.contents.twoColumnWatchNextResults &&
+      youtubeData.contents.twoColumnWatchNextResults.results &&
+      youtubeData.contents.twoColumnWatchNextResults.results.results &&
       Array.isArray(
         youtubeData.contents.twoColumnWatchNextResults.results.results.contents
       ) &&
@@ -113,6 +117,10 @@ const youtubeChannelScrapper = async (cid) => {
 
     /** @type {string} */
     const viewCount =
+      youtubeData.contents &&
+      youtubeData.contents.twoColumnWatchNextResults &&
+      youtubeData.contents.twoColumnWatchNextResults.results &&
+      youtubeData.contents.twoColumnWatchNextResults.results.results &&
       Array.isArray(
         youtubeData.contents.twoColumnWatchNextResults.results.results.contents
       ) &&
