@@ -1,5 +1,5 @@
 // @ts-check
-require("dotenv").config({ path: __dirname + "/../.env" });
+require("dotenv").config({ path: __dirname + "/../../.env" });
 
 const YouTubeTypes = require("../@types/youtube.types");
 const TikTokTypes = require("../@types/tiktok.types");
