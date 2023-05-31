@@ -1,6 +1,6 @@
 #!/bin/zsh 
-export PID=45760
-export NODE_VERSION="$(nvm version)"
+export PID=54280
+export NODE_VERSION="v19.2.0" # @todo: use "$(nvm version)"
 
 if ps -p $PID > /dev/null
     then
