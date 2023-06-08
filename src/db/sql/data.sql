@@ -181,7 +181,7 @@ VALUES (
     ),
     (
         "UCbogMiZkPOnJEp8oXE2u_sg",
-        "",
+        "Atypical Te Ve",
         "AtypicalTeVe"
     );
 INSERT INTO [main].tiktok_user (id, nickname, unique_id)
