@@ -17,6 +17,7 @@
  * @description YouTube Channel Info Type
  * @typedef  {object}                 YouTubeChannelInfoType
  * @property {string}                 canonical          Canonical URL
+ * @property {string|null}            title              Channel Title
  * @property {string|null|undefined=} vanityUrl          Vanity URL
  */
 

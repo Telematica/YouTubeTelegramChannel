@@ -27,6 +27,9 @@ const youtubeChannelInfoScrapper = async (cid) => {
     /** @type {HTMLLinkElement|null} */
     const url = dom.window.document.querySelector("link[rel=canonical]");
 
+    /** @type {HTMLMetaElement|null} */
+    const title = dom.window.document.querySelector("meta[property='og:title']");
+
     /** @type {string=} */
     let ytInitialDataRawScript = "";
 
@@ -61,6 +64,7 @@ const youtubeChannelInfoScrapper = async (cid) => {
     /** @type {YoutubeTypes.YouTubeChannelInfoType} */
     const data = {
       canonical: url?.href || "",
+      title: title?.content || "",
       vanityUrl,
     };
     return Promise.resolve(data);

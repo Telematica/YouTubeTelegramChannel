@@ -14,7 +14,7 @@ const youtubeChannelScrapper = require("../scrappers/youtube/youtube-channel-inf
     const channelIndex = rest.indexOf('--channel');
 
     if (channelIndex === -1) {
-      console.log("Missing Channel input.");
+      console.log("Missing channel input.");
       return;
     }
 
@@ -25,9 +25,9 @@ const youtubeChannelScrapper = require("../scrappers/youtube/youtube-channel-inf
     return data;
   } catch (/** @type {any} */ e) {
     if (e.code === "ERR_BAD_REQUEST") {
-      console.log("Channel Not Found or Bad Request.");
+      console.log("Channel Not Found (404) or Bad Request (400).");
     } else {
-      console.log("Unexpected Error:", e.code);
+      console.log("Unexpected Error (maybe 500):", e.code, e.message);
     }
   }
 })();

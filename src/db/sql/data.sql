@@ -168,6 +168,21 @@ VALUES (
         "UC6mvc52_1j0okpAaXJj2c_Q",
         "Claudia Sheinbaum Pardo",
         "@ClaudiaSheinbaumP"
+    ),
+    (
+        "UCzmd9Aj2wmPggWZJpLdBB8Q",
+        "Grupo Fórmula",
+        "GrupoFormulaOficial"
+    ),
+    (
+        "UC-FVhfqCwhzpJ4DTJOMMofA",
+        "Latinus_us",
+        "Latinusus"
+    ),
+    (
+        "UCbogMiZkPOnJEp8oXE2u_sg",
+        "",
+        "AtypicalTeVe"
     );
 INSERT INTO [main].tiktok_user (id, nickname, unique_id)
 VALUES (
