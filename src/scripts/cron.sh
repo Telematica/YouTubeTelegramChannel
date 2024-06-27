@@ -1,5 +1,5 @@
 #!/bin/zsh 
-export PID=94959
+export PID=22487
 export NODE_VERSION="v19.2.0" # @todo: use "$(nvm version)"
 
 if ps -p $PID > /dev/null
@@ -21,3 +21,7 @@ fi
 # Reference
 # https://stackoverflow.com/questions/5171901/find-and-replace-in-file-and-overwrite-file-doesnt-work-it-empties-the-file
 # https://stackoverflow.com/questions/12351702/how-to-write-a-bash-script-to-set-global-environment-variable
+
+# Sample
+# * * * * * . /Users/hector.ceron/YouTubeTelegramChannel/src/scripts/cron.sh
+# 0 0,8,16 * * * cd /Users/hector.ceron/YouTubeTelegramChannel/src/scripts/ && zsh backup-db.sh
