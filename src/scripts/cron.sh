@@ -1,5 +1,5 @@
 #!/bin/zsh 
-export PID=22487
+export PID=75199
 export NODE_VERSION="v19.2.0" # @todo: use "$(nvm version)"
 
 if ps -p $PID > /dev/null
@@ -11,6 +11,7 @@ if ps -p $PID > /dev/null
         $HOME/.nvm/versions/node/$NODE_VERSION/bin/node $HOME/YouTubeTelegramChannel/src/bots/notification.bot.js --use_strict & PID=$!
         sed -i.bak -E "s/=[0-9]+/=$PID/" $HOME/YouTubeTelegramChannel/src/scripts/cron.sh
         # echo "#!/bin/zsh \n export PID=$PID"|cat - $HOME/YouTubeTelegramChannel/src/scripts/cron.sh > /tmp/out && mv /tmp/out $HOME/YouTubeTelegramChannel/src/scripts/cron.sh
+        return 0;
 fi
 
 # * * * * * /path/to/node /Users/your user/YouTubeTelegramChannel/src/bot.js && ko && killall node

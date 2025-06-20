@@ -6,15 +6,14 @@
  * @returns {void}
  */
 function showDebugInfo(env) {
-  const { API_TOKEN, TZ } = env;
-  console.table(
-    {
-      "Telegram Token": API_TOKEN,
-      TimeZone: TZ,
-      "Server DateTime": new Date().toDateString(),
-      "Server Locale Time": new Date().toLocaleTimeString(),
-    },
-  );
+  const { API_TOKEN, TZ, TELEGRAM_CHANNEL_OR_GROUP } = env;
+  console.table({
+    "Telegram Token": API_TOKEN,
+    TimeZone: TZ,
+    "Server DateTime": new Date().toDateString(),
+    "Server Locale Time": new Date().toLocaleTimeString(),
+    "Telegram Channel/Group": TELEGRAM_CHANNEL_OR_GROUP,
+  });
 }
 
 module.exports = { showDebugInfo };
