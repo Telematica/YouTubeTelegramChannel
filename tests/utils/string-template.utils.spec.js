@@ -18,6 +18,7 @@ const notLive = {
   live: false,
   scheduledStartTime: "1677432900",
 };
+/** @type {YouTubeTypes.YouTubeChannelType} */
 const channel = YOUTUBE_CHANNELS[0];
 const liveRequestError = new Error("Generic error");
 

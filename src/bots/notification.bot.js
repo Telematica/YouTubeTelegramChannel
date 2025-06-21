@@ -105,7 +105,9 @@ const tiktokBatch = async (t) => {
               tiktokData,
               user,
             }),
-            disable_notification: Boolean(parseInt(user.disable_notification, 10))
+            disable_notification: Boolean(
+              parseInt(user.disable_notification, 10)
+            ),
           });
         }
       } else {
@@ -198,7 +200,9 @@ const youtubeBatch = async (t) => {
               youtubeData,
               channel,
             }),
-            disable_notification: Boolean(parseInt(channel.disable_notification, 10)),
+            disable_notification: Boolean(
+              parseInt(channel.disable_notification ?? "0", 10)
+            ),
           });
         }
       } else {
