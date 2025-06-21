@@ -42,6 +42,11 @@
       "!**/node_modules/**",
       "!**/vendor/**"
     ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/src/constants/",
+      "/src/db/models/"
+    ],
     "coverageThreshold": {
       "global": {
         "lines": 50
