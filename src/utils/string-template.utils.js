@@ -17,6 +17,8 @@ const { CONSOLE } = require("../constants/app.constants");
  * @property {unknown} [liveRequestError]
  */
 
+// const platforms = { YOUTUBE: "YouTube", TIKTOK: "TikTok" }; // @todo: Add platforms label to the message
+
 /**
  *
  * @param {string} type

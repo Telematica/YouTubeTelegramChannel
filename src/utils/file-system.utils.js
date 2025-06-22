@@ -3,10 +3,12 @@ const fs = require("fs");
 
 /**
  * @function
+ * @deprecated
  * @description Open and retrieve log file contents as an Array of any
  * @param {{logFileDirectory: string, logFilename: string}} params
  * @returns {Array<any>} Array of any
  */
+// istanbul ignore next
 function openOrCreateLogFile({ logFileDirectory, logFilename }) {
   /** @type {string} */
   let rawLogObj = "";
@@ -47,7 +49,10 @@ function openOrCreateAndWriteErrorLogFile({
   const log = `[${new Date()}]: ` + String(error) + "\n";
 
   if (fs.existsSync(fullPathFile)) {
-    fs.appendFile(fullPathFile, log, () => {});
+    fs.appendFile(fullPathFile, log, (err) => {
+      if (err) throw err;
+      console.log("Error log updated!");
+    });
   } else {
     fs.writeFile(fullPathFile, log, (err) => {
       if (err) throw err;
