@@ -79,7 +79,7 @@ const youtubeChannelScrapper = async (cid) => {
 
     /** @type {boolean} */
     const live =
-      /watch\?v=/.test(url?.href || "") &&
+      /watch\?v=/.test(String(url?.href)) &&
       playerResponse.playabilityStatus &&
       playerResponse.playabilityStatus.status === "OK";
 
@@ -110,10 +110,10 @@ const youtubeChannelScrapper = async (cid) => {
       youtubeData.contents.twoColumnWatchNextResults.results.results.contents
         .length > 0 &&
       youtubeData.contents.twoColumnWatchNextResults.results.results.contents[0]
-        .videoPrimaryInfoRenderer
-        ? youtubeData.contents.twoColumnWatchNextResults.results.results
-            .contents[0].videoPrimaryInfoRenderer.dateText.simpleText
-        : "(?)";
+        .videoPrimaryInfoRenderer &&
+      (youtubeData.contents.twoColumnWatchNextResults.results.results
+        .contents[0].videoPrimaryInfoRenderer.dateText.simpleText ||
+        "(?)");
 
     /** @type {string} */
     const viewCount =
@@ -150,9 +150,7 @@ const youtubeChannelScrapper = async (cid) => {
       liveSince,
       title,
       vid,
-      viewCount: isFinite(parseInt(viewCount.replace(",", "")))
-        ? Number(viewCount.replace(",", "") || 0)
-        : 0,
+      viewCount: Number(viewCount.replace(",", "")),
     };
     return Promise.resolve(data);
   } catch (error) {
