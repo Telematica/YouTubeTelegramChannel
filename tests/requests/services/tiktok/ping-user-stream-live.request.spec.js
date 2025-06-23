@@ -13,7 +13,7 @@ beforeEach(() => {
 describe("pingUserStreamLive Request", () => {
   test("Successful GET html contents using a Channel Vanity URL", async () => {
     const html = fs.readFileSync(
-      path.resolve(__dirname, "../../../../src/mock/tiktok/user-live.html"),
+      path.resolve(__dirname, "../../../../src/mock/tiktok/user-live.mock.html"),
       "utf8"
     );
     // @ts-ignore
