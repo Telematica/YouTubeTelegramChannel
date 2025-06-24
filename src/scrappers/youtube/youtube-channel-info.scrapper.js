@@ -12,6 +12,7 @@ const homePageRequest = require("../../requests/services/youtube/home-page.reque
  * @param {string} cid Channel Id
  * @returns {Promise<YoutubeTypes.YouTubeChannelInfoType>} YouTube Data
  */
+// @todo: Implement <408 M de suscriptores, 879 videos, description> 
 const youtubeChannelInfoScrapper = async (cid) => {
   try {
     /** @type {AxiosTypes.AxiosResponse} */
