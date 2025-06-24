@@ -63,8 +63,8 @@ const youtubeChannelInfoScrapper = async (cid) => {
 
     /** @type {YoutubeTypes.YouTubeChannelInfoType} */
     const data = {
-      canonical: url?.href || "",
-      title: title?.content || "",
+      canonical: String(url?.href),
+      title: String(title?.content),
       vanityUrl,
     };
     return Promise.resolve(data);

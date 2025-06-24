@@ -31,7 +31,7 @@ const tiktokUserScrapper = async (uniqueId) => {
     const script = dom.window.document.getElementById("SIGI_STATE");
 
     /** @type {any} */
-    const tiktokData = JSON.parse(script?.textContent || "{}");
+    const tiktokData = JSON.parse(String(script?.textContent));
 
     /** @type {boolean} */
     const live =
@@ -48,12 +48,9 @@ const tiktokUserScrapper = async (uniqueId) => {
     }
 
     /** @type {string|null|undefined} */
-    const title =
-      tiktokData.SEOState &&
-      tiktokData.SEOState.metaParams &&
-      tiktokData.SEOState.metaParams.description
-        ? tiktokData.SEOState.metaParams.description
-        : "";
+    const title = dom.window.document
+      .querySelector("meta[name='description']")
+      ?.attributes.getNamedItem("content")?.value;
 
     /** @type {number} */
     const liveSince = tiktokData.LiveRoom.liveRoomUserInfo.liveRoom.startTime;
