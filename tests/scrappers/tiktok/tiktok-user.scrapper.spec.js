@@ -32,15 +32,14 @@ describe("tiktokUserScrapper Scrapping Script", () => {
     };
     // @ts-ignore
     axios.get.mockResolvedValueOnce(Promise.resolve(mockAxiosResponse));
-    const response = await tiktokUserScrapper("labettydetemu");
+    const response = await tiktokUserScrapper("@9maafer6");
     const expectedData = {
       live: true,
-      liveSince: 1750719846,
-      roomId: "7519284392415972152",
-      title:
-        "Quiubo Muchach@s!! | Watch Laflakcastro (@labettydetemu)'s LIVE on TikTok and interact with others in real time.",
-      uniqueId: "labettydetemu",
-      viewCount: 680,
+      liveSince: undefined,
+      roomId: "7519705674660219654",
+      title: "(NO TITLE)",
+      uniqueId: "@9maafer6",
+      viewCount: 0
     };
     expect(response).toEqual(expectedData);
   });
@@ -63,10 +62,10 @@ describe("tiktokUserScrapper Scrapping Script", () => {
     };
     // @ts-ignore
     axios.get.mockResolvedValueOnce(Promise.resolve(mockAxiosResponse));
-    const response = await tiktokUserScrapper("labettydetemu");
+    const response = await tiktokUserScrapper("@9maafer6");
     const expectedData = {
       live: false,
-      uniqueId: "labettydetemu",
+      uniqueId: "@9maafer6",
     };
     expect(response).toEqual(expectedData);
   });

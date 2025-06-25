@@ -93,11 +93,9 @@ function consoleMessageTiktok(type, { tiktokData, user, liveRequestError }) {
           user.nickname
         } está transmitiendo En Vivo! \n\n 🔗 Entra a: https://tiktok.com/@${
           user.unique_id
-        }/live \n\n 🕒 Comenzó a transmitir: ${new Date(
+        }/live \n\n 🕒 Comenzó a transmitir: ${/*new Date(
           parseInt(tiktokData.liveSince + "000", 10)
-        ).toLocaleDateString()} ${new Date(
-          parseInt(tiktokData.liveSince + "000", 10)
-        ).toLocaleTimeString()} \n\n 👥 Espectadores: ${new Intl.NumberFormat(
+        ).toLocaleDateString()*/ "(UNKNOWN)"} \n\n 👥 Espectadores: ${new Intl.NumberFormat(
           "es-MX",
           {
             maximumSignificantDigits: 3,

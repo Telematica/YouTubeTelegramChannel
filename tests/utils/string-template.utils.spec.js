@@ -175,7 +175,7 @@ describe("string-template Functions", () => {
           liveRequestError,
         })
       ).toEqual(
-        `🔴 ¡Adri Kraj está transmitiendo En Vivo! \n\n 🔗 Entra a: https://tiktok.com/@00909309490340983/live \n\n 🕒 Comenzó a transmitir: 2/26/2023 11:35:00 AM \n\n 👥 Espectadores: 100`
+        `🔴 ¡Adri Kraj está transmitiendo En Vivo! \n\n 🔗 Entra a: https://tiktok.com/@00909309490340983/live \n\n 🕒 Comenzó a transmitir: (UNKNOWN) \n\n 👥 Espectadores: 100`
       );
     });
     test("consoleMessageTiktok behavior: TELEGRAM_MESSAGE with no spectators", async () => {
@@ -186,7 +186,7 @@ describe("string-template Functions", () => {
           liveRequestError,
         })
       ).toEqual(
-        `🔴 ¡Adri Kraj está transmitiendo En Vivo! \n\n 🔗 Entra a: https://tiktok.com/@00909309490340983/live \n\n 🕒 Comenzó a transmitir: 2/26/2023 11:35:00 AM \n\n 👥 Espectadores: 0`
+        `🔴 ¡Adri Kraj está transmitiendo En Vivo! \n\n 🔗 Entra a: https://tiktok.com/@00909309490340983/live \n\n 🕒 Comenzó a transmitir: (UNKNOWN) \n\n 👥 Espectadores: 0`
       );
     });
   });

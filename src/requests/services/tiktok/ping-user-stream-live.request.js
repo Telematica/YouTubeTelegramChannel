@@ -14,7 +14,7 @@ const {
  */
 const pingUserStreamLive = async (channelId) => {
   /** @type {string} */
-  const url = `${TIKTOK_URL}/${channelId}/live`;
+  const url = `${TIKTOK_URL}/${channelId}`;
 
   /** @type {Axios.AxiosRequestConfig} */
   const config = {

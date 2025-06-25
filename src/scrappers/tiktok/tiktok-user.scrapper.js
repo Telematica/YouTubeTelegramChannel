@@ -28,17 +28,22 @@ const tiktokUserScrapper = async (uniqueId) => {
     const dom = new jsdom.JSDOM(response.data);
 
     /** @type {HTMLElement|null} */
-    const script = dom.window.document.getElementById("SIGI_STATE");
+    const script = dom.window.document.getElementById(
+      "__UNIVERSAL_DATA_FOR_REHYDRATION__"
+    );
 
     /** @type {any} */
     const tiktokData = JSON.parse(String(script?.textContent));
 
     /** @type {boolean} */
-    const live =
-      tiktokData.LiveRoom &&
-      tiktokData.LiveRoom.liveRoomUserInfo &&
-      tiktokData.LiveRoom.liveRoomUserInfo.liveRoom.status ===
-        TIKTOK_LIVE_STATUSES.LIVE;
+    const live = Boolean(
+      tiktokData.__DEFAULT_SCOPE__ &&
+        tiktokData.__DEFAULT_SCOPE__["webapp.user-detail"] &&
+        tiktokData.__DEFAULT_SCOPE__["webapp.user-detail"]?.userInfo &&
+        tiktokData.__DEFAULT_SCOPE__["webapp.user-detail"]?.userInfo?.user &&
+        tiktokData.__DEFAULT_SCOPE__["webapp.user-detail"]?.userInfo?.user
+          ?.roomId
+    );
 
     if (!live) {
       return Promise.resolve({
@@ -47,29 +52,34 @@ const tiktokUserScrapper = async (uniqueId) => {
       });
     }
 
-    /** @type {string|null|undefined} */
-    const title = dom.window.document
-      .querySelector("meta[name='description']")
-      ?.attributes.getNamedItem("content")?.value;
+    // /** @type {string|null|undefined} */
+    // const title = dom.window.document
+    //   .querySelector("meta[name='description']")
+    //   ?.attributes.getNamedItem("content")?.value;
 
-    /** @type {number} */
-    const liveSince = tiktokData.LiveRoom.liveRoomUserInfo.liveRoom.startTime;
+    // /** @type {number} */
+    // const liveSince = tiktokData.LiveRoom.liveRoomUserInfo.liveRoom.startTime;
 
-    /** @type {number} */
-    const viewCount =
-      tiktokData.LiveRoom.liveRoomUserInfo.liveRoom.liveRoomStats.userCount;
+    // /** @type {number} */
+    // const viewCount =
+    //   tiktokData.LiveRoom.liveRoomUserInfo.liveRoom.liveRoomStats.userCount;
+
+    // /** @type {string} */
+    // const roomId = tiktokData.LiveRoom.liveRoomUserInfo.user.roomId;
 
     /** @type {string} */
-    const roomId = tiktokData.LiveRoom.liveRoomUserInfo.user.roomId;
+    const roomId =
+      tiktokData.__DEFAULT_SCOPE__["webapp.user-detail"]?.userInfo?.user
+        ?.roomId;
 
     /** @type {TikTokTypes.TikTokLiveDataType} */
     const data = {
       uniqueId,
       roomId,
       live,
-      liveSince,
-      title,
-      viewCount,
+      liveSince: undefined,
+      title: "(NO TITLE)",
+      viewCount: 0,
     };
     return Promise.resolve(data);
   } catch (error) {

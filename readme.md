@@ -81,3 +81,6 @@ $ /path/to/node /Users/your-user/YouTubeTelegramChannel/src/bot.js
 
 - https://github.com/gajus/eslint-plugin-jsdoc/issues/533
 - https://eslint.org/docs/latest/use/configure/language-options#specifying-globals
+
+
+- https://stackoverflow.com/questions/64648688/how-to-mock-sequelize-with-jest

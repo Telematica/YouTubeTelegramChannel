@@ -129,7 +129,7 @@ const tiktokBatch = async (t) => {
         errorLogFileDirectory: ERROR_LOG_FILE_DIRECTORY,
         errorLogFileExtension,
       });
-      message = consoleMessage(CONSOLE.SERVER_ERROR, { liveRequestError });
+      message = consoleMessageTiktok(CONSOLE.SERVER_ERROR, { liveRequestError });
       await TikTokLogEntry.create(
         { log_status_id: 4, tiktok_user_id: user.id },
         { transaction: t }
