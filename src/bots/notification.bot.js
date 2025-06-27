@@ -47,10 +47,7 @@ const ERROR_LOG_FILE_DIRECTORY = __dirname + "/../../logs/errors";
 /** @type {(t: any) => Promise<any>} */
 const tiktokBatch = async (t) => {
   /** @type Array<TikTokTypes.TikTokUserType> */
-  const tiktokUsers = await TikTokUser.findAll(
-    { raw: true },
-    { transaction: t }
-  );
+  const tiktokUsers = await TikTokUser.findAll({ raw: true, transaction: t });
 
   /** @type {string} */
   let message = "This is bad!";
@@ -129,7 +126,9 @@ const tiktokBatch = async (t) => {
         errorLogFileDirectory: ERROR_LOG_FILE_DIRECTORY,
         errorLogFileExtension,
       });
-      message = consoleMessageTiktok(CONSOLE.SERVER_ERROR, { liveRequestError });
+      message = consoleMessageTiktok(CONSOLE.SERVER_ERROR, {
+        liveRequestError,
+      });
       await TikTokLogEntry.create(
         { log_status_id: 4, tiktok_user_id: user.id },
         { transaction: t }
@@ -143,7 +142,7 @@ const tiktokBatch = async (t) => {
 /** @type {(t: any) => Promise<any>} */
 const youtubeBatch = async (t) => {
   /** @type Array<YouTubeTypes.YouTubeChannelType> */
-  const channels = await Channel.findAll({ raw: true }, { transaction: t });
+  const channels = await Channel.findAll({ raw: true, transaction: t });
 
   /** @type {string} */
   let message = "This is bad!";
@@ -206,7 +205,7 @@ const youtubeBatch = async (t) => {
           });
         }
       } else {
-        // @todo scheduledStartTime logic to notify twice: when scheduled and when live
+        // @todo: scheduledStartTime logic to notify twice: when scheduled and when live
         // scheduledStartTime: String((parseInt(youtubeData.scheduledStartTime || "0", 10) || 0) * 1000),
         message = consoleMessage(CONSOLE.NOT_LIVE, {
           youtubeData,
