@@ -58,6 +58,7 @@ describe("Sequelize implementation connect()", () => {
       storage: dbDir + "/db.sqlite",
     });
     expect(mSequelizeContext.authenticate).toHaveBeenCalled();
+    expect(mSequelizeContext.sync).toHaveBeenCalled();
     // @todo: Uncomment when the define method is implemented (all models should be defined)
     /* expect(mSequelizeContext.define).toHaveBeenCalledWith(
       "live",

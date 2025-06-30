@@ -6,7 +6,7 @@ const TikTokTypes = require("../@types/tiktok.types");
 const {
   CONSOLE,
   TELEGRAM_CHANNEL_OR_GROUP,
-  TELEGRAM_CHANNEL_TIKTOK,
+  TELEGRAM_TIKTOK_CHANNEL,
 } = require("../constants/app.constants");
 const { connect, models, sequelize } = require("../db/connect.db");
 const telegramSendMessage = require("../requests/telegram-send-message.request");
@@ -97,7 +97,7 @@ const tiktokBatch = async (t) => {
             { transaction: t }
           );
           await telegramSendMessage({
-            chat_id: TELEGRAM_CHANNEL_TIKTOK,
+            chat_id: TELEGRAM_TIKTOK_CHANNEL,
             text: consoleMessageTiktok(CONSOLE.TELEGRAM_MESSAGE, {
               tiktokData,
               user,
@@ -236,10 +236,11 @@ const youtubeBatch = async (t) => {
 
 /**
  * @function
- * @description Main Function IIFE
- * @returns {void}
+ * @description Notify Action for YouTube and TikTok Channels
+ * @async
+ * @returns {Promise<void>}
  */
-(async () => {
+const notifyChannels = async () => {
   try {
     showDebugInfo(process.env);
 
@@ -263,6 +264,12 @@ const youtubeBatch = async (t) => {
       errorLogFileExtension,
     });
   }
-})();
+};
 
-// Gilberto Téllez => Radio Búfalo
+if (process.argv.indexOf("--use_strict") > -1) {
+  (async () => {
+    await notifyChannels();
+  })();
+}
+
+module.exports = { notifyChannels };

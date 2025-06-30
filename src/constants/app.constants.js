@@ -2,7 +2,7 @@ module.exports = {
   API_TOKEN: process.env.API_TOKEN,
   TELEGRAM_API_URL: "https://api.telegram.org/bot",
   TELEGRAM_CHANNEL_OR_GROUP: process.env.TELEGRAM_CHANNEL_OR_GROUP,
-  TELEGRAM_CHANNEL_TIKTOK: process.env.TELEGRAM_TIKTOK_CHANNEL,
+  TELEGRAM_TIKTOK_CHANNEL: process.env.TELEGRAM_TIKTOK_CHANNEL,
   RESPONSE_MESSAGES: {
     CHANNEL_ERROR: "¡Hubo un Error en la Petición al Canal!",
   },
@@ -11,6 +11,6 @@ module.exports = {
     NOTIFIED: "NOTIFIED",
     TELEGRAM_MESSAGE: "TELEGRAM_MESSAGE",
     NOT_LIVE: "NOT_LIVE",
-    SERVER_ERROR: "SERVER_ERROR"
-  }
+    SERVER_ERROR: "SERVER_ERROR",
+  },
 };
