@@ -77,7 +77,10 @@ jest.mock("../../src/scrappers/tiktok/tiktok-user.scrapper");
 describe("NotificationBot Action", () => {
   beforeAll(() => {
     // jest.replaceProperty(process, "argv", ["--use_strict"]);
-    // jest.resetAllMocks();
+    jest.clearAllMocks();
+    //jest.resetAllMocks();
+    jest.restoreAllMocks();
+    //jest.resetModules();
     jest.mocked(Perf).mockImplementation(() => {
       return {
         begin: jest.fn().mockReturnValue({
@@ -87,7 +90,7 @@ describe("NotificationBot Action", () => {
     });
   });
 
-  it("should execute notifyChannels() and notify when a Tiktok or YouTube Channel is live", async () => {
+  it("should execute notifyChannels() and notify when a Tiktok or YouTube Channel is live and transmission is already notified", async () => {
     jest.mocked(tiktokUserScrapper).mockImplementation(
       /**
        * The CallAgain method calls the provided function twice
@@ -117,7 +120,6 @@ describe("NotificationBot Action", () => {
   });
 
   it("should execute notifyChannels() and log in the console when a Tiktok or YouTube Channel is not live", async () => {
-    jest.clearAllMocks();
     jest.mocked(tiktokUserScrapper).mockImplementation(
       /**
        * The CallAgain method calls the provided function twice
