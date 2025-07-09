@@ -77,10 +77,8 @@ $ /path/to/node /Users/your-user/YouTubeTelegramChannel/src/bot.js
 - https://stackoverflow.com/questions/32454238/how-to-check-if-youtube-channel-is-streaming-live
 - https://stackoverflow.com/questions/42335016/dotenv-file-is-not-loading-environment-variables
 - https://stackoverflow.com/questions/42706584/eslint-error-parsing-error-the-keyword-const-is-reserved
-
-
 - https://github.com/gajus/eslint-plugin-jsdoc/issues/533
 - https://eslint.org/docs/latest/use/configure/language-options#specifying-globals
-
-
 - https://stackoverflow.com/questions/64648688/how-to-mock-sequelize-with-jest
+- https://stackoverflow.com/questions/5171901/find-and-replace-in-file-and-overwrite-file-doesnt-work-it-empties-the-file
+- https://stackoverflow.com/questions/12351702/how-to-write-a-bash-script-to-set-global-environment-variable
