@@ -12,4 +12,4 @@ npx sequelize-auto \
 --useDefine --caseModel o --caseFile k --caseProp o --additional "./src/db/sequelize-auto-config.json"
 # --noAlias
 # --noInitModels
-# --tables escorts_profile
+# --tables test_table
